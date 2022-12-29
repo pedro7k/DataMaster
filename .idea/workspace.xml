@@ -4,13 +4,110 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/DataMaster-application/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="working 2022.12.29">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/ang-ie11.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/ang.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/antd-ie11.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/antd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/barcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/charts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/color-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/cropperjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/cxd-ie11.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/cxd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/dark-ie11.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/exceljs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/helper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/ie11-patch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/locale/de-DE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/markdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/papaparse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/rest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/rich-text.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/sdk-ie11.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/sdk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/sdk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/hls.js/hls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/markdown-it/node_modules/entities/lib/maps/entities.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/base/browser/ui/codicons/codicon/codicon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/base/worker/workerMain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/apex/apex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/azcli/azcli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/bat/bat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/clojure/clojure.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/coffee/coffee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/cpp/cpp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/csharp/csharp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/css/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/dockerfile/dockerfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/fsharp/fsharp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/go/go.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/handlebars/handlebars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/html/html.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/ini/ini.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/java/java.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/javascript/javascript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/less/less.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/lua/lua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/markdown/markdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/msdax/msdax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/objective-c/objective-c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/php/php.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/postiats/postiats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/powershell/powershell.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/pug/pug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/python/python.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/r/r.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/razor/razor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/redis/redis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/redshift/redshift.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/ruby/ruby.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/rust/rust.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/sb/sb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/scheme/scheme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/scss/scss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/shell/shell.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/solidity/solidity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/sql/sql.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/st/st.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/swift/swift.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/typescript/typescript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/vb/vb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/xml/xml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/basic-languages/yaml/yaml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/editor/editor.main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/editor/editor.main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/editor/editor.main.nls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/editor/editor.main.nls.zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/css/cssMode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/css/cssWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/html/htmlMode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/html/htmlWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/json/jsonMode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/json/jsonWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/typescript/tsMode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/language/typescript/tsWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/monaco-editor/min/vs/loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/thirds/mpegts.js/mpegts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/amis/tinymce.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pedro/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/DataMasterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pedro/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/test/java/com/pedro/DataMasterApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +137,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
     "node.js.detected.package.eslint": "true",
@@ -65,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670914404517</updated>
       <workItem from="1670914405779" duration="1497000" />
-      <workItem from="1672317970984" duration="1784000" />
+      <workItem from="1672317970984" duration="2152000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -74,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670914676694</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="working 2022.12.29">
+      <created>1672320866940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672320866940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +187,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="working 2022.12.29" />
+    <option name="LAST_COMMIT_MESSAGE" value="working 2022.12.29" />
   </component>
 </project>
