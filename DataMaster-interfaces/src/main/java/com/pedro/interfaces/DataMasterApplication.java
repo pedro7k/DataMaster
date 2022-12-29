@@ -1,10 +1,10 @@
-package com.pedro;
+package com.pedro.interfaces;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class DataMasterApplication
 {
     public static void main( String[] args )
     {

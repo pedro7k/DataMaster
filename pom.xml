@@ -5,10 +5,14 @@
   <groupId>com.pedro</groupId>
   <artifactId>DataMaster</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>DataMaster</name>
   <url>http://maven.apache.org</url>
+  <modules>
+    <module>DataMaster-application</module>
+    <module>DataMaster-interfaces</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
