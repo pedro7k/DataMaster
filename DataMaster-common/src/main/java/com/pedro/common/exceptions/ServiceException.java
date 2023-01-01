@@ -1,10 +1,10 @@
 package com.pedro.common.exceptions;
 
-// ServiceException.java
-
-
 import com.pedro.common.res.ServiceExceptionEnum;
 
+/**
+ * 服务端统一异常
+ */
 public final class ServiceException extends RuntimeException {
 
     /**

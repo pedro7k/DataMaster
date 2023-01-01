@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="working 2022.12.29">
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/exceptions/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/CommonResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/GlobalResponseBodyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/ServiceExceptionEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/DataMasterApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2022.12.31 进行了一些框架搭建">
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/test2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/DataMasterApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/exceptions/ServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/exceptions/ServiceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/CommonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/GlobalResponseBodyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/GlobalResponseBodyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/ServiceExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/ServiceExceptionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/DataMasterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/DataMasterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,18 +59,19 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "G:/code/DataMaster/DataMaster-common/src/main/java/com/pedro/common/res",
+    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "39bfb6dab5370eaf6f2cfb7df6d9ba62",
+    "spring.configuration.checksum": "5518b2465b5530ae7416b2f37abbf7c2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static" />
       <recent name="G:\code\DataMaster\DataMaster-common\src\main\java\com\pedro\common\res" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static\amis" />
     </key>
@@ -86,6 +80,7 @@
       <recent name="G:\code\DataMaster\DataMaster-application" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.pedro.interfaces.controller" />
       <recent name="com.pedro" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -124,7 +119,8 @@
       <workItem from="1672317970984" duration="2152000" />
       <workItem from="1672321195918" duration="1527000" />
       <workItem from="1672374722036" duration="1479000" />
-      <workItem from="1672377112935" duration="7112000" />
+      <workItem from="1672377112935" duration="11847000" />
+      <workItem from="1672553066400" duration="6680000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -147,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672321217513</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2022.12.31 进行了一些框架搭建">
+      <created>1672466800427</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672466800427</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="working 2022.12.29" />
-    <option name="LAST_COMMIT_MESSAGE" value="working 2022.12.29" />
+    <MESSAGE value="2022.12.31 进行了一些框架搭建" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.12.31 进行了一些框架搭建" />
   </component>
 </project>

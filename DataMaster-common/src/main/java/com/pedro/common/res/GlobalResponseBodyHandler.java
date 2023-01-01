@@ -1,7 +1,5 @@
 package com.pedro.common.res;
 
-// GlobalResponseBodyHandler.java
-
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -9,6 +7,9 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
+/**
+ * 全局返回拦截器
+ */
 @ControllerAdvice(basePackages = "com.pedro.interfaces.controller") // 只拦截 controller 包
 public class GlobalResponseBodyHandler implements ResponseBodyAdvice {
 

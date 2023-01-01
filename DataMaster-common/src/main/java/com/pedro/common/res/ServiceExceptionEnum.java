@@ -2,6 +2,9 @@ package com.pedro.common.res;
 
 // ServiceExceptionEnum.java
 
+/**
+ * 返回状态枚举
+ */
 public enum ServiceExceptionEnum {
 
     SUCCESS(0, "成功"),
