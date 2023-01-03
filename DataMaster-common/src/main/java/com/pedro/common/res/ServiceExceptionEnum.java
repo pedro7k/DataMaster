@@ -9,7 +9,8 @@ public enum ServiceExceptionEnum {
 
     SUCCESS(0, "成功"),
     SYS_ERROR(1, "服务端发生异常"),
-    NO_RESULT(2, "查询不到结果");
+    NO_RESULT(2, "查询不到结果"),
+    REPEAT_PASSWORD_ERROR(3,"注册时重复密码错误");
 
     /**
      * 错误码

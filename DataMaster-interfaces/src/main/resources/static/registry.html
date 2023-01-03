@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>amis demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <link rel="stylesheet" href="amis/sdk.css"/>
+    <link rel="stylesheet" href="amis/helper.css"/>
+    <link rel="stylesheet" href="amis/iconfont.css"/>
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+<script src="amis/sdk.js"></script>
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            "type": "page",
+            "title": "注册页",
+            "body": [
+                {
+                    "type": "flex",
+                    "className": "p-1",
+                    "items": [
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch",
+                    "id": "u:681a9dde3ad7"
+                },
+                {
+                    "type": "tpl",
+                    "tpl": "注册",
+                    "inline": true,
+                    "wrapperComponent": "h1",
+                    "id": "u:770bc2a05fad",
+                    "style": {
+                        "fontFamily": "",
+                        "fontSize": 27,
+                        "textAlign": "center"
+                    }
+                },
+                {
+                    "type": "form",
+                    "title": "",
+                    "body": [
+                        {
+                            "label": "用户名",
+                            "type": "input-text",
+                            "name": "username",
+                            "id": "u:bb081a07fa80",
+                            "required": true
+                        },
+                        {
+                            "label": "密码",
+                            "type": "input-password",
+                            "name": "password",
+                            "id": "u:6fc111b4b57a",
+                            "required": true,
+                            "showCounter": false,
+                            "validations": {
+                            },
+                            "validationErrors": {
+                            }
+                        },
+                        {
+                            "label": "重复密码",
+                            "type": "input-password",
+                            "name": "rePassword",
+                            "id": "u:9db6c4651904",
+                            "required": true,
+                            "showCounter": false,
+                            "validations": {
+                            },
+                            "validationErrors": {
+                            }
+                        }
+                    ],
+                    "api": {
+                        "url": "http://localhost:8080/registry",
+                        "method": "post",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "id": "u:a8feaa97a337",
+                    "mode": "horizontal",
+                    "wrapWithPanel": true,
+                    "className": "m-lg m-r-lg m-l-lg m-b-lg p-lg p-r-lg p-b-lg p-l-lg no-border p-t m-t",
+                    "horizontal": {
+                        "leftFixed": "lg"
+                    },
+                    "submitText": "注册",
+                    "redirect": "http://localhost:8080/jumpToLoginPage"
+                }
+            ],
+            "id": "u:3f809b3ab84f",
+            "pullRefresh": {
+                "disabled": true
+            },
+            "regions": [
+                "body"
+            ],
+            "subTitle": "",
+            "style": {
+                "marginLeft": "0",
+                "backgroundSize": "",
+                "backgroundPosition": "",
+                "backgroundColor": "",
+                "backgroundImage": "",
+                "fontFamily": "",
+                "fontSize": 12
+            }
+        }
+        let amisScoped = amis.embed('#root', amisJSON, {
+            data: {
+                myData: 'amis'
+            }
+        });
+    })();
+</script>
+</body>
+</html>
