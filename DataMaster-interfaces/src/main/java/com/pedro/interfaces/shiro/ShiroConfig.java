@@ -39,8 +39,11 @@ public class ShiroConfig {
 
         // 2.过滤器配置
         Map<String, String> filterMap = new LinkedHashMap<>();
-        // 登录页
+        // 登录和注册页
         filterMap.put("/jumpToLoginPage", "anon");
+        filterMap.put("/login", "anon");
+        filterMap.put("/registry", "anon");
+        // 权限控制
         filterMap.put("/**","authc");
 
 //        //动态权限注入

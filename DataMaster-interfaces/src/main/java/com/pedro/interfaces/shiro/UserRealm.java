@@ -1,8 +1,6 @@
 package com.pedro.interfaces.shiro;
 
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -52,19 +50,27 @@ public class UserRealm extends AuthorizingRealm {
             throws AuthenticationException {
         System.out.println("执行了认证方法doGetAuthenticationInfo");
 
-//        //获取token
-//        UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
-//
+        //获取token
+        UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
+
 //        //连接真实数据库,通过token中的name
 //        User user = userService.queryUserByName(token.getUsername());
 //        if (user == null){//此人不存在
 //            return null;//UnknownAccountException
 //        }
-//
+
+        // test
+        String username = "root";
+        String password = "root";
+        if(!token.getUsername().equals(username)){
+            return null;
+        }
+        return new SimpleAuthenticationInfo("",password,"");
+
 //        //将user放入session中
 //        Subject subject = SecurityUtils.getSubject();
 //        subject.getSession().setAttribute("loginUser",user);
-//
+
 //        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(
 //                user,
 //                user.getPassword(),
@@ -72,7 +78,5 @@ public class UserRealm extends AuthorizingRealm {
 //                getName());
 //
 //        return info;
-
-        return null;
     }
 }
