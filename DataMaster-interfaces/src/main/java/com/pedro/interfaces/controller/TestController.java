@@ -18,6 +18,11 @@ public class TestController {
         System.out.println("test");
     }
 
+    @GetMapping("/testRole")
+    public void testRole(){
+        System.out.println("testRole");
+    }
+
     @PostMapping("/testWithParam")
     public CommonResult testWithParam(@RequestParam("id") String id,@RequestParam("password") String passWord){
         System.out.println(id);

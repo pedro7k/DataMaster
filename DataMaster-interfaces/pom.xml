@@ -45,6 +45,13 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+        </dependency>
+
+        <!--其他模块-->
         <dependency>
             <groupId>com.pedro</groupId>
             <artifactId>DataMaster-common</artifactId>
