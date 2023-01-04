@@ -1,6 +1,5 @@
 package com.pedro.domain.user.repository;
 
-import com.pedro.domain.user.model.vo.UserAuthVO;
 import com.pedro.domain.user.model.vo.UserVO;
 
 /**
@@ -8,8 +7,18 @@ import com.pedro.domain.user.model.vo.UserVO;
  */
 public interface UserRepository {
 
+    /**
+     * 通过名字查询User
+     * @param username
+     * @return
+     */
     UserVO queryUserByName(String username);
 
+    /**
+     * 注册
+     * @param userVO
+     * @return
+     */
     boolean registry(UserVO userVO);
 
 }

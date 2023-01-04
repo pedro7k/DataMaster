@@ -1,10 +1,8 @@
 package com.pedro.infrastructure.repository;
 
-import com.pedro.domain.user.model.vo.UserAuthVO;
 import com.pedro.domain.user.model.vo.UserVO;
 import com.pedro.domain.user.repository.UserRepository;
 import com.pedro.infrastructure.dao.UserDao;
-import com.pedro.infrastructure.po.User;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;

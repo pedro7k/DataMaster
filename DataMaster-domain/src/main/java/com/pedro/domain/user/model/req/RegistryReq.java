@@ -5,10 +5,19 @@ package com.pedro.domain.user.model.req;
  */
 public class RegistryReq {
 
+    /**
+     * 用户名
+     */
     String username;
 
+    /**
+     * 密码
+     */
     String password;
 
+    /**
+     * 重复密码
+     */
     String rePassword;
 
     public RegistryReq() {

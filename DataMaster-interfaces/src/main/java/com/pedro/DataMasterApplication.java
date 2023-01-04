@@ -11,8 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @Configurable
-public class DataMasterApplication
-{
+public class DataMasterApplication {
     public static void main(String[] args) {
         SpringApplication.run(DataMasterApplication.class, args);
     }

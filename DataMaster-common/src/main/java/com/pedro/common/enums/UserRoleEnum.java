@@ -39,7 +39,7 @@ public enum UserRoleEnum {
     /**
      * 静态加载从数字到角色的对应关系
      */
-    private static Map<Integer, List<String>> roleStringListMap = new HashMap<>();
+    private static final Map<Integer, List<String>> roleStringListMap = new HashMap<>();
 
     static {
         // root

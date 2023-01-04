@@ -10,12 +10,14 @@ public interface UserService {
 
     /**
      * 注册服务
+     *
      * @param registryReq
      */
     void registry(RegistryReq registryReq);
 
     /**
      * 通过名字获取用户信息
+     *
      * @param username
      * @return
      */

@@ -49,11 +49,11 @@ public class ShiroConfig {
         filterMap.put("/jumpToLoginPage", "anon");
         filterMap.put("/login", "anon");
         filterMap.put("/registry", "anon");
-        filterMap.put("/roleDenied","anon");
+        filterMap.put("/roleDenied", "anon");
         // 需要root权限
-        filterMap.put("/testRole","roles[root]");
+        filterMap.put("/testRole", "roles[root]");
         // 权限控制
-        filterMap.put("/**","authc");
+        filterMap.put("/**", "authc");
 
         // 3.向过滤器中添加map
         bean.setFilterChainDefinitionMap(filterMap);

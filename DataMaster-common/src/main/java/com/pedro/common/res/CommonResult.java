@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 /**
  * 统一返回结果
+ *
  * @param <T>
  */
 public class CommonResult<T> implements Serializable {

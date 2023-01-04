@@ -25,7 +25,7 @@ public class LoginController {
      * 跳转到登录页面
      */
     @GetMapping("/jumpToLoginPage")
-    public ModelAndView jumpToAnotherPage2(){
+    public ModelAndView jumpToAnotherPage2() {
         System.out.println("跳转到登录页面");
         ModelAndView mv = new ModelAndView("login.html");
         return mv;
@@ -35,10 +35,10 @@ public class LoginController {
      * 登录接口
      */
     @PostMapping("/login")
-    public CommonResult login(@RequestParam("username") String username, @RequestParam("password") String passWord){
+    public CommonResult login(@RequestParam("username") String username, @RequestParam("password") String passWord) {
         System.out.println("用户登录");
-        System.out.println("username="+username);
-        System.out.println("passWord="+passWord);
+        System.out.println("username=" + username);
+        System.out.println("passWord=" + passWord);
 
         // 1.shiro 获取当前subject,封装登陆数据
         Subject subject = SecurityUtils.getSubject();
