@@ -37,64 +37,84 @@
         // 通过替换下面这个配置来生成不同页面
         let amisJSON = {
             "type": "page",
-            "title": "注册",
+            "title": "test",
             "body": [
                 {
-                    "type": "form",
-                    "title": "表单",
-                    "body": [
+                    "type": "tabs",
+                    "tabs": [
                         {
-                            "label": "账号",
-                            "type": "input-text",
-                            "name": "id",
-                            "id": "u:7e32da72eaa5",
-                            "autoFill": {
-                            }
+                            "title": "选项卡1",
+                            "body": [
+                                {
+                                    "type": "tpl",
+                                    "tpl": "内容1",
+                                    "inline": false,
+                                    "id": "u:e3874a6366d7"
+                                }
+                            ],
+                            "id": "u:cb89cec7f180"
                         },
                         {
-                            "type": "input-password",
-                            "label": "密码",
-                            "name": "password",
-                            "id": "u:779d5346872a",
-                            "hidden": false,
-                            "static": false,
-                            "showCounter": false,
-                            "validations": {
-                            },
-                            "validationErrors": {
-                            }
+                            "title": "选项卡2",
+                            "body": [
+                                {
+                                    "type": "tpl",
+                                    "tpl": "内容2",
+                                    "inline": false
+                                }
+                            ]
                         }
                     ],
-                    "id": "u:2fb53bf9ad00",
-                    "api": {
-                        "url": "http://localhost:8080/testWithParam",
-                        "method": "post",
-                        "messages": {
-                        },
-                        "dataType": "form-data"
-                    },
+                    "id": "u:2b1660c8154d"
+                },
+                {
+                    "type": "button",
+                    "label": "按钮",
                     "onEvent": {
-                    }
+                        "click": {
+                            "actions": [
+                                {
+                                    "actionType": "url",
+                                    "args": {
+                                        "url": "http://www.baidu.com",
+                                        "blank": true,
+                                        "params": {
+                                            "name": "jack",
+                                            "jon": "${myjon}"
+                                        },
+                                        "name": "${myname}",
+                                        "age": 18
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "id": "u:6ecf8a1b13df"
                 }
             ],
-            "id": "u:51c38aa4b429",
-            "toolbar": [
-            ],
+            "id": "u:0e491740728b",
             "aside": [
                 {
-                    "type": "nav",
-                    "stacked": true,
-                    "links": [
-                        {
-                            "label": "页面1",
-                            "to": "test.html"
-                        },
-                        {
-                            "label": "页面2",
-                            "to": "test2.html"
-                        }
+                    "type": "flex",
+                    "className": "p-1",
+                    "items": [
                     ],
-                    "id": "u:053472025531"
+                    "style": {
+                        "position": "fixed",
+                        "inset": "0 auto auto 0",
+                        "zIndex": 10,
+                        "width": "100%",
+                        "overflowX": "auto",
+                        "margin": "0",
+                        "overflowY": "auto"
+                    },
+                    "isFixedWidth": true,
+                    "direction": "row",
+                    "justify": "center",
+                    "alignItems": "stretch",
+                    "isFixedHeight": false,
+                    "originPosition": "right-bottom",
+                    "id": "u:af4f862e63b2"
                 }
             ]
         }

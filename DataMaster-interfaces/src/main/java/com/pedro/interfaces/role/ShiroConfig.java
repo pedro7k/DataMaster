@@ -45,19 +45,15 @@ public class ShiroConfig {
 
         // 2.过滤器配置
         Map<String, String> filterMap = new LinkedHashMap<>();
-        // 登录和注册页
+        // 无权限限制页面
         filterMap.put("/jumpToLoginPage", "anon");
         filterMap.put("/login", "anon");
         filterMap.put("/registry", "anon");
+        filterMap.put("/roleDenied","anon");
         // 需要root权限
         filterMap.put("/testRole","roles[root]");
         // 权限控制
         filterMap.put("/**","authc");
-
-
-//        //动态权限注入
-//        List<Map<String,String>> perms = permsMap.getPerms();
-//        perms.forEach(perm->filterMap.put(perm.get("url"),perm.get("permission")));
 
         // 3.向过滤器中添加map
         bean.setFilterChainDefinitionMap(filterMap);
@@ -65,8 +61,8 @@ public class ShiroConfig {
         // 4.设置登陆的请求
         bean.setLoginUrl("/jumpToLoginPage");
 
-        // TODO 5.设置权限不足跳转的请求
-        bean.setUnauthorizedUrl("/test");
+        // 5.设置权限不足跳转的请求
+        bean.setUnauthorizedUrl("/roleDenied");
 
         return bean;
     }
@@ -75,9 +71,9 @@ public class ShiroConfig {
     @Bean
     public HashedCredentialsMatcher hashedCredentialsMatcher() {
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        //设置加密方式
+        // 1.设置加密方式
         hashedCredentialsMatcher.setHashAlgorithmName("md5");
-        //设置散列的次数
+        // 2.设置散列的次数
         hashedCredentialsMatcher.setHashIterations(2);
         return hashedCredentialsMatcher;
     }

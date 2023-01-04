@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2022.1.4 完善注册功能">
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2022.1.4 完善权限相关功能">
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/CommonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/roleDenied.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/UserRoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/UserRoleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/po/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/PermsMap.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/UserRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/SYS_User_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/SYS_User_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +56,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/mybatis/mapper",
+    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,11 +73,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\mapper" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\config" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\java\com\pedro\interfaces\shiro" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\java\com\pedro\controller" />
-      <recent name="G:\code\DataMaster\DataMaster-domain\src\main\java\com\pedro\domain\user\service\shiro" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis" />
@@ -137,7 +131,7 @@
       <workItem from="1672720732008" duration="22000" />
       <workItem from="1672720760648" duration="6519000" />
       <workItem from="1672752065934" duration="3246000" />
-      <workItem from="1672808678870" duration="22120000" />
+      <workItem from="1672808678870" duration="27276000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -202,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672826523097</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="2022.1.4 完善权限相关功能">
+      <created>1672833037300</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672833037300</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +227,7 @@
     <MESSAGE value="2022.1.1" />
     <MESSAGE value="2022.1.3" />
     <MESSAGE value="2022.1.4 完善注册功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.1.4 完善注册功能" />
+    <MESSAGE value="2022.1.4 完善权限相关功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.1.4 完善权限相关功能" />
   </component>
 </project>
