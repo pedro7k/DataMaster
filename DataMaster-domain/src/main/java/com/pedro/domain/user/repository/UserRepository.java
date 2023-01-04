@@ -8,7 +8,8 @@ import com.pedro.domain.user.model.vo.UserVO;
  */
 public interface UserRepository {
 
-    boolean checkUsername(String username);
+    UserVO queryUserByName(String username);
 
     boolean registry(UserVO userVO);
+
 }

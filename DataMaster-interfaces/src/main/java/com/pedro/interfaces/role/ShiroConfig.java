@@ -1,5 +1,6 @@
 package com.pedro.interfaces.role;
 
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +18,12 @@ public class ShiroConfig {
 
     @Bean
     public UserRealm userRealm() {
-        return new UserRealm();
+        // 1.获得realm
+        UserRealm userRealm = new UserRealm();
+        // 2.注入加密
+        userRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+
+        return userRealm;
     }
 
     @Bean(name = "securityManager")
@@ -43,8 +49,11 @@ public class ShiroConfig {
         filterMap.put("/jumpToLoginPage", "anon");
         filterMap.put("/login", "anon");
         filterMap.put("/registry", "anon");
+        // 需要root权限
+        filterMap.put("/testRole","roles[root]");
         // 权限控制
-         filterMap.put("/**","authc");
+        filterMap.put("/**","authc");
+
 
 //        //动态权限注入
 //        List<Map<String,String>> perms = permsMap.getPerms();
@@ -56,22 +65,22 @@ public class ShiroConfig {
         // 4.设置登陆的请求
         bean.setLoginUrl("/jumpToLoginPage");
 
-//        // 5.设置未授权的请求
-//        bean.setUnauthorizedUrl("/noauth");
+        // TODO 5.设置权限不足跳转的请求
+        bean.setUnauthorizedUrl("/test");
 
         return bean;
     }
 
-//    //密码加密算法设置
-//    @Bean
-//    public HashedCredentialsMatcher hashedCredentialsMatcher() {
-//        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-//        //设置加密方式
-//        hashedCredentialsMatcher.setHashAlgorithmName("md5");
-//        //设置散列的次数
-//        hashedCredentialsMatcher.setHashIterations(2);
-//        return hashedCredentialsMatcher;
-//    }
+    //密码加密算法设置
+    @Bean
+    public HashedCredentialsMatcher hashedCredentialsMatcher() {
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        //设置加密方式
+        hashedCredentialsMatcher.setHashAlgorithmName("md5");
+        //设置散列的次数
+        hashedCredentialsMatcher.setHashIterations(2);
+        return hashedCredentialsMatcher;
+    }
 
 
 }

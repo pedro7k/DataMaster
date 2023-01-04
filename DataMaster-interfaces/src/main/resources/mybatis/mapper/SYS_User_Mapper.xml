@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pedro.infrastructure.dao.UserDao">
 
-    <select id="queryUserByName" parameterType="java.lang.String" resultType="com.pedro.infrastructure.po.User">
-        SELECT uid, username, password, role
+    <select id="queryUserByName" parameterType="java.lang.String" resultType="com.pedro.domain.user.model.vo.UserVO">
+        SELECT uid, username, password, role, salt
         FROM sys_user
         WHERE username = #{username}
     </select>

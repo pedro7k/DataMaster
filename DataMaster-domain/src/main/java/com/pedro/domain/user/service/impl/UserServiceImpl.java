@@ -26,12 +26,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public void registry(RegistryReq registryReq) {
         // 1.用户名校验
-        if(userRepository.checkUsername(registryReq.getUsername())){
+        if (checkUsername(registryReq.getUsername())) {
             throw new ServiceException(ServiceExceptionEnum.DUPLICATE_USERNAME);
         }
 
         // 2.密码校验
-        if(!registryReq.getPassword().equals(registryReq.getRePassword())){
+        if (!registryReq.getPassword().equals(registryReq.getRePassword())) {
             throw new ServiceException(ServiceExceptionEnum.REPEAT_PASSWORD_ERROR);
         }
 
@@ -39,13 +39,31 @@ public class UserServiceImpl implements UserService {
         UserVO userVO = new UserVO();
         userVO.setUsername(registryReq.getUsername());
         userVO.setSalt(EncryptionUtil.getSalt());
-        userVO.setPassword(EncryptionUtil.encryptPassword(registryReq.getUsername(),registryReq.getPassword(),userVO.getSalt(), Constants.HASH_TIMES));
+        userVO.setPassword(EncryptionUtil.encryptPassword(registryReq.getUsername(), registryReq.getPassword(), userVO.getSalt(), Constants.HASH_TIMES));
         userVO.setRole(UserRoleEnum.NORMAL_USER.getLevel());
         boolean success = userRepository.registry(userVO);
 
         // 4.注册失败
-        if(!success){
+        if (!success) {
             throw new ServiceException(ServiceExceptionEnum.SYS_ERROR);
         }
+    }
+
+    @Override
+    public UserVO queryUserByName(String username) {
+        return userRepository.queryUserByName(username);
+    }
+
+    /**
+     * 检查当前数据库内是否有同名User
+     *
+     * @param username
+     * @return
+     */
+    private boolean checkUsername(String username) {
+        if (userRepository.queryUserByName(username) != null) {
+            return true;
+        }
+        return false;
     }
 }

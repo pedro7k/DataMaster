@@ -4,6 +4,7 @@ import com.pedro.domain.user.model.vo.UserAuthVO;
 import com.pedro.domain.user.model.vo.UserVO;
 import com.pedro.domain.user.repository.UserRepository;
 import com.pedro.infrastructure.dao.UserDao;
+import com.pedro.infrastructure.po.User;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -15,8 +16,17 @@ public class UserRepositoryImpl implements UserRepository {
     private UserDao userDao;
 
     @Override
-    public boolean checkUsername(String username) {
-        return userDao.queryUserByName(username) != null;
+    public UserVO queryUserByName(String username) {
+        // 1.执行查询
+        UserVO userVO = userDao.queryUserByName(username);
+
+        // 2.若未查询到，则返回null
+        if (userVO == null) {
+            return null;
+        }
+
+        // 3.返回
+        return userVO;
     }
 
     @Override

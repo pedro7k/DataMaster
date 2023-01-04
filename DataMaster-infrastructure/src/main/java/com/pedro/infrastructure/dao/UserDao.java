@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserDao {
-    User queryUserByName(String username);
+    UserVO queryUserByName(String username);
 
     boolean registry(UserVO userVO);
 }
