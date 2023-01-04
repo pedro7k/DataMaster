@@ -1,4 +1,4 @@
-package com.pedro.interfaces.shiro;
+package com.pedro.interfaces.role;
 
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;

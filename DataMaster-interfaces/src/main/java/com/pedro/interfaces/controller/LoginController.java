@@ -2,7 +2,7 @@ package com.pedro.interfaces.controller;
 
 import com.pedro.common.exceptions.ServiceException;
 import com.pedro.common.res.CommonResult;
-import com.pedro.common.res.ServiceExceptionEnum;
+import com.pedro.common.enums.ServiceExceptionEnum;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;

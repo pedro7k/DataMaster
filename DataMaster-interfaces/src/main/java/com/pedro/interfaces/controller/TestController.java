@@ -46,4 +46,15 @@ public class TestController {
         ModelAndView mv = new ModelAndView("test.html");
         return mv;
     }
+
+    /**
+     * 跳转页面2
+     * @return
+     */
+    @GetMapping("/jumpToAnotherPage3")
+    public ModelAndView jumpToAnotherPage3(){
+        System.out.println("jump");
+        ModelAndView mv = new ModelAndView("login.html");
+        return mv;
+    }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pedro.infrastructure.dao.UserDao">
+
+    <select id="queryUserByName" parameterType="java.lang.String" resultType="com.pedro.infrastructure.po.User">
+        SELECT uid, username, password, role
+        FROM sys_user
+        WHERE username = #{username}
+    </select>
+
+    <insert id="registry" parameterType="com.pedro.domain.user.model.vo.UserVO">
+        insert into sys_user(username, password, role, salt)
+        values (#{username},#{password},#{role},#{salt})
+    </insert>
+
+
+</mapper>

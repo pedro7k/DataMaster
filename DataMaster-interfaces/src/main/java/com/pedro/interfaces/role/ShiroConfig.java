@@ -1,4 +1,4 @@
-package com.pedro.interfaces.shiro;
+package com.pedro.interfaces.role;
 
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -44,7 +44,7 @@ public class ShiroConfig {
         filterMap.put("/login", "anon");
         filterMap.put("/registry", "anon");
         // 权限控制
-        filterMap.put("/**","authc");
+         filterMap.put("/**","authc");
 
 //        //动态权限注入
 //        List<Map<String,String>> perms = permsMap.getPerms();

@@ -1,4 +1,4 @@
-package com.pedro.interfaces.shiro;
+package com.pedro.interfaces.role;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

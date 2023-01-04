@@ -2,6 +2,7 @@ package com.pedro.common.res;
 
 // GlobalExceptionHandler.java
 
+import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

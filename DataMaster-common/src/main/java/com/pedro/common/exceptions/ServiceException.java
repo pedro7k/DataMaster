@@ -1,6 +1,6 @@
 package com.pedro.common.exceptions;
 
-import com.pedro.common.res.ServiceExceptionEnum;
+import com.pedro.common.enums.ServiceExceptionEnum;
 
 /**
  * 服务端统一异常
