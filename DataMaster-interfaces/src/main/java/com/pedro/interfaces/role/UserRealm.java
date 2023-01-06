@@ -36,8 +36,7 @@ public class UserRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 
         // 2.拿到用户当前登陆的对象
-        Subject subject = SecurityUtils.getSubject();
-        UserVO currentUser = (UserVO) subject.getPrincipal();//拿到user对象
+        UserVO currentUser = ShiroUtil.getCurrentUser();
 
         // 3.添加role
         int roleKey = currentUser.getRole();

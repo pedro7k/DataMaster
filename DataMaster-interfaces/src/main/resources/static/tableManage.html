@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>amis demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <link rel="stylesheet" href="amis/sdk.css"/>
+    <link rel="stylesheet" href="amis/helper.css"/>
+    <link rel="stylesheet" href="amis/iconfont.css"/>
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+<script src="amis/sdk.js"></script>
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            "type": "page",
+            "title": "",
+            "body": [
+                {
+                    "type": "flex",
+                    "className": "p-1",
+                    "items": [
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "tpl",
+                                    "tpl": "DataMaster",
+                                    "inline": true,
+                                    "wrapperComponent": "",
+                                    "id": "u:9b03f22628eb",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 33,
+                                        "textAlign": "left",
+                                        "color": "#4a90e2"
+                                    },
+                                    "className": "b-primary"
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto",
+                                "color": "#000000",
+                                "fontFamily": "",
+                                "fontSize": 12,
+                                "textAlign": "left",
+                                "overflowY": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:fbadc279ddf2",
+                            "className": "b-primary",
+                            "bodyClassName": "b-primary text-white bg-white"
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "form",
+                                    "title": "",
+                                    "body": [
+                                        {
+                                            "type": "group",
+                                            "body": [
+                                                {
+                                                    "type": "input-text",
+                                                    "name": "username",
+                                                    "placeholder": "",
+                                                    "label": "当前用户",
+                                                    "size": "full",
+                                                    "id": "u:18e2d06ab07c",
+                                                    "showCounter": false,
+                                                    "validations": {
+                                                    },
+                                                    "validationErrors": {
+                                                    },
+                                                    "readOnly": true,
+                                                    "static": false
+                                                },
+                                                {
+                                                    "type": "button-toolbar",
+                                                    "buttons": [
+                                                        {
+                                                            "type": "submit",
+                                                            "label": "注销",
+                                                            "id": "u:9db9233f7198",
+                                                            "confirmText": "确定要注销吗？"
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "label": "用户管理（仅root用户可用）",
+                                                            "url": "http://www.baidu.com/",
+                                                            "level": "success",
+                                                            "id": "u:07eb02ecb8f2"
+                                                        }
+                                                    ],
+                                                    "id": "u:06d3f5460a2e"
+                                                }
+                                            ],
+                                            "id": "u:197dedd35438"
+                                        }
+                                    ],
+                                    "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+                                    "mode": "inline",
+                                    "submitText": null,
+                                    "autoFocus": false,
+                                    "id": "u:6d863ccb0de0",
+                                    "initApi": {
+                                        "url": "http://localhost:8080/getCurrentUser",
+                                        "method": "get"
+                                    }
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:65bd1cabb880"
+                        }
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch",
+                    "id": "u:3520231181e9"
+                },
+                {
+                    "type": "tpl",
+                    "tpl": "下面的还没做",
+                    "inline": true,
+                    "wrapperComponent": "",
+                    "id": "u:62a5a135aebc"
+                },
+                {
+                    "type": "flex",
+                    "className": "p-1",
+                    "items": [
+                        {
+                            "type": "form",
+                            "body": [
+                                {
+                                    "type": "group",
+                                    "body": [
+                                        {
+                                            "type": "input-text",
+                                            "name": "email",
+                                            "placeholder": "",
+                                            "label": "当前健康分",
+                                            "size": "full",
+                                            "id": "u:18e2d06ab07c",
+                                            "showCounter": false,
+                                            "validations": {
+                                            },
+                                            "validationErrors": {
+                                            },
+                                            "readOnly": true,
+                                            "static": false
+                                        }
+                                    ],
+                                    "id": "u:197dedd35438"
+                                }
+                            ],
+                            "id": "u:6d863ccb0de0",
+                            "title": "",
+                            "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+                            "mode": "normal",
+                            "submitText": null,
+                            "autoFocus": false,
+                            "staticClassName": "no-border",
+                            "panelClassName": "m-lg no-border",
+                            "className": "no-border",
+                            "actions": [
+                            ]
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "chart",
+                                    "config": {
+                                        "xAxis": {
+                                            "type": "category",
+                                            "data": [
+                                                "Mon",
+                                                "Tue",
+                                                "Wed",
+                                                "Thu",
+                                                "Fri",
+                                                "Sat",
+                                                "Sun"
+                                            ],
+                                            "id": "u:c4dc7e1d6cbb"
+                                        },
+                                        "yAxis": {
+                                            "type": "value",
+                                            "id": "u:c34f4931cab8"
+                                        },
+                                        "series": [
+                                            {
+                                                "data": [
+                                                    820,
+                                                    932,
+                                                    901,
+                                                    934,
+                                                    1290,
+                                                    1330,
+                                                    1320
+                                                ],
+                                                "type": "line",
+                                                "id": "u:12e9e5b768f2"
+                                            }
+                                        ]
+                                    },
+                                    "replaceChartOption": true,
+                                    "id": "u:e1c62b97ea27"
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:7a81726eb33a"
+                        }
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch",
+                    "id": "u:0e52aea6e951"
+                },
+                {
+                    "type": "crud",
+                    "syncLocation": false,
+                    "api": {
+                        "method": "get",
+                        "url": ""
+                    },
+                    "columns": [
+                        {
+                            "type": "crud",
+                            "syncLocation": false,
+                            "api": {
+                                "method": "get",
+                                "url": ""
+                            },
+                            "columns": [
+                                {
+                                    "name": "id",
+                                    "label": "ID",
+                                    "type": "text",
+                                    "id": "u:d5502f9964e6"
+                                },
+                                {
+                                    "name": "engine",
+                                    "label": "渲染引擎",
+                                    "type": "text",
+                                    "id": "u:b518315c5590"
+                                }
+                            ],
+                            "bulkActions": [
+                            ],
+                            "itemActions": [
+                            ],
+                            "id": "u:8fab91e913cd",
+                            "label": "增删改查"
+                        }
+                    ],
+                    "bulkActions": [
+                    ],
+                    "itemActions": [
+                    ],
+                    "id": "u:969546819b74"
+                }
+            ],
+            "id": "u:c2e774da9fab",
+            "regions": [
+                "body"
+            ]
+        }
+        let amisScoped = amis.embed('#root', amisJSON, {
+            data: {
+                myData: 'amis'
+            }
+        });
+    })();
+</script>
+</body>
+</html>
