@@ -13,5 +13,14 @@
         values (#{username},#{password},#{role},#{salt})
     </insert>
 
+    <select id="queryUserInfo" resultType="com.pedro.domain.user.model.vo.UserVO">
+        SELECT uid, username, password, role, salt
+        FROM sys_user
+    </select>
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from sys_user
+        where uid = #{uid};
+    </delete>
 
 </mapper>

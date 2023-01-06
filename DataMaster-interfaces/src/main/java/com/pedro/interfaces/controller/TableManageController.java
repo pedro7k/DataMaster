@@ -49,4 +49,15 @@ public class TableManageController {
         // 3.返回
         return CommonResult.success(usernameVO);
     }
+
+    /**
+     * 注销
+     */
+    @GetMapping("/logout")
+    public CommonResult logout(){
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+
+        return CommonResult.success(null);
+    }
 }

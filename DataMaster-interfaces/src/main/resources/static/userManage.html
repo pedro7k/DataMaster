@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>amis demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <link rel="stylesheet" href="amis/sdk.css"/>
+    <link rel="stylesheet" href="amis/helper.css"/>
+    <link rel="stylesheet" href="amis/iconfont.css"/>
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+<script src="amis/sdk.js"></script>
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            "type": "page",
+            "title": "用户管理页",
+            "body": [
+                {
+                    "type": "flex",
+                    "className": "p-1",
+                    "items": [
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "tpl",
+                                    "className": "b-primary",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 33,
+                                        "textAlign": "left",
+                                        "color": "#4a90e2"
+                                    },
+                                    "id": "u:9b03f22628eb",
+                                    "tpl": "DataMaster",
+                                    "inline": true,
+                                    "wrapperComponent": ""
+                                }
+                            ],
+                            "id": "u:fbadc279ddf2",
+                            "className": "b-primary",
+                            "bodyClassName": "b-primary text-white bg-white",
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto",
+                                "color": "#000000",
+                                "fontFamily": "",
+                                "fontSize": 12,
+                                "textAlign": "left",
+                                "overflowY": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:6b5fc20acc25"
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:47b5cd197574"
+                        }
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch",
+                    "id": "u:35b6fed56bf8"
+                },
+                {
+                    "type": "crud",
+                    "api": "http://localhost:8080/loadUserManageForm",
+                    "columns": [
+                        {
+                            "name": "uid",
+                            "label": "ID",
+                            "type": "text",
+                            "sortable": true,
+                            "toggled": true,
+                            "remark": "注册时系统自动生成",
+                            "id": "u:0adfb39e24df",
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "username",
+                            "label": "用户名",
+                            "type": "text",
+                            "sortable": false,
+                            "searchable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "id": "u:ca57a6855916",
+                            "placeholder": "-"
+                        },
+                        {
+                            "type": "text",
+                            "name": "role",
+                            "label": "权限",
+                            "quickEdit": {
+                                "saveImmediately": true,
+                                "mode": "inline",
+                                "type": "select",
+                                "options": [
+                                    "ROOT用户",
+                                    "管理员",
+                                    "普通用户"
+                                ],
+                                "id": "u:013229f0ca37"
+                            },
+                            "id": "u:2de69b840de6",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "remark": ""
+                        },
+                        {
+                            "type": "operation",
+                            "label": "操作",
+                            "width": 100,
+                            "buttons": [
+                                {
+                                    "type": "button",
+                                    "icon": "fa fa-eye",
+                                    "actionType": "dialog",
+                                    "tooltip": "查看",
+                                    "dialog": {
+                                        "title": "查看",
+                                        "body": {
+                                            "type": "form",
+                                            "body": [
+                                                {
+                                                    "type": "static",
+                                                    "name": "uid",
+                                                    "label": "ID"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "name": "username",
+                                                    "label": "用户名"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "name": "role",
+                                                    "label": "权限"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "id": "u:23a8c4dff6d9"
+                                },
+                                {
+                                    "type": "button",
+                                    "icon": "fa fa-times text-danger",
+                                    "actionType": "ajax",
+                                    "tooltip": "删除",
+                                    "confirmText": "您确认要删除?",
+                                    "api": {
+                                        "method": "post",
+                                        "url": "http://localhost:8080/deleteUser",
+                                        "dataType": "form-data",
+                                        "data": null
+                                    },
+                                    "id": "u:f5892e781974"
+                                }
+                            ],
+                            "toggled": true,
+                            "id": "u:986fda179e92"
+                        }
+                    ],
+                    "bulkActions": [
+                        {
+                            "label": "批量删除",
+                            "actionType": "ajax",
+                            "api": "delete:/amis/api/sample/${ids|raw}",
+                            "confirmText": "确定要批量删除?",
+                            "id": "u:8b7699109813"
+                        }
+                    ],
+                    "draggable": true,
+                    "perPage": 15,
+                    "keepItemSelectionOnPageChange": true,
+                    "maxKeepItemSelectionLength": 11,
+                    "labelTpl": "${uid} ${username}",
+                    "orderBy": "id",
+                    "orderDir": "asc",
+                    "quickSaveApi": "/amis/api/sample/bulkUpdate",
+                    "quickSaveItemApi": "/amis/api/sample/$id",
+                    "filterTogglable": true,
+                    "headerToolbar": [
+                        {
+                            "type": "bulk-actions"
+                        },
+                        {
+                            "type": "columns-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "drag-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "pagination",
+                            "align": "right"
+                        },
+                        {
+                            "type": "reload",
+                            "label": "刷新",
+                            "align": "right",
+                            "icon": "iconfont icon-refresh",
+                            "tooltip": "",
+                            "level": "primary",
+                            "id": "u:6a3a5955844f"
+                        }
+                    ],
+                    "footerToolbar": [
+                        "statistics",
+                        "switch-per-page",
+                        "pagination"
+                    ],
+                    "id": "u:7bc35eea002d",
+                    "perPageAvailable": [
+                        10
+                    ],
+                    "messages": {
+                    },
+                    "primaryField": "uid",
+                    "loadDataOnce": true
+                }
+            ],
+            "id": "u:6e0d5ad736bb",
+            "asideResizor": false,
+            "pullRefresh": {
+                "disabled": true
+            },
+            "regions": [
+                "body"
+            ]
+        }
+        let amisScoped = amis.embed('#root', amisJSON, {
+            data: {
+                myData: 'amis'
+            }
+        });
+    })();
+</script>
+</body>
+</html>

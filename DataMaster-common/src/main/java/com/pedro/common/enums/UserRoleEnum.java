@@ -1,5 +1,7 @@
 package com.pedro.common.enums;
 
+import com.pedro.common.exceptions.ServiceException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.Map;
 public enum UserRoleEnum {
 
     ROOT(0, "ROOT用户"),
-    ADMIN(1, "管理员用户"),
+    ADMIN(1, "管理员"),
     NORMAL_USER(2, "普通用户");
 
     /**
@@ -63,5 +65,21 @@ public enum UserRoleEnum {
      */
     public static List<String> getRoleString(int roleKey) {
         return roleStringListMap.get(roleKey);
+    }
+
+    /**
+     * 返回key对应的中文名
+     */
+    public static String castRoleToString(int roleKey){
+        switch (roleKey){
+            case 0:
+                return ROOT.msg;
+            case 1:
+                return ADMIN.msg;
+            case 2:
+                return NORMAL_USER.msg;
+        }
+
+        throw new ServiceException(ServiceExceptionEnum.SYS_ERROR);
     }
 }

@@ -14,15 +14,19 @@ public enum ServiceExceptionEnum {
     SUCCESS(0, "成功"),
     SYS_ERROR(1, "服务端发生异常"),
     NO_RESULT(2, "查询不到结果"),
+
     /**
      * ===========业务级别===========
      * 共6位，前2位代表模块，后2位代表错误码
      * - User模块:01
+     * - Form模块:02
      */
     REPEAT_PASSWORD_ERROR(0101, "注册时重复密码错误"),
     UNKNOWN_ACCOUNT_ERROR(0102, "登陆时用户名不存在"),
     INCORRECT_PASSWORD(0103, "登录时密码错误"),
-    DUPLICATE_USERNAME(0104, "注册时用户名重复");
+    DUPLICATE_USERNAME(0104, "注册时用户名重复"),
+
+    DELETE_USER_ERROR(0201, "删除用户时出现异常");
 
     /**
      * 错误码

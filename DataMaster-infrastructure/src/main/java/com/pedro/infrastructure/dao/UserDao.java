@@ -3,6 +3,8 @@ package com.pedro.infrastructure.dao;
 import com.pedro.domain.user.model.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserDao {
 
@@ -19,4 +21,14 @@ public interface UserDao {
      * @return
      */
     boolean registry(UserVO userVO);
+
+    /**
+     * 查询所有用户信息
+     */
+    List<UserVO> queryUserInfo();
+
+    /**
+     * 删除用户
+     */
+    boolean deleteUser(int uid);
 }

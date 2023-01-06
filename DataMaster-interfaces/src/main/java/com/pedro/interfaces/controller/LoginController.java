@@ -25,7 +25,7 @@ public class LoginController {
      * 跳转到登录页面
      */
     @GetMapping("/jumpToLoginPage")
-    public ModelAndView jumpToAnotherPage2() {
+    public ModelAndView jumpToLoginPage() {
         System.out.println("跳转到登录页面");
         ModelAndView mv = new ModelAndView("login.html");
         return mv;

@@ -118,9 +118,21 @@
                                                         {
                                                             "type": "button",
                                                             "label": "用户管理（仅root用户可用）",
-                                                            "url": "http://www.baidu.com/",
                                                             "level": "success",
-                                                            "id": "u:07eb02ecb8f2"
+                                                            "id": "u:07eb02ecb8f2",
+                                                            "onEvent": {
+                                                                "click": {
+                                                                    "actions": [
+                                                                        {
+                                                                            "actionType": "url",
+                                                                            "args": {
+                                                                                "url": "http://localhost:8080/jumpToUserManage",
+                                                                                "blank": true
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
                                                         }
                                                     ],
                                                     "id": "u:06d3f5460a2e"
@@ -129,7 +141,12 @@
                                             "id": "u:197dedd35438"
                                         }
                                     ],
-                                    "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+                                    "api": {
+                                        "method": "get",
+                                        "url": "http://localhost:8080/logout",
+                                        "messages": {
+                                        }
+                                    },
                                     "mode": "inline",
                                     "submitText": null,
                                     "autoFocus": false,
@@ -137,7 +154,8 @@
                                     "initApi": {
                                         "url": "http://localhost:8080/getCurrentUser",
                                         "method": "get"
-                                    }
+                                    },
+                                    "redirect": "http://localhost:8080/jumpToLoginPage"
                                 }
                             ],
                             "size": "xs",

@@ -48,10 +48,12 @@ public class ShiroConfig {
         // 无权限限制页面
         filterMap.put("/jumpToLoginPage", "anon");
         filterMap.put("/login", "anon");
+        filterMap.put("/jumpToRegistryPage", "anon");
         filterMap.put("/registry", "anon");
         filterMap.put("/roleDenied", "anon");
         // 需要root权限
-        filterMap.put("/testRole", "roles[root]");
+//        filterMap.put("/testRole", "roles[root]");
+        filterMap.put("/jumpToUserManage","roles[root]");
         // 权限控制
         filterMap.put("/**", "authc");
 
