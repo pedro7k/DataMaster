@@ -19,4 +19,14 @@ public interface UserManageFormService {
      * 删除单个用户
      */
     void deleteUser(int uid);
+
+    /**
+     * 批量删除用户
+     */
+    void batchDeleteUsers(List<Integer> uidList);
+
+    /**
+     * 编辑用户权限
+     */
+    void editUserRole(int uid, String roleString);
 }

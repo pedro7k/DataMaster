@@ -2,10 +2,7 @@ package com.pedro.common.enums;
 
 import com.pedro.common.exceptions.ServiceException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 用户角色枚举
@@ -70,14 +67,26 @@ public enum UserRoleEnum {
     /**
      * 返回key对应的中文名
      */
-    public static String castRoleToString(int roleKey){
-        switch (roleKey){
-            case 0:
-                return ROOT.msg;
-            case 1:
-                return ADMIN.msg;
-            case 2:
-                return NORMAL_USER.msg;
+    public static String castRoleToString(int roleKey) {
+        // 遍历查找
+        for (UserRoleEnum enumItem : UserRoleEnum.values()) {
+            if (roleKey == enumItem.level) {
+                return enumItem.msg;
+            }
+        }
+
+        throw new ServiceException(ServiceExceptionEnum.SYS_ERROR);
+    }
+
+    /**
+     * 返回中文名对应的key
+     */
+    public static int castRoleToInt(String roleString) {
+        // 遍历查找
+        for (UserRoleEnum enumItem : UserRoleEnum.values()) {
+            if (Objects.equals(roleString, enumItem.msg)) {
+                return enumItem.level;
+            }
         }
 
         throw new ServiceException(ServiceExceptionEnum.SYS_ERROR);

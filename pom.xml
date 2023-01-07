@@ -43,6 +43,11 @@
         <artifactId>shiro-spring</artifactId>
         <version>1.4.0</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>28.2-jre</version>
+      </dependency>
 
       <!--MyBatis-->
       <dependency>

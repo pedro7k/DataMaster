@@ -1,10 +1,14 @@
 package com.pedro.infrastructure.dao;
 
+import com.pedro.domain.form.model.vo.UserRoleVO;
 import com.pedro.domain.user.model.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+/**
+ * 用户dao
+ */
 @Mapper
 public interface UserDao {
 
@@ -31,4 +35,9 @@ public interface UserDao {
      * 删除用户
      */
     boolean deleteUser(int uid);
+
+    /**
+     * 更新用户权限
+     */
+    int updateUserRole(UserRoleVO userRoleVO);
 }

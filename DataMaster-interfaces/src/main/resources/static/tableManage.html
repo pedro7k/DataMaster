@@ -181,52 +181,63 @@
                     "id": "u:3520231181e9"
                 },
                 {
-                    "type": "tpl",
-                    "tpl": "下面的还没做",
-                    "inline": true,
-                    "wrapperComponent": "",
-                    "id": "u:62a5a135aebc"
-                },
-                {
                     "type": "flex",
                     "className": "p-1",
                     "items": [
                         {
-                            "type": "form",
+                            "type": "container",
                             "body": [
                                 {
-                                    "type": "group",
-                                    "body": [
-                                        {
-                                            "type": "input-text",
-                                            "name": "email",
-                                            "placeholder": "",
-                                            "label": "当前健康分",
-                                            "size": "full",
-                                            "id": "u:18e2d06ab07c",
-                                            "showCounter": false,
-                                            "validations": {
-                                            },
-                                            "validationErrors": {
-                                            },
-                                            "readOnly": true,
-                                            "static": false
-                                        }
-                                    ],
-                                    "id": "u:197dedd35438"
+                                    "type": "chart",
+                                    "config": {
+                                        "title": {
+                                            "text": "当前整体健康分"
+                                        },
+                                        "xAxis": {
+                                            "type": "category",
+                                            "data": [
+                                                "得分"
+                                            ],
+                                            "id": "u:a55ac3e92610"
+                                        },
+                                        "yAxis": {
+                                            "type": "value",
+                                            "id": "u:db3c2f6f83e7",
+                                            "max": "100",
+                                            "min": "0"
+                                        },
+                                        "series": [
+                                            {
+                                                "data": [
+                                                    "${currentTotalHealthScore}"
+                                                ],
+                                                "type": "bar",
+                                                "id": "u:4dd54bf0d5e0",
+                                                "label": {
+                                                    "show": "true",
+                                                    "position": "inside"
+                                                },
+                                                "barWidth": "30%"
+                                            }
+                                        ]
+                                    },
+                                    "replaceChartOption": true,
+                                    "id": "u:1290653d6f3d",
+                                    "api": "http://localhost:8080/getCurrentTotalHealthScore"
                                 }
                             ],
-                            "id": "u:6d863ccb0de0",
-                            "title": "",
-                            "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
-                            "mode": "normal",
-                            "submitText": null,
-                            "autoFocus": false,
-                            "staticClassName": "no-border",
-                            "panelClassName": "m-lg no-border",
-                            "className": "no-border",
-                            "actions": [
-                            ]
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 0,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:c3c692b45589"
                         },
                         {
                             "type": "container",
@@ -237,38 +248,40 @@
                                         "xAxis": {
                                             "type": "category",
                                             "data": [
-                                                "Mon",
-                                                "Tue",
-                                                "Wed",
-                                                "Thu",
-                                                "Fri",
-                                                "Sat",
-                                                "Sun"
+                                                "六天前",
+                                                "五天前",
+                                                "四天前",
+                                                "三天前",
+                                                "两天前",
+                                                "一天前",
+                                                "今天"
                                             ],
-                                            "id": "u:c4dc7e1d6cbb"
+                                            "id": "u:8d4440f12b10"
                                         },
                                         "yAxis": {
                                             "type": "value",
-                                            "id": "u:c34f4931cab8"
+                                            "id": "u:b13dac3f77a7",
+                                            "max": "100",
+                                            "min": "0"
                                         },
                                         "series": [
                                             {
-                                                "data": [
-                                                    820,
-                                                    932,
-                                                    901,
-                                                    934,
-                                                    1290,
-                                                    1330,
-                                                    1320
-                                                ],
+                                                "data": "${totalHealthScoreLine}",
                                                 "type": "line",
-                                                "id": "u:12e9e5b768f2"
+                                                "id": "u:56fd2a19dc06",
+                                                "label": {
+                                                    "show": "true",
+                                                    "position": "top"
+                                                }
                                             }
-                                        ]
+                                        ],
+                                        "title": {
+                                            "text": "过去七天整体健康分变化趋势"
+                                        }
                                     },
                                     "replaceChartOption": true,
-                                    "id": "u:e1c62b97ea27"
+                                    "id": "u:aecbb2187444",
+                                    "api": "http://localhost:8080/get7DaysTotalHealthScoreLine"
                                 }
                             ],
                             "size": "xs",
@@ -276,13 +289,13 @@
                                 "position": "static",
                                 "display": "block",
                                 "flex": "1 1 auto",
-                                "flexGrow": 1,
+                                "flexGrow": 12,
                                 "flexBasis": "auto"
                             },
                             "wrapperBody": false,
                             "isFixedHeight": false,
                             "isFixedWidth": false,
-                            "id": "u:7a81726eb33a"
+                            "id": "u:cded25a3de75"
                         }
                     ],
                     "style": {
@@ -291,7 +304,7 @@
                     "direction": "row",
                     "justify": "flex-start",
                     "alignItems": "stretch",
-                    "id": "u:0e52aea6e951"
+                    "id": "u:19c076d757a0"
                 },
                 {
                     "type": "crud",

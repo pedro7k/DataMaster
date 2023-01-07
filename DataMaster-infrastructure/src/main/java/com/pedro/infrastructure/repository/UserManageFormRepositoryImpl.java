@@ -1,6 +1,7 @@
 package com.pedro.infrastructure.repository;
 
 import com.pedro.domain.form.model.vo.UserManageVO;
+import com.pedro.domain.form.model.vo.UserRoleVO;
 import com.pedro.domain.form.repository.UserManageFormRepository;
 import com.pedro.domain.user.model.vo.UserVO;
 import com.pedro.infrastructure.dao.UserDao;
@@ -50,5 +51,11 @@ public class UserManageFormRepositoryImpl implements UserManageFormRepository {
 
         // 3.返回结果
         return deleteCount;
+    }
+
+    @Override
+    public int editUserRole(UserRoleVO userRoleVO) {
+
+        return userDao.updateUserRole(userRoleVO);
     }
 }

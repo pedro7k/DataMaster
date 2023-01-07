@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pedro.infrastructure.dao.TotalHealthScoreDao">
+
+    <select id="queryCurrentTotalHealthScore" resultType="java.lang.Double">
+        SELECT score
+        FROM sys_total_health_score
+        order by thid desc
+        limit 1
+    </select>
+
+    <select id="query7DaysTotalHealthScoreLine" resultType="java.lang.Double">
+        SELECT sys_total_health_score.score FROM sys_total_health_score AS sys_total_health_score
+             INNER JOIN(
+                 SELECT max(sys_total_health_score.time) AS max_time
+                 FROM sys_total_health_score
+                 GROUP BY date_format(sys_total_health_score.time, '%Y-%m-%d')
+         ) AS son
+         ON sys_total_health_score.time = son.max_time
+         ORDER BY sys_total_health_score.thid DESC
+         limit 7
+    </select>
+
+</mapper>

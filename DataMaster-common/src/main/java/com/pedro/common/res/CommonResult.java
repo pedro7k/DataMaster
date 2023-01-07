@@ -59,6 +59,14 @@ public class CommonResult<T> implements Serializable {
         return result;
     }
 
+    public static <T> CommonResult<T> success(T data, String msg) {
+        CommonResult<T> result = new CommonResult<>();
+        result.status = CODE_SUCCESS;
+        result.data = data;
+        result.msg = msg;
+        return result;
+    }
+
     @JsonIgnore // 忽略，避免 jackson 序列化给前端
     public boolean isSuccess() { // 方便判断是否成功
         return CODE_SUCCESS.equals(status);

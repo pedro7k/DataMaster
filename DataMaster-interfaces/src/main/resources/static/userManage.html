@@ -159,7 +159,6 @@
                                 "mode": "inline",
                                 "type": "select",
                                 "options": [
-                                    "ROOT用户",
                                     "管理员",
                                     "普通用户"
                                 ],
@@ -240,9 +239,14 @@
                         {
                             "label": "批量删除",
                             "actionType": "ajax",
-                            "api": "delete:/amis/api/sample/${ids|raw}",
+                            "api": {
+                                "method": "post",
+                                "url": "http://localhost:8080/batchDeleteUser",
+                                "dataType": "form-data"
+                            },
                             "confirmText": "确定要批量删除?",
-                            "id": "u:8b7699109813"
+                            "id": "u:8b7699109813",
+                            "level": "danger"
                         }
                     ],
                     "draggable": true,
@@ -252,8 +256,20 @@
                     "labelTpl": "${uid} ${username}",
                     "orderBy": "id",
                     "orderDir": "asc",
-                    "quickSaveApi": "/amis/api/sample/bulkUpdate",
-                    "quickSaveItemApi": "/amis/api/sample/$id",
+                    "quickSaveApi": {
+                        "method": "post",
+                        "url": "/amis/api/sample/bulkUpdate",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "quickSaveItemApi": {
+                        "method": "post",
+                        "url": "http://localhost:8080/quickEditRole",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
                     "filterTogglable": true,
                     "headerToolbar": [
                         {
@@ -279,12 +295,34 @@
                             "tooltip": "",
                             "level": "primary",
                             "id": "u:6a3a5955844f"
+                        },
+                        {
+                            "type": "tpl",
+                            "tpl": "<p><span style=\"color: rgb(149, 165, 166);\">ROOT用户不可更改，故不展示</span></p>",
+                            "id": "u:a89eced5c7f0",
+                            "align": "left"
                         }
                     ],
                     "footerToolbar": [
-                        "statistics",
-                        "switch-per-page",
-                        "pagination"
+                        {
+                            "type": "statistics"
+                        },
+                        {
+                            "type": "switch-per-page"
+                        },
+                        {
+                            "type": "pagination"
+                        },
+                        {
+                            "type": "export-excel",
+                            "tpl": "内容",
+                            "id": "u:70219287d252",
+                            "align": "right",
+                            "api": "http://localhost:8080/loadUserManageForm",
+                            "filename": "DataMaster导出-用户管理页",
+                            "level": "primary",
+                            "block": false
+                        }
                     ],
                     "id": "u:7bc35eea002d",
                     "perPageAvailable": [

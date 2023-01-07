@@ -6,7 +6,7 @@ import java.util.List;
  * 返回给前端渲染表格的通用结果
  * @param <T>
  */
-public class FormDataRes<T> {
+public class CommonFormDataRes<T> {
 
     /**
      * 表单元素
@@ -18,15 +18,15 @@ public class FormDataRes<T> {
      */
     int total;
 
-    public FormDataRes() {
+    public CommonFormDataRes() {
     }
 
-    public FormDataRes(List<T> items) {
+    public CommonFormDataRes(List<T> items) {
         this.items = items;
         this.total = items.size();
     }
 
-    public FormDataRes(List<T> items, int total) {
+    public CommonFormDataRes(List<T> items, int total) {
         this.items = items;
         this.total = total;
     }

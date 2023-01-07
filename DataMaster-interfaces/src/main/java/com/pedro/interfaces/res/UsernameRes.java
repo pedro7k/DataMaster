@@ -1,16 +1,16 @@
-package com.pedro.domain.user.model.vo;
+package com.pedro.interfaces.res;
 
 /**
- * 用户名VO，用于返回给前端展示
+ * 用户名Res，用于返回给前端展示
  */
-public class UsernameVO {
+public class UsernameRes {
 
     String username;
 
-    public UsernameVO() {
+    public UsernameRes() {
     }
 
-    public UsernameVO(String username) {
+    public UsernameRes(String username) {
         this.username = username;
     }
 

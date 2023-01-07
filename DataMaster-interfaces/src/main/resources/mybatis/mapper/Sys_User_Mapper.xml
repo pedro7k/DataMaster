@@ -23,4 +23,10 @@
         where uid = #{uid};
     </delete>
 
+    <update id="updateUserRole" parameterType="com.pedro.domain.form.model.vo.UserRoleVO">
+        update sys_user
+        set role = #{role}
+        where uid = #{uid}
+    </update>
+
 </mapper>

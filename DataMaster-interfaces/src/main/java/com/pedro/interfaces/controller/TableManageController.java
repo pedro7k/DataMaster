@@ -1,10 +1,12 @@
 package com.pedro.interfaces.controller;
 
 import com.pedro.common.res.CommonResult;
+import com.pedro.domain.score.service.TotalHealthScoreService;
 import com.pedro.domain.user.model.vo.UserVO;
-import com.pedro.domain.user.model.vo.UsernameVO;
+import com.pedro.interfaces.res.CurrentTotalHealthScoreRes;
+import com.pedro.interfaces.res.Last7DaysTotalHealthScoreRes;
+import com.pedro.interfaces.res.UsernameRes;
 import com.pedro.interfaces.role.ShiroUtil;
-import org.apache.catalina.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
@@ -13,7 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 库表管理页Controller
@@ -22,6 +25,9 @@ import java.util.Date;
 public class TableManageController {
 
     private static final Logger logger = LoggerFactory.getLogger(TableManageController.class);
+
+    @Resource
+    TotalHealthScoreService totalHealthScoreService;
 
     /**
      * 跳转到库表管理页
@@ -43,11 +49,11 @@ public class TableManageController {
         UserVO currentUser = ShiroUtil.getCurrentUser();
 
         // 2.保证安全，构造一个仅包含username的对象
-        UsernameVO usernameVO = new UsernameVO(currentUser.getUsername());
-        usernameVO.setUsername(currentUser.getUsername());
+        UsernameRes usernameRes = new UsernameRes(currentUser.getUsername());
+        usernameRes.setUsername(currentUser.getUsername());
 
         // 3.返回
-        return CommonResult.success(usernameVO);
+        return CommonResult.success(usernameRes);
     }
 
     /**
@@ -59,5 +65,31 @@ public class TableManageController {
         subject.logout();
 
         return CommonResult.success(null);
+    }
+
+    /**
+     * 获取当前整体健康分
+     */
+    @GetMapping("/getCurrentTotalHealthScore")
+    public CommonResult getCurrentTotalHealthScore(){
+
+        // 1.获得数据
+        Double currentTotalHealthScore = totalHealthScoreService.getCurrentTotalHealthScore();
+
+        // 2.返回
+        return CommonResult.success(new CurrentTotalHealthScoreRes(currentTotalHealthScore));
+    }
+
+    /**
+     * 获取过去七日整体健康分变化趋势
+     */
+    @GetMapping("/get7DaysTotalHealthScoreLine")
+    public CommonResult get7DaysTotalHealthScoreLine(){
+
+        // 1.获得数据
+        List<Double> line = totalHealthScoreService.get7DaysTotalHealthScoreLine();
+
+        // 2.返回
+        return CommonResult.success(new Last7DaysTotalHealthScoreRes(line));
     }
 }
