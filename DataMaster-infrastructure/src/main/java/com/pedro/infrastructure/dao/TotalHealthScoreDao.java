@@ -6,14 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * 整体健康分dao
+ * 整体健康分Dao
  */
 @Mapper
 public interface TotalHealthScoreDao {
 
     /**
      * 查询当前整体健康分
-     * @return
      */
     Double queryCurrentTotalHealthScore();
 

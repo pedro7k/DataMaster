@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * 用户dao
+ * 用户Dao
  */
 @Mapper
 public interface UserDao {

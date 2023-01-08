@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pedro.infrastructure.dao.TableAlarmDao">
+
+    <select id="queryAlarmTimesByTid" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM sys_table_alarm
+        WHERE tid = #{tid}
+    </select>
+
+</mapper>

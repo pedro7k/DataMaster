@@ -300,46 +300,254 @@
                 },
                 {
                     "type": "crud",
-                    "syncLocation": false,
-                    "api": {
-                        "method": "get",
-                        "url": ""
-                    },
+                    "api": "http://localhost:8080/loadTableManageForm",
                     "columns": [
                         {
-                            "type": "crud",
-                            "syncLocation": false,
-                            "api": {
-                                "method": "get",
-                                "url": ""
+                            "name": "tid",
+                            "label": "ID",
+                            "type": "text",
+                            "id": "u:0adfb39e24df",
+                            "sortable": true,
+                            "toggled": true,
+                            "remark": "系统自动生成",
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "name",
+                            "label": "表名",
+                            "type": "text",
+                            "id": "u:ca57a6855916",
+                            "sortable": false,
+                            "searchable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "score",
+                            "label": "健康分",
+                            "type": "text",
+                            "id": "u:a519a73c261f",
+                            "sortable": false,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-",
+                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "name": "alarmTimes",
+                            "label": "报警数量",
+                            "type": "text",
+                            "id": "u:1afbe5cd84e5",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-"
+                        },
+                        {
+                            "type": "text",
+                            "name": "weight",
+                            "label": "权重",
+                            "quickEdit": {
+                                "saveImmediately": true,
+                                "mode": "inline",
+                                "type": "select",
+                                "options": [
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4",
+                                    "5"
+                                ],
+                                "id": "u:013229f0ca37"
                             },
-                            "columns": [
+                            "id": "u:2de69b840de6",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "remark": ""
+                        },
+                        {
+                            "type": "operation",
+                            "label": "操作",
+                            "width": 100,
+                            "buttons": [
                                 {
-                                    "name": "id",
-                                    "label": "ID",
-                                    "type": "text",
-                                    "id": "u:d5502f9964e6"
+                                    "type": "button",
+                                    "icon": "fa fa-eye",
+                                    "actionType": "dialog",
+                                    "tooltip": "查看",
+                                    "dialog": {
+                                        "title": "查看",
+                                        "body": {
+                                            "type": "form",
+                                            "body": [
+                                                {
+                                                    "type": "static",
+                                                    "name": "tid",
+                                                    "label": "ID"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "name": "name",
+                                                    "label": "表名"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "name": "score",
+                                                    "label": "单表健康分"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "name": "alarmTimes",
+                                                    "label": "报警次数"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "name": "weight",
+                                                    "label": "权重"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "id": "u:23a8c4dff6d9",
+                                    "label": "详情页"
                                 },
                                 {
-                                    "name": "engine",
-                                    "label": "渲染引擎",
-                                    "type": "text",
-                                    "id": "u:b518315c5590"
+                                    "type": "button",
+                                    "icon": "fa fa-times text-danger",
+                                    "actionType": "ajax",
+                                    "tooltip": "删除",
+                                    "confirmText": "您确认要删除?",
+                                    "api": {
+                                        "method": "post",
+                                        "url": "http://localhost:8080/deleteUser",
+                                        "dataType": "form-data",
+                                        "data": null
+                                    },
+                                    "id": "u:f5892e781974"
                                 }
                             ],
-                            "bulkActions": [
-                            ],
-                            "itemActions": [
-                            ],
-                            "id": "u:8fab91e913cd",
-                            "label": "增删改查"
+                            "toggled": true,
+                            "id": "u:986fda179e92"
                         }
                     ],
                     "bulkActions": [
+                        {
+                            "label": "批量删除",
+                            "actionType": "ajax",
+                            "api": {
+                                "method": "post",
+                                "url": "http://localhost:8080/batchDeleteUser",
+                                "dataType": "form-data"
+                            },
+                            "confirmText": "确定要批量删除?",
+                            "id": "u:8b7699109813",
+                            "level": "danger"
+                        }
                     ],
-                    "itemActions": [
+                    "id": "u:7bc35eea002d",
+                    "draggable": true,
+                    "perPage": 15,
+                    "keepItemSelectionOnPageChange": true,
+                    "maxKeepItemSelectionLength": 11,
+                    "labelTpl": "${tid} ${name}",
+                    "orderBy": "id",
+                    "orderDir": "asc",
+                    "quickSaveApi": {
+                        "method": "get",
+                        "url": "",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "quickSaveItemApi": {
+                        "method": "post",
+                        "url": "http://localhost:8080/quickEditRole",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "filterTogglable": true,
+                    "headerToolbar": [
+                        {
+                            "type": "bulk-actions"
+                        },
+                        {
+                            "type": "columns-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "drag-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "pagination",
+                            "align": "right"
+                        },
+                        {
+                            "type": "reload",
+                            "label": "刷新",
+                            "align": "right",
+                            "icon": "iconfont icon-refresh",
+                            "tooltip": "",
+                            "level": "primary",
+                            "id": "u:6a3a5955844f"
+                        },
+                        {
+                            "type": "tpl",
+                            "tpl": "<p><span style=\"color: rgb(126, 140, 141);\">删除意为不再由DataMaster管理</span></p>",
+                            "id": "u:a89eced5c7f0",
+                            "align": "left"
+                        }
                     ],
-                    "id": "u:969546819b74"
+                    "footerToolbar": [
+                        {
+                            "type": "statistics"
+                        },
+                        {
+                            "type": "switch-per-page"
+                        },
+                        {
+                            "type": "pagination"
+                        },
+                        {
+                            "type": "export-excel",
+                            "tpl": "内容",
+                            "id": "u:70219287d252",
+                            "align": "right",
+                            "api": "http://localhost:8080/loadUserManageForm",
+                            "filename": "DataMaster导出-库表管理页",
+                            "level": "primary",
+                            "block": false
+                        }
+                    ],
+                    "perPageAvailable": [
+                        10
+                    ],
+                    "messages": {
+                    },
+                    "primaryField": "tid",
+                    "loadDataOnce": true,
+                    "placeholder": "-",
+                    "quickEdit": false
                 }
             ],
             "id": "u:c2e774da9fab",

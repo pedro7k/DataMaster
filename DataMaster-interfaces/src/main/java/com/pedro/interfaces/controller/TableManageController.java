@@ -1,8 +1,11 @@
 package com.pedro.interfaces.controller;
 
 import com.pedro.common.res.CommonResult;
+import com.pedro.domain.form.model.res.TableManageFormRes;
+import com.pedro.domain.form.service.tableManageForm.TableManageFormService;
 import com.pedro.domain.score.service.TotalHealthScoreService;
 import com.pedro.domain.user.model.vo.UserVO;
+import com.pedro.interfaces.res.CommonFormDataRes;
 import com.pedro.interfaces.res.CurrentTotalHealthScoreRes;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.interfaces.res.UsernameRes;
@@ -28,6 +31,9 @@ public class TableManageController {
 
     @Resource
     TotalHealthScoreService totalHealthScoreService;
+
+    @Resource
+    TableManageFormService tableManageFormService;
 
     /**
      * 跳转到库表管理页
@@ -91,5 +97,21 @@ public class TableManageController {
 
         // 2.返回
         return CommonResult.success(line);
+    }
+
+    /**
+     * 拉取表单数据
+     */
+    @GetMapping("/loadTableManageForm")
+    public CommonResult loadTableManageForm(){
+
+        // 1.拉取表单数据
+        List<TableManageFormRes> tableManageFormResList = tableManageFormService.loadTableManageForm();
+
+        // 2.构造返回结果
+        CommonFormDataRes<TableManageFormRes> tableManageVOCommonResult = new CommonFormDataRes<>(tableManageFormResList, tableManageFormResList.size());
+
+        // 3.返回
+        return CommonResult.success(tableManageVOCommonResult);
     }
 }
