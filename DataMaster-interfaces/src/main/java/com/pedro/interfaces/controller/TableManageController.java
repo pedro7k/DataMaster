@@ -4,7 +4,7 @@ import com.pedro.common.res.CommonResult;
 import com.pedro.domain.score.service.TotalHealthScoreService;
 import com.pedro.domain.user.model.vo.UserVO;
 import com.pedro.interfaces.res.CurrentTotalHealthScoreRes;
-import com.pedro.interfaces.res.Last7DaysTotalHealthScoreRes;
+import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.interfaces.res.UsernameRes;
 import com.pedro.interfaces.role.ShiroUtil;
 import org.apache.shiro.SecurityUtils;
@@ -87,9 +87,9 @@ public class TableManageController {
     public CommonResult get7DaysTotalHealthScoreLine(){
 
         // 1.获得数据
-        List<Double> line = totalHealthScoreService.get7DaysTotalHealthScoreLine();
+        ScoreLineVO line = totalHealthScoreService.get7DaysTotalHealthScoreLine();
 
         // 2.返回
-        return CommonResult.success(new Last7DaysTotalHealthScoreRes(line));
+        return CommonResult.success(line);
     }
 }

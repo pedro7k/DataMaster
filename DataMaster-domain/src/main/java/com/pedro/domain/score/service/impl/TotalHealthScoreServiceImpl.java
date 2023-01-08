@@ -2,6 +2,7 @@ package com.pedro.domain.score.service.impl;
 
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
+import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.domain.score.repository.TotalHealthScoreRepository;
 import com.pedro.domain.score.service.TotalHealthScoreService;
 import org.slf4j.Logger;
@@ -36,25 +37,27 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
     }
 
     @Override
-    public List<Double> get7DaysTotalHealthScoreLine() {
+    public ScoreLineVO get7DaysTotalHealthScoreLine() {
 
         // 1.获取数据
-        List<Double> line = totalHealthScoreRepository.query7DaysTotalHealthScoreLine();
+        ScoreLineVO line = totalHealthScoreRepository.query7DaysTotalHealthScoreLine();
+        int size = line.getDate().size();
 
         // 2.校验数据
         // 2.1 数据量大于7，不合法
-        if (line.size() > 7) {
+        if (size > 7) {
             logger.error("健康分数据不合法");
             throw new ServiceException(ServiceExceptionEnum.HEALTH_SCORE_NUM_ERROR);
         }
         // 2.2 数据量小于7，填充0在前几天
-        if (line.size() < 7) {
-            for (int i = 0; i < (7 - line.size()); i++) {
-                line.add(0, 0.00);
+        if (size < 7) {
+            for (int i = 0; i < (7 - size); i++) {
+                line.getScore().add(0.0);
+                line.getDate().add("无记录");
             }
         }
         // 2.3 值校验
-        for (Double score : line) {
+        for (Double score : line.getScore()) {
             if (score < 0 || score > 100) {
                 logger.error("健康分数据不合法");
                 throw new ServiceException(ServiceExceptionEnum.HEALTH_SCORE_ILLEGAL_ERROR);

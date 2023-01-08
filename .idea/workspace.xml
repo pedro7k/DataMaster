@@ -4,37 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2022.1.6 开发用户管理页面 未完成">
-      <change afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/util/CommonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/model/vo/UserRoleVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/repository/TotalHealthScoreRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/TotalHealthScoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TotalHealthScoreServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TotalHealthScoreDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/CurrentTotalHealthScoreRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/Last7DaysTotalHealthScoreRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Total_Health_Score_Mapper.xml" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2022.1.7 完成用户管理页，开发库表管理页图表">
+      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/po/ScoreLinePO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/UserRoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/UserRoleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/res/CommonResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/UserManageFormRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/UserManageFormRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/userManageForm/UserManageFormService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/userManageForm/UserManageFormService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/userManageForm/impl/UserManageFormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/userManageForm/impl/UserManageFormServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/model/vo/UsernameVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/UsernameRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/UserManageFormRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/UserManageFormRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/repository/TotalHealthScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/repository/TotalHealthScoreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/TotalHealthScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/TotalHealthScoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TotalHealthScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TotalHealthScoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TotalHealthScoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TotalHealthScoreDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/FormDataRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/CommonFormDataRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/SYS_User_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_User_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/Last7DaysTotalHealthScoreRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/model/vo/ScoreLineVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Total_Health_Score_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Total_Health_Score_Mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/userManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/userManage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,32 +50,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/mybatis/mapper",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.editor",
-    "spring.configuration.checksum": "4bfe57aa455f8a20b493ae5c02dc6831",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/code/DataMaster/DataMaster-interfaces/src/main/resources/mybatis/mapper&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4bfe57aa455f8a20b493ae5c02dc6831&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\mapper" />
@@ -157,7 +138,8 @@
       <workItem from="1672752065934" duration="3246000" />
       <workItem from="1672808678870" duration="29067000" />
       <workItem from="1672891563260" duration="734000" />
-      <workItem from="1672999704699" duration="39392000" />
+      <workItem from="1672999704699" duration="39726000" />
+      <workItem from="1673151167459" duration="2963000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -264,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673020511053</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2022.1.7 完成用户管理页，开发库表管理页图表">
+      <created>1673106841223</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673106841223</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +284,7 @@
     <MESSAGE value="2022.1.4 更新库表管理页框架" />
     <MESSAGE value="2022.1.4 开发用户管理页面 未完成" />
     <MESSAGE value="2022.1.6 开发用户管理页面 未完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.1.6 开发用户管理页面 未完成" />
+    <MESSAGE value="2022.1.7 完成用户管理页，开发库表管理页图表" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.1.7 完成用户管理页，开发库表管理页图表" />
   </component>
 </project>

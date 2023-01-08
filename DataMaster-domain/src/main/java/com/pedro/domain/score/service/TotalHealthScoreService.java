@@ -1,6 +1,8 @@
 package com.pedro.domain.score.service;
 
 
+import com.pedro.domain.score.model.vo.ScoreLineVO;
+
 import java.util.List;
 
 /**
@@ -17,5 +19,5 @@ public interface TotalHealthScoreService {
     /**
      * 获得过去七日整体健康分变化趋势
      */
-    List<Double> get7DaysTotalHealthScoreLine();
+    ScoreLineVO get7DaysTotalHealthScoreLine();
 }

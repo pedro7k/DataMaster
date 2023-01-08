@@ -247,15 +247,7 @@
                                     "config": {
                                         "xAxis": {
                                             "type": "category",
-                                            "data": [
-                                                "六天前",
-                                                "五天前",
-                                                "四天前",
-                                                "三天前",
-                                                "两天前",
-                                                "一天前",
-                                                "今天"
-                                            ],
+                                            "data": "${date}",
                                             "id": "u:8d4440f12b10"
                                         },
                                         "yAxis": {
@@ -266,7 +258,7 @@
                                         },
                                         "series": [
                                             {
-                                                "data": "${totalHealthScoreLine}",
+                                                "data": "${score}",
                                                 "type": "line",
                                                 "id": "u:56fd2a19dc06",
                                                 "label": {
@@ -276,7 +268,7 @@
                                             }
                                         ],
                                         "title": {
-                                            "text": "过去七天整体健康分变化趋势"
+                                            "text": "过去有数据的七天整体健康分变化趋势"
                                         }
                                     },
                                     "replaceChartOption": true,

@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.dao;
 
+import com.pedro.infrastructure.po.ScoreLinePO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,5 +20,5 @@ public interface TotalHealthScoreDao {
     /**
      * 获取过去七日健康分变化趋势
      */
-    List<Double> query7DaysTotalHealthScoreLine();
+    List<ScoreLinePO> query7DaysTotalHealthScoreLine();
 }
