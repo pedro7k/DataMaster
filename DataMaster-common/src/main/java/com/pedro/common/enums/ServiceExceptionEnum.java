@@ -14,6 +14,7 @@ public enum ServiceExceptionEnum {
     SUCCESS(0, "成功"),
     SYS_ERROR(1, "服务端发生异常"),
     NO_RESULT(2, "查询不到结果"),
+    ROLE_DENIED(3, "权限不足"),
 
     /**
      * ===========业务级别===========
@@ -29,10 +30,12 @@ public enum ServiceExceptionEnum {
     DUPLICATE_USERNAME(0104, "注册时用户名重复"),
     // 02 form模块
     DELETE_USER_ERROR(0201, "删除用户时出现异常"),
-    EDIT_USER_ROLE_ERROR(0202,"编辑用户权限时出现异常"),
+    EDIT_USER_ROLE_ERROR(0202, "编辑用户权限时出现异常"),
+    INSERT_EXCEPT_TABLE_ERROR(0203, "新增except表失败"),
+    EDIT_TABLE_WEIGHT_ERROR(0204,"编辑表单权重时出现异常"),
     // 03 score模块
-    HEALTH_SCORE_ILLEGAL_ERROR(0301,"健康分数据不合法"),
-    HEALTH_SCORE_NUM_ERROR(0302,"健康分数据量异常");
+    HEALTH_SCORE_ILLEGAL_ERROR(0301, "健康分数据不合法"),
+    HEALTH_SCORE_NUM_ERROR(0302, "健康分数据量异常");
 
     /**
      * 错误码

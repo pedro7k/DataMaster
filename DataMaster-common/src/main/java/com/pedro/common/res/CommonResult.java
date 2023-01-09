@@ -3,6 +3,7 @@ package com.pedro.common.res;
 // CommonResult.java
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pedro.common.enums.ServiceExceptionEnum;
 import org.springframework.util.Assert;
 
 import java.io.Serializable;
@@ -47,6 +48,13 @@ public class CommonResult<T> implements Serializable {
         CommonResult<T> result = new CommonResult<>();
         result.status = status;
         result.msg = msg;
+        return result;
+    }
+
+    public static <T> CommonResult<T> error(ServiceExceptionEnum serviceExceptionEnum){
+        CommonResult<T> result = new CommonResult<>();
+        result.status = serviceExceptionEnum.getStatus();
+        result.msg = serviceExceptionEnum.getMsg();
         return result;
     }
 

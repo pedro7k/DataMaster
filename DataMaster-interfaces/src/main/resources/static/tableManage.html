@@ -124,11 +124,32 @@
                                                                 "click": {
                                                                     "actions": [
                                                                         {
-                                                                            "actionType": "url",
+                                                                            "actionType": "ajax",
+                                                                            "args": {
+                                                                                "options": {
+                                                                                },
+                                                                                "api": {
+                                                                                    "url": "http://localhost:8080/roleCheck",
+                                                                                    "method": "get",
+                                                                                    "messages": {
+                                                                                    },
+                                                                                    "dataType": "form-data",
+                                                                                    "data": {
+                                                                                        "&": "$$",
+                                                                                        "minRoleKey": 0
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "outputVar": "roleCheckResult",
+                                                                            "stopPropagation": ""
+                                                                        },
+                                                                        {
                                                                             "args": {
                                                                                 "url": "http://localhost:8080/jumpToUserManage",
                                                                                 "blank": true
-                                                                            }
+                                                                            },
+                                                                            "actionType": "url",
+                                                                            "expression": "${event.data.roleCheckResult.responseStatus==0}"
                                                                         }
                                                                     ]
                                                                 }
@@ -438,7 +459,7 @@
                                     "confirmText": "您确认要删除?",
                                     "api": {
                                         "method": "post",
-                                        "url": "http://localhost:8080/deleteUser",
+                                        "url": "http://localhost:8080/exceptTable",
                                         "dataType": "form-data",
                                         "data": null
                                     },
@@ -455,7 +476,7 @@
                             "actionType": "ajax",
                             "api": {
                                 "method": "post",
-                                "url": "http://localhost:8080/batchDeleteUser",
+                                "url": "http://localhost:8080/batchExceptTable",
                                 "dataType": "form-data"
                             },
                             "confirmText": "确定要批量删除?",
@@ -480,7 +501,7 @@
                     },
                     "quickSaveItemApi": {
                         "method": "post",
-                        "url": "http://localhost:8080/quickEditRole",
+                        "url": "http://localhost:8080/quickEditTableWeight",
                         "messages": {
                         },
                         "dataType": "form-data"

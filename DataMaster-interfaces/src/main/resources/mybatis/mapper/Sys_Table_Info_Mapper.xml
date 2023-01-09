@@ -7,4 +7,21 @@
         FROM sys_table_info;
     </select>
 
+    <select id="queryTableInfoByTid" resultType="com.pedro.infrastructure.po.TableInfoPO" parameterType="java.lang.Integer">
+        SELECT tid, name, table_weight AS tableWeight, scan_freq_per_min AS scanFreqPerMin
+        FROM sys_table_info
+        WHERE tid = #{tid}
+    </select>
+
+    <delete id="deleteRecordByTid" parameterType="java.lang.Integer">
+        DELETE FROM sys_table_info
+        WHERE tid = #{tid};
+    </delete>
+
+    <update id="updateTableWeight" parameterType="com.pedro.domain.form.model.vo.TableWeightVO">
+        UPDATE sys_table_info
+        SET table_weight = #{weight}
+        WHERE tid = #{tid}
+    </update>
+
 </mapper>
