@@ -50,7 +50,7 @@ public class CommonController {
         }
 
         // 3.成功返回
-        return CommonResult.success(null);
+        return CommonResult.success(null,"鉴权通过");
 
     }
 }

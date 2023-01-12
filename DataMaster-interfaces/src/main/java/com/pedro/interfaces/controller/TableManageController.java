@@ -4,6 +4,7 @@ import com.google.common.base.Splitter;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.res.CommonResult;
+import com.pedro.domain.dbProcess.model.req.TableCreationReq;
 import com.pedro.domain.form.model.res.TableManageFormRes;
 import com.pedro.domain.form.service.tableManageForm.TableManageFormService;
 import com.pedro.domain.score.service.TotalHealthScoreService;
@@ -17,10 +18,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -197,5 +195,28 @@ public class TableManageController {
 
         // 4.返回
         return CommonResult.success(null, "修改成功！");
+    }
+
+    /**
+     * 可视化创建表
+     */
+    @PostMapping("/createTable")
+    public CommonResult createTable(@RequestBody TableCreationReq tableCreationReq){
+
+        // 1.获取当前权限
+        UserVO currentUser = ShiroUtil.getCurrentUser();
+        int role = currentUser.getRole();
+
+        // 2.权限不足
+        if (role > UserRoleEnum.ADMIN.getLevel()) {
+            logger.info("[roleDenied]权限不足，user={},time={}", currentUser.getUsername(), new Date());
+            return CommonResult.error(ServiceExceptionEnum.ROLE_DENIED);
+        }
+
+        // TODO 3.执行表创建
+        System.out.println(tableCreationReq);
+
+        // 4.返回
+        return CommonResult.success(null,"创建成功！刷新表单可见");
     }
 }

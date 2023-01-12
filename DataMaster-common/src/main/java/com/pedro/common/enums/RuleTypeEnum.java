@@ -5,11 +5,11 @@ package com.pedro.common.enums;
  */
 public enum RuleTypeEnum {
 
-    NULL_PERCENT_RULE(0,"空缺率控制"),
-    VALUE_APPEAR_TIMES_RESTRICTION(1,"值出现次数规则"),
-    VALUE_APPEAR_RATIO_RESTRICTION(2,"值出现比例规则"),
-    RANGE_APPEAR_TIMES_RESTRICTION(3,"范围内值出现次数规则"),
-    RANGE_APPEAR_RATIO_RESTRICTION(4,"范围内值出现比例规则");
+    NULL_PERCENT_RULE(0,"空缺率控制"), // appear_ratio有值
+    VALUE_APPEAR_TIMES_RESTRICTION(1,"值出现次数规则"), // value_appear和appear_times有值
+    VALUE_APPEAR_RATIO_RESTRICTION(2,"值出现比例规则"), // value_appear和appear_ratio有值
+    RANGE_APPEAR_TIMES_RESTRICTION(3,"范围内值出现次数规则"), // value_range和appear_times有值
+    RANGE_APPEAR_RATIO_RESTRICTION(4,"范围内值出现比例规则"); // value_range和appear_ratio有值
 
 
 

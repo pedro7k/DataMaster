@@ -59,4 +59,13 @@ public class TestController {
         ModelAndView mv = new ModelAndView("login.html");
         return mv;
     }
+
+    /**
+     * 跳转到可视化创建表
+     */
+    @GetMapping("/jumpToVisualCreateTable")
+    public ModelAndView jumpToVisualCreateTable(){
+        ModelAndView mv = new ModelAndView(("visualCreateTable.html"));
+        return mv;
+    }
 }
