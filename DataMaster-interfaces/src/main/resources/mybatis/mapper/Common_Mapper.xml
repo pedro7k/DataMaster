@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pedro.infrastructure.dao.CommonDao">
+
+    <update id="createTableWithPlaceHolder">
+        CREATE TABLE ${tableName} (
+            placeHolder INT
+        )
+    </update>
+
+    <update id="addColumn" parameterType="com.pedro.domain.dbProcess.model.vo.ColumnWithTableNameVO">
+        alter table ${tableName} add column ${columnName} ${dataType}
+            <if test="primary != false">
+                primary key auto_increment
+            </if>
+            <if test="notNull != false">
+                not null
+            </if>
+            <if test="hasDefaultValue != false">
+                default ${defaultValue}
+            </if>
+    </update>
+
+    <update id="dropColumn">
+        ALTER TABLE ${tableName}
+        DROP COLUMN ${columnName}
+    </update>
+
+    <select id="queryIfTableNameExist" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        SELECT count(*) > 0 FROM information_schema.tables WHERE table_schema = 'datamaster' and TABLE_NAME = #{tableName}
+    </select>
+
+
+</mapper>

@@ -33,6 +33,8 @@ mybatis:
 
 # log
 logging:
+  level:
+      com.pedro.infrastructure.dao: debug
   file:
     name: G:/code/DataMaster/log/DataMaster.log
 

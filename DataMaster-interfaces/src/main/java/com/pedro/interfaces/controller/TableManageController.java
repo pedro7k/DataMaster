@@ -5,6 +5,7 @@ import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.res.CommonResult;
 import com.pedro.domain.dbProcess.model.req.TableCreationReq;
+import com.pedro.domain.dbProcess.service.tableCreation.VisualCreateTableService;
 import com.pedro.domain.form.model.res.TableManageFormRes;
 import com.pedro.domain.form.service.tableManageForm.TableManageFormService;
 import com.pedro.domain.score.service.TotalHealthScoreService;
@@ -39,6 +40,9 @@ public class TableManageController {
 
     @Resource
     TableManageFormService tableManageFormService;
+
+    @Resource
+    VisualCreateTableService visualCreateTableService;
 
     /**
      * 跳转到库表管理页
@@ -213,10 +217,10 @@ public class TableManageController {
             return CommonResult.error(ServiceExceptionEnum.ROLE_DENIED);
         }
 
-        // TODO 3.执行表创建
-        System.out.println(tableCreationReq);
+        // 3.执行表创建
+        visualCreateTableService.createTable(tableCreationReq);
 
         // 4.返回
-        return CommonResult.success(null,"创建成功！刷新表单可见");
+        return CommonResult.success(null,"创建成功！请稍后刷新表单");
     }
 }

@@ -4,19 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2022.1.9 完成库表管理页的表单功能">
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/req/TableCreationReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/visualCreateTable.html" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.12 完成可视化创建表前端">
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/req/ColumnReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/req/RuleReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/ColumnWithTableNameVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableCreationColumnVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableCreationVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/repository/TableCreationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/VisualCreateTableService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/CommonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableCreationRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Common_Mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/RuleTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/RuleTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/req/TableCreationReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/req/TableCreationReq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/registry.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/registry.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/roleDenied.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/roleDenied.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/userManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/userManage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +66,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static/amis",
+    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/mybatis/mapper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,8 +83,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static\amis" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\mapper" />
+      <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static\amis" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\config" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\java\com\pedro\interfaces\shiro" />
@@ -144,7 +148,8 @@
       <workItem from="1673151167459" duration="3286000" />
       <workItem from="1673155889461" duration="9725000" />
       <workItem from="1673247585957" duration="12191000" />
-      <workItem from="1673497421685" duration="16387000" />
+      <workItem from="1673497421685" duration="16504000" />
+      <workItem from="1673577882431" duration="14896000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -279,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673260103427</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="2023.1.12 完成可视化创建表前端">
+      <created>1673529212255</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673529212255</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,17 +326,7 @@
     <MESSAGE value="2022.1.7 完成库表管理页的图表" />
     <MESSAGE value="2022.1.8 完成库表管理页的表单展示" />
     <MESSAGE value="2022.1.9 完成库表管理页的表单功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.1.9 完成库表管理页的表单功能" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java</url>
-          <line>216</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="2023.1.12 完成可视化创建表前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.12 完成可视化创建表前端" />
   </component>
 </project>

@@ -22,6 +22,7 @@ public enum ServiceExceptionEnum {
      * - user模块:01
      * - form模块:02
      * - score模块:03
+     * - dbProcess模块:04
      */
     // 01 user模块
     REPEAT_PASSWORD_ERROR(0101, "注册时重复密码错误"),
@@ -35,7 +36,13 @@ public enum ServiceExceptionEnum {
     EDIT_TABLE_WEIGHT_ERROR(0204,"编辑表单权重时出现异常"),
     // 03 score模块
     HEALTH_SCORE_ILLEGAL_ERROR(0301, "健康分数据不合法"),
-    HEALTH_SCORE_NUM_ERROR(0302, "健康分数据量异常");
+    HEALTH_SCORE_NUM_ERROR(0302, "健康分数据量异常"),
+    // 04 dbProcess模块
+    CREATE_TABLE_ERROR(0401,"创建表时出现异常"),
+    EMPTY_COLUMN_LIST(0402,"创建表时列集合为空"),
+    DUPLICATE_PRIMARY_KEY(0403,"主键不允许重复"),
+    PRIMARY_KEY_WITH_DEFAULT_VALUE(0404,"主键不允许有默认值"),
+    DUPLICATE_TABLE_NAME(0405,"表名重复");
 
     /**
      * 错误码
