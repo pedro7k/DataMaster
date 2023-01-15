@@ -31,4 +31,14 @@ public interface TableInfoDao {
      * 编辑表单权重
      */
     int updateTableWeight(TableWeightVO tableWeightVO);
+
+    /**
+     * 插入新表信息
+     */
+    void insertTableInfo(TableInfoPO tableInfoPO);
+
+    /**
+     * 通过表名查询库表信息
+     */
+    TableInfoPO queryTableInfoByName(String name);
 }

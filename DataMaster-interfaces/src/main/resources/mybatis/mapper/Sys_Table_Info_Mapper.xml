@@ -24,4 +24,15 @@
         WHERE tid = #{tid}
     </update>
 
+    <insert id="insertTableInfo" parameterType="com.pedro.infrastructure.po.TableInfoPO">
+        INSERT INTO sys_table_info(name, table_weight, scan_freq_per_min)
+        values(#{name}, #{tableWeight}, 1);
+    </insert>
+
+    <select id="queryTableInfoByName" resultType="com.pedro.infrastructure.po.TableInfoPO" parameterType="java.lang.String">
+        SELECT tid, name, table_weight AS tableWeight, scan_freq_per_min AS scanFreqPerMin
+        FROM sys_table_info
+        WHERE name = #{name}
+    </select>
+
 </mapper>

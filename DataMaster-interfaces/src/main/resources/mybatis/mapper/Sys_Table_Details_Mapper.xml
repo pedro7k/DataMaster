@@ -7,5 +7,25 @@
         WHERE tid = #{tid};
     </delete>
 
+    <insert id="insertTableDetail" parameterType="com.pedro.domain.dbProcess.model.vo.TableDetailVO">
+        INSERT INTO sys_table_details(tid, column_name, dataType, is_primary_key, is_auto_inc, is_unique, with_default_value, not_null, is_num)
+        VALUES (#{tid}, #{columnName}, #{dataType}, #{primary}, #{autoInc}, #{unique}, #{withDefaultValue}, #{notNull}, #{numType})
+    </insert>
+
+    <select id="queryTableDetailByTid" parameterType="java.lang.Integer" resultType="com.pedro.infrastructure.po.TableDetailPO">
+        SELECT cid as cid,
+               tid as tid,
+               column_name as columnName,
+               dataType as dataType,
+               is_primary_key as ifPrimary,
+               is_auto_inc as autoInc,
+               is_unique as ifUnique,
+               with_default_value as withDefaultValue,
+               not_null as notNull,
+               is_num as numType
+        FROM sys_table_details
+        where tid = #{tid}
+    </select>
+
 
 </mapper>

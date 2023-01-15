@@ -42,7 +42,8 @@ public enum ServiceExceptionEnum {
     EMPTY_COLUMN_LIST(0402,"创建表时列集合为空"),
     DUPLICATE_PRIMARY_KEY(0403,"主键不允许重复"),
     PRIMARY_KEY_WITH_DEFAULT_VALUE(0404,"主键不允许有默认值"),
-    DUPLICATE_TABLE_NAME(0405,"表名重复");
+    DUPLICATE_TABLE_NAME(0405,"表名重复"),
+    RULE_TYPE_ERROR(0406,"不适用的约束类型");
 
     /**
      * 错误码

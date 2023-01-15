@@ -28,4 +28,9 @@ public interface CommonDao {
      * 查询某表名是否存在
      */
     boolean queryIfTableNameExist(String tableName);
+
+    /**
+     * 删除指定表名的数据表
+     */
+    void dropTableByName(String tableName);
 }

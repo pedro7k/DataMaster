@@ -7,5 +7,8 @@
         WHERE tid = #{tid};
     </delete>
 
-
+    <insert id="insertTableRule" parameterType="com.pedro.domain.dbProcess.model.vo.TableRuleVO">
+        INSERT INTO sys_table_rule(cid, tid, rule_weight, type, value_appear, value_range, appear_times, appear_ratio, ext_info)
+        VALUES (#{cid}, #{tid}, #{ruleWeight}, #{type}, #{valueAppear}, #{valueRange}, #{appearTimes}, #{appearRatio}, #{extInfo})
+    </insert>
 </mapper>

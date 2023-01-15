@@ -2,21 +2,37 @@ package com.pedro.infrastructure.repository;
 
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
-import com.pedro.domain.dbProcess.model.vo.ColumnWithTableNameVO;
-import com.pedro.domain.dbProcess.model.vo.TableCreationColumnVO;
-import com.pedro.domain.dbProcess.model.vo.TableCreationVO;
+import com.pedro.domain.dbProcess.model.vo.*;
 import com.pedro.domain.dbProcess.repository.TableCreationRepository;
-import com.pedro.infrastructure.dao.CommonDao;
+import com.pedro.infrastructure.dao.*;
+import com.pedro.infrastructure.po.TableDetailPO;
+import com.pedro.infrastructure.po.TableInfoPO;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Repository
 public class TableCreationRepositoryImpl implements TableCreationRepository {
 
     @Resource
     private CommonDao commonDao;
+
+    @Resource
+    private TableInfoDao tableInfoDao;
+
+    @Resource
+    private TableDetailsDao tableDetailsDao;
+
+    @Resource
+    private TableRuleDao tableRuleDao;
+
+    @Resource
+    private TableAlarmDao tableAlarmDao;
+
+    @Resource
+    private TableHealthScoreDao tableHealthScoreDao;
 
     // 占位符
     private static final String PLACE_HOLDER = "placeHolder";
@@ -49,5 +65,72 @@ public class TableCreationRepositoryImpl implements TableCreationRepository {
         // 4.删除占位符列
         commonDao.dropColumn(tableCreationVO.getTableName(), PLACE_HOLDER);
 
+    }
+
+    @Override
+    public void insertTableInfo(TableInfoVO tableInfoVO) {
+
+        // 1.默认扫描频率为1次每分钟，对象转换
+        TableInfoPO tableInfoPO = new TableInfoPO();
+        tableInfoPO.setName(tableInfoVO.getTableName());
+        tableInfoPO.setTableWeight(tableInfoVO.getTableWeight());
+        tableInfoPO.setScanFreqPerMin(1);
+
+        // 2.插入新行
+        tableInfoDao.insertTableInfo(tableInfoPO);
+
+    }
+
+    @Override
+    public int queryTidByName(String tableName) {
+        TableInfoPO tableInfoPO = tableInfoDao.queryTableInfoByName(tableName);
+        return tableInfoPO.getTid();
+    }
+
+    @Override
+    public void insertTableDetail(TableDetailVO tableDetailVO) {
+        tableDetailsDao.insertTableDetail(tableDetailVO);
+    }
+
+    @Override
+    public int queryCidByTidAndColumnName(int tid, String columnName) {
+
+        // 1.查询表的所有列信息
+        List<TableDetailPO> tableDetailPOList = tableDetailsDao.queryTableDetailByTid(tid);
+
+        // 2.找到其中对应列的id
+        for (TableDetailPO tableDetailPO : tableDetailPOList) {
+            if (tableDetailPO.getColumnName().equals(columnName)) {
+                return tableDetailPO.getCid();
+            }
+        }
+
+        // 3.没找到，抛异常
+        throw new ServiceException(ServiceExceptionEnum.CREATE_TABLE_ERROR);
+    }
+
+    @Override
+    public void insertTableRule(TableRuleVO tableRuleVO) {
+        tableRuleDao.insertTableRule(tableRuleVO);
+    }
+
+    @Override
+    public void dropTableByTableName(String tableName) {
+        commonDao.dropTableByName(tableName);
+    }
+
+    @Override
+    public void deleteDataByTid(int tid) {
+        // 执行删除 alarm表->rule表->detail表->score表->info表
+        // 1.alarm
+        tableAlarmDao.deleteRecordByTid(tid);
+        // 2.rule
+        tableRuleDao.deleteRecordByTid(tid);
+        // 3.details
+        tableDetailsDao.deleteRecordByTid(tid);
+        // 4.score
+        tableHealthScoreDao.deleteRecordByTid(tid);
+        // 5.info
+        tableInfoDao.deleteRecordByTid(tid);
     }
 }

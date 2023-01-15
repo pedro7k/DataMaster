@@ -55,7 +55,7 @@ public enum UserRoleEnum {
     }
 
     /**
-     * 返回key对应的roles
+     * 返回key对应的roles及权限比他低的roles
      *
      * @param roleKey
      * @return
@@ -84,7 +84,7 @@ public enum UserRoleEnum {
     public static int castRoleToInt(String roleString) {
         // 遍历查找
         for (UserRoleEnum enumItem : UserRoleEnum.values()) {
-            if (Objects.equals(roleString, enumItem.msg)) {
+            if (roleString.equals(enumItem.msg)) {
                 return enumItem.level;
             }
         }

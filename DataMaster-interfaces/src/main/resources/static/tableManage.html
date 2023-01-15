@@ -649,8 +649,8 @@
                                                                 "value": "double"
                                                             },
                                                             {
-                                                                "label": "varchar",
-                                                                "value": "varchar"
+                                                                "label": "varchar(50)",
+                                                                "value": "varchar(50)"
                                                             },
                                                             {
                                                                 "label": "timestamp",
@@ -705,8 +705,8 @@
                                                                 "name": "ruleType",
                                                                 "options": [
                                                                     "空缺率",
-                                                                    "数值出现次数",
-                                                                    "数值出现率",
+                                                                    "值出现次数",
+                                                                    "值出现率",
                                                                     "数值范围出现次数",
                                                                     "数值范围出现率"
                                                                 ],
@@ -747,7 +747,7 @@
                                                                 "name": "valueAppear",
                                                                 "mode": "horizontal",
                                                                 "label": "指定值",
-                                                                "visibleOn": "${ruleType == '数值出现次数' || ruleType == '数值出现率'}"
+                                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '值出现率'}"
                                                             },
                                                             {
                                                                 "type": "input-text",
@@ -770,7 +770,7 @@
                                                                 "name": "appearTimes",
                                                                 "mode": "horizontal",
                                                                 "label": "出现次数范围",
-                                                                "visibleOn": "${ruleType == '数值出现次数' || ruleType == '数值范围出现次数'}",
+                                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '数值范围出现次数'}",
                                                                 "labelRemark": {
                                                                     "icon": "fa fa-question-circle",
                                                                     "trigger": [
@@ -786,7 +786,7 @@
                                                                 "name": "appearRatio",
                                                                 "mode": "horizontal",
                                                                 "label": "出现比例要求",
-                                                                "visibleOn": "${ruleType == '数值出现率' || ruleType == '数值范围出现率' || ruleType =='空缺率'}",
+                                                                "visibleOn": "${ruleType == '值出现率' || ruleType == '数值范围出现率' || ruleType =='空缺率'}",
                                                                 "labelRemark": {
                                                                     "icon": "fa fa-question-circle",
                                                                     "trigger": [
