@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
 public class VisualCreateTableServiceImpl implements VisualCreateTableService {
 
     private static final Logger logger = LoggerFactory.getLogger(VisualCreateTableServiceImpl.class);
