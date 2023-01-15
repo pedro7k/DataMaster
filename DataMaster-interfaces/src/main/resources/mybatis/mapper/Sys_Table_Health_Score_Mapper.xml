@@ -15,4 +15,9 @@
         WHERE tid = #{tid};
     </delete>
 
+    <insert id="insertTableHealthScore" parameterType="com.pedro.domain.dbProcess.model.vo.TableHealthScoreVO">
+        INSERT INTO sys_table_health_score(tid, score, time)
+        VALUES (#{tid}, #{score}, now())
+    </insert>
+
 </mapper>

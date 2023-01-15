@@ -7,5 +7,14 @@
         VALUES (#{name})
     </insert>
 
+    <delete id="deleteExceptTable" parameterType="java.lang.String">
+        DELETE FROM sys_except_table
+        WHERE name = #{name};
+    </delete>
+    
+    <select id="queryExceptTableNameList" resultType="java.lang.String">
+        SELECT name from sys_except_table;
+    </select>
+
 
 </mapper>

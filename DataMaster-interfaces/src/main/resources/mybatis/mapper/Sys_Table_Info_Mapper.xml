@@ -26,7 +26,7 @@
 
     <insert id="insertTableInfo" parameterType="com.pedro.infrastructure.po.TableInfoPO">
         INSERT INTO sys_table_info(name, table_weight, scan_freq_per_min)
-        values(#{name}, #{tableWeight}, 1);
+        values(#{name}, #{tableWeight}, #{scanFreqPerMin});
     </insert>
 
     <select id="queryTableInfoByName" resultType="com.pedro.infrastructure.po.TableInfoPO" parameterType="java.lang.String">

@@ -822,6 +822,45 @@
                                 "size": "lg"
                             },
                             "level": "primary"
+                        },
+                        {
+                            "type": "button",
+                            "tpl": "内容",
+                            "id": "u:d99a77039aa5",
+                            "label": "扫描数据库",
+                            "align": "right",
+                            "level": "primary",
+                            "onEvent": {
+                                "click": {
+                                    "weight": 0,
+                                    "actions": [
+                                        {
+                                            "args": {
+                                                "options": {
+                                                    "silent": false
+                                                },
+                                                "api": {
+                                                    "url": "http://localhost:8080/searchTable",
+                                                    "method": "get",
+                                                    "messages": {
+                                                    }
+                                                }
+                                            },
+                                            "outputVar": "responseResult",
+                                            "actionType": "ajax"
+                                        },
+                                        {
+                                            "componentId": "u:7bc35eea002d",
+                                            "args": {
+                                                "resetPage": true
+                                            },
+                                            "actionType": "reload",
+                                            "dataMergeMode": "merge"
+                                        }
+                                    ]
+                                }
+                            },
+                            "tooltip": "支持扫描数据库中的表，收录入DataMaster管理"
                         }
                     ],
                     "perPageAvailable": [

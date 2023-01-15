@@ -6,6 +6,7 @@ import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.res.CommonResult;
 import com.pedro.domain.dbProcess.model.req.TableCreationReq;
 import com.pedro.domain.dbProcess.service.tableCreation.VisualCreateTableService;
+import com.pedro.domain.dbProcess.service.tableSearch.TableSearchService;
 import com.pedro.domain.form.model.res.TableManageFormRes;
 import com.pedro.domain.form.service.tableManageForm.TableManageFormService;
 import com.pedro.domain.score.service.TotalHealthScoreService;
@@ -43,6 +44,9 @@ public class TableManageController {
 
     @Resource
     VisualCreateTableService visualCreateTableService;
+
+    @Resource
+    TableSearchService tableSearchService;
 
     /**
      * 跳转到库表管理页
@@ -221,6 +225,27 @@ public class TableManageController {
         visualCreateTableService.createTable(tableCreationReq);
 
         // 4.返回
-        return CommonResult.success(null,"创建成功！请稍后刷新表单");
+        return CommonResult.success(null,"创建成功！请稍后刷新");
+    }
+
+    @GetMapping("/searchTable")
+    public CommonResult searchTable(){
+
+        // 1.获取当前权限
+        UserVO currentUser = ShiroUtil.getCurrentUser();
+        int role = currentUser.getRole();
+
+        // 2.权限不足
+        if (role > UserRoleEnum.ADMIN.getLevel()) {
+            logger.info("[roleDenied]权限不足，user={},time={}", currentUser.getUsername(), new Date());
+            return CommonResult.error(ServiceExceptionEnum.ROLE_DENIED);
+        }
+
+        // 3.执行表搜索
+        tableSearchService.searchTable();
+
+        // 4.返回
+        return CommonResult.success(null,"搜索新表单成功！请稍后刷新");
+
     }
 }

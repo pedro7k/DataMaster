@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.common.config.Constants;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
 import com.pedro.domain.dbProcess.model.vo.*;
@@ -29,10 +30,10 @@ public class TableCreationRepositoryImpl implements TableCreationRepository {
     private TableRuleDao tableRuleDao;
 
     @Resource
-    private TableAlarmDao tableAlarmDao;
+    private TableHealthScoreDao tableHealthScoreDao;
 
     @Resource
-    private TableHealthScoreDao tableHealthScoreDao;
+    private ExceptTableDao exceptTableDao;
 
     // 占位符
     private static final String PLACE_HOLDER = "placeHolder";
@@ -70,11 +71,11 @@ public class TableCreationRepositoryImpl implements TableCreationRepository {
     @Override
     public void insertTableInfo(TableInfoVO tableInfoVO) {
 
-        // 1.默认扫描频率为1次每分钟，对象转换
+        // 1.默认扫描频率为3次每分钟，对象转换
         TableInfoPO tableInfoPO = new TableInfoPO();
         tableInfoPO.setName(tableInfoVO.getTableName());
         tableInfoPO.setTableWeight(tableInfoVO.getTableWeight());
-        tableInfoPO.setScanFreqPerMin(1);
+        tableInfoPO.setScanFreqPerMin(Constants.DEFAULT_SCAN_FREQ);
 
         // 2.插入新行
         tableInfoDao.insertTableInfo(tableInfoPO);
@@ -121,16 +122,24 @@ public class TableCreationRepositoryImpl implements TableCreationRepository {
 
     @Override
     public void deleteDataByTid(int tid) {
-        // 执行删除 alarm表->rule表->detail表->score表->info表
-        // 1.alarm
-        tableAlarmDao.deleteRecordByTid(tid);
-        // 2.rule
+        // 执行删除 rule表->detail表->score表->info表
+        // 1.rule
         tableRuleDao.deleteRecordByTid(tid);
-        // 3.details
+        // 2.details
         tableDetailsDao.deleteRecordByTid(tid);
-        // 4.score
+        // 3.score
         tableHealthScoreDao.deleteRecordByTid(tid);
-        // 5.info
+        // 4.info
         tableInfoDao.deleteRecordByTid(tid);
+    }
+
+    @Override
+    public void insertTableHealthScore(TableHealthScoreVO tableHealthScoreVO) {
+        tableHealthScoreDao.insertTableHealthScore(tableHealthScoreVO);
+    }
+
+    @Override
+    public void deleteTableFromExcept(String tableName) {
+        exceptTableDao.deleteExceptTable(tableName);
     }
 }

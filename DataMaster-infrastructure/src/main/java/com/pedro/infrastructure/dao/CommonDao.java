@@ -1,10 +1,11 @@
 package com.pedro.infrastructure.dao;
 
 import com.pedro.domain.dbProcess.model.vo.ColumnWithTableNameVO;
-import com.pedro.domain.dbProcess.model.vo.TableCreationColumnVO;
-import com.pedro.domain.dbProcess.model.vo.TableCreationVO;
+import com.pedro.infrastructure.po.TableMetaInfoPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface CommonDao {
@@ -33,4 +34,14 @@ public interface CommonDao {
      * 删除指定表名的数据表
      */
     void dropTableByName(String tableName);
+
+    /**
+     * 查询数据库中所有的表名
+     */
+    List<String> queryTableNameList();
+
+    /**
+     * desc表
+     */
+    List<TableMetaInfoPO> descTable(@Param("tableName") String tableName);
 }

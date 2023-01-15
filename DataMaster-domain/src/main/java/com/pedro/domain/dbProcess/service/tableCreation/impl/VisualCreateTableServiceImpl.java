@@ -1,5 +1,6 @@
 package com.pedro.domain.dbProcess.service.tableCreation.impl;
 
+import com.pedro.common.config.Constants;
 import com.pedro.common.enums.AlarmStateEnum;
 import com.pedro.common.enums.RuleTypeEnum;
 import com.pedro.common.enums.ServiceExceptionEnum;
@@ -27,6 +28,9 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
 
     private static final Logger logger = LoggerFactory.getLogger(VisualCreateTableServiceImpl.class);
 
+    /**
+     * 数值类型集合
+     */
     private static List<String> numTypeList = new ArrayList<>();
 
     static {
@@ -47,6 +51,8 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
             if (CollectionUtils.isEmpty(req.getColumns())) {
                 throw new ServiceException(ServiceExceptionEnum.EMPTY_COLUMN_LIST);
             }
+            // 1.2 尝试从except表中删除对应表名的数据
+            tableCreationRepository.deleteTableFromExcept(req.getTableName());
 
             // 2.创建表
             TableCreationVO tableCreationVO = new TableCreationVO();
@@ -85,7 +91,7 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
             // 3.1 填充info表
             TableInfoVO tableInfoVO = new TableInfoVO();
             tableInfoVO.setTableName(req.getTableName());
-            tableInfoVO.setTableWeight(req.getTableWeight() == 0 ? 3 : req.getTableWeight());
+            tableInfoVO.setTableWeight(req.getTableWeight() == 0 ? Constants.DEFAULT_WEIGHT : req.getTableWeight());
             tableCreationRepository.insertTableInfo(tableInfoVO);
             // 3.2 查询tid
             int tid = tableCreationRepository.queryTidByName(req.getTableName());
@@ -116,12 +122,12 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
                     continue;
                 }
                 for (String ruleName : columnReq.getRules().keySet()) {
-                    // 4.3.1 对象构造
+                    // 4.4.1 对象构造
                     RuleReq ruleReq = columnReq.getRules().get(ruleName);
                     TableRuleVO tableRuleVO = new TableRuleVO();
                     tableRuleVO.setCid(cid);
                     tableRuleVO.setTid(tid);
-                    tableRuleVO.setRuleWeight(ruleReq.getRuleWeight() == 0 ? 3 : ruleReq.getRuleWeight());
+                    tableRuleVO.setRuleWeight(ruleReq.getRuleWeight() == 0 ? Constants.DEFAULT_WEIGHT : ruleReq.getRuleWeight());
                     tableRuleVO.setType(RuleTypeEnum.castTypeToInt(ruleReq.getRuleType()));
                     // 如果不是数值类型，但给出的约束是数值范围相关的，抛出异常
                     if (!tableDetailVO.isNumType()) {
@@ -135,13 +141,16 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
                     tableRuleVO.setAppearTimes(ruleReq.getAppearTimes());
                     tableRuleVO.setAppearRatio(ruleReq.getAppearRatio());
                     tableRuleVO.setExtInfo(ruleName);
-                    // 4.3.2 执行rule插入
+                    // 4.4.2 执行rule插入
                     tableCreationRepository.insertTableRule(tableRuleVO);
                 }
             }
 
-            // TODO 5.定时任务处理，同步执行一次
-
+            // 5.在单表健康分表创建一份数据
+            TableHealthScoreVO tableHealthScoreVO = new TableHealthScoreVO();
+            tableHealthScoreVO.setTid(tid);
+            tableHealthScoreVO.setScore(100);
+            tableCreationRepository.insertTableHealthScore(tableHealthScoreVO);
 
         } catch (ServiceException e) {
             deleteDataByTableName(req.getTableName());
@@ -168,8 +177,7 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
             return;
         }
 
-        // 3.借助排除方法，删除alarm表->rule表->detail表->score表->info表
-        // TODO 考虑有没有机会让两个重复的方法合并
+        // 3.借助排除方法，删除rule表->detail表->score表->info表
         tableCreationRepository.deleteDataByTid(tid);
     }
 }

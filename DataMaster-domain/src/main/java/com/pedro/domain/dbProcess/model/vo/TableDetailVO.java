@@ -109,4 +109,19 @@ public class TableDetailVO {
     public void setNumType(boolean numType) {
         this.numType = numType;
     }
+
+    @Override
+    public String toString() {
+        return "TableDetailVO{" +
+                "tid=" + tid +
+                ", columnName='" + columnName + '\'' +
+                ", dataType='" + dataType + '\'' +
+                ", primary=" + primary +
+                ", autoInc=" + autoInc +
+                ", unique=" + unique +
+                ", withDefaultValue=" + withDefaultValue +
+                ", notNull=" + notNull +
+                ", numType=" + numType +
+                '}';
+    }
 }

@@ -1,9 +1,6 @@
 package com.pedro.domain.dbProcess.repository;
 
-import com.pedro.domain.dbProcess.model.vo.TableCreationVO;
-import com.pedro.domain.dbProcess.model.vo.TableDetailVO;
-import com.pedro.domain.dbProcess.model.vo.TableInfoVO;
-import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
+import com.pedro.domain.dbProcess.model.vo.*;
 
 public interface TableCreationRepository {
 
@@ -46,4 +43,14 @@ public interface TableCreationRepository {
      * 删除指定tid的表相关的所有信息
      */
     void deleteDataByTid(int tid);
+
+    /**
+     * 添加单表健康分数据
+     */
+    void insertTableHealthScore(TableHealthScoreVO tableHealthScoreVO);
+
+    /**
+     * 从except表中删除对应表名的数据
+     */
+    void deleteTableFromExcept(String tableName);
 }
