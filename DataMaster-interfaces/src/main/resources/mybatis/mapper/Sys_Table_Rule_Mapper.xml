@@ -3,12 +3,31 @@
 <mapper namespace="com.pedro.infrastructure.dao.TableRuleDao">
 
     <delete id="deleteRecordByTid" parameterType="java.lang.Integer">
-        DELETE FROM sys_table_rule
+        DELETE
+        FROM sys_table_rule
         WHERE tid = #{tid};
     </delete>
 
     <insert id="insertTableRule" parameterType="com.pedro.domain.dbProcess.model.vo.TableRuleVO">
-        INSERT INTO sys_table_rule(cid, tid, rule_weight, type, value_appear, value_range, appear_times, appear_ratio, ext_info)
-        VALUES (#{cid}, #{tid}, #{ruleWeight}, #{type}, #{valueAppear}, #{valueRange}, #{appearTimes}, #{appearRatio}, #{extInfo})
+        INSERT INTO sys_table_rule(cid, tid, rule_weight, type, value_appear, value_range, appear_times, appear_ratio,
+                                   ext_info)
+        VALUES (#{cid}, #{tid}, #{ruleWeight}, #{type}, #{valueAppear}, #{valueRange}, #{appearTimes}, #{appearRatio},
+                #{extInfo})
     </insert>
+
+    <select id="queryTableRuleByCid" parameterType="java.lang.Integer"
+            resultType="com.pedro.infrastructure.po.TableRulePO">
+        SELECT rid          as rid,
+               cid          as cid,
+               tid          as tid,
+               rule_weight  as ruleWeight,
+               type         as type,
+               value_appear as valueAppear,
+               value_range  as valueRange,
+               appear_times as appearTimes,
+               appear_ratio as appearRatio,
+               ext_info     as extInfo
+        FROM sys_table_rule
+        where cid = #{cid}
+    </select>
 </mapper>

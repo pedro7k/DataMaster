@@ -1,11 +1,14 @@
 package com.pedro.interfaces.controller;
 
 import com.pedro.common.res.CommonResult;
+import com.pedro.domain.form.model.res.TableDetailFormRes;
+import com.pedro.domain.form.model.res.TableManageFormRes;
 import com.pedro.domain.form.service.tableDetailForm.TableDetailFormService;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.domain.score.service.TableHealthScoreService;
 import com.pedro.infrastructure.dao.TableInfoDao;
 import com.pedro.infrastructure.po.TableInfoPO;
+import com.pedro.interfaces.res.CommonFormDataRes;
 import com.pedro.interfaces.res.CurrentTableHealthScoreRes;
 import com.pedro.interfaces.res.CurrentTotalHealthScoreRes;
 import com.pedro.interfaces.res.TableNameRes;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class TableDetailController {
@@ -27,10 +31,10 @@ public class TableDetailController {
     private TableInfoDao tableInfoDao;
 
     @Resource
-    private TableDetailFormService tableDetailFormService;
+    private TableHealthScoreService tableHealthScoreService;
 
     @Resource
-    private TableHealthScoreService tableHealthScoreService;
+    private TableDetailFormService tableDetailFormService;
 
     /**
      * 跳转到数据表详情页
@@ -39,16 +43,6 @@ public class TableDetailController {
     public ModelAndView jumpToDetailPage(int tid) {
         logger.info("jumpToDetailPage,tid={}", tid);
         ModelAndView mv = new ModelAndView("detail.html");
-        mv.addObject("tid", tid);
-        return mv;
-    }
-
-    /**
-     * 跳转到约束管理页
-     */
-    @GetMapping("/jumpToRulePage")
-    public ModelAndView jumpToRulePage(int tid) {
-        ModelAndView mv = new ModelAndView("rule.html");
         mv.addObject("tid", tid);
         return mv;
     }
@@ -101,5 +95,21 @@ public class TableDetailController {
 
         // 2.返回
         return CommonResult.success(line);
+    }
+
+    /**
+     * 拉取表单详情页表单数据
+     */
+    @GetMapping("/loadTableDetailForm")
+    public CommonResult loadTableDetailForm(int tid) {
+
+        // 1.拉取表单数据
+        List<TableDetailFormRes> tableDetailFormResList = tableDetailFormService.loadTableDetailForm(tid);
+
+        // 2.构造返回结果
+        CommonFormDataRes<TableDetailFormRes> tableDetailFormCommonResult = new CommonFormDataRes<>(tableDetailFormResList, tableDetailFormResList.size());
+
+        // 3.返回
+        return CommonResult.success(tableDetailFormCommonResult);
     }
 }

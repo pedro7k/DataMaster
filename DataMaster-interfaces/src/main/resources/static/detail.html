@@ -312,6 +312,208 @@
                     "direction": "row",
                     "justify": "flex-start",
                     "alignItems": "stretch"
+                },
+                {
+                    "type": "crud",
+                    "api": "http://localhost:8080/loadTableDetailForm",
+                    "columns": [
+                        {
+                            "name": "cid",
+                            "label": "ID",
+                            "type": "text",
+                            "id": "u:0adfb39e24df",
+                            "sortable": true,
+                            "toggled": true,
+                            "remark": "系统自动生成",
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "columnName",
+                            "label": "列名",
+                            "type": "text",
+                            "id": "u:ca57a6855916",
+                            "sortable": false,
+                            "searchable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "dataType",
+                            "label": "数据类型",
+                            "type": "text",
+                            "id": "u:ca57a6855916",
+                            "sortable": false,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-",
+                            "searchable": false
+                        },
+                        {
+                            "name": "primary",
+                            "label": "主键",
+                            "type": "text",
+                            "id": "u:a519a73c261f",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-",
+                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "name": "notNull",
+                            "label": "非空",
+                            "type": "text",
+                            "id": "u:a519a73c261f",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-",
+                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "name": "withDefaultValue",
+                            "label": "有默认值",
+                            "type": "text",
+                            "id": "u:a519a73c261f",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-",
+                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "type": "text",
+                            "name": "unique",
+                            "label": "唯一",
+                            "id": "u:a519a73c261f",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "type": "text",
+                            "label": "自增",
+                            "id": "u:a519a73c261f",
+                            "name": "autoInc",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "type": "text",
+                            "label": "有自定义约束",
+                            "id": "u:1afbe5cd84e5",
+                            "name": "ruleCount",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true
+                        }
+                    ],
+                    "bulkActions": [
+                    ],
+                    "id": "u:7bc35eea002d",
+                    "draggable": true,
+                    "perPage": 15,
+                    "keepItemSelectionOnPageChange": true,
+                    "maxKeepItemSelectionLength": 11,
+                    "labelTpl": "${tid} ${name}",
+                    "orderBy": "id",
+                    "orderDir": "asc",
+                    "quickSaveApi": {
+                        "method": "get",
+                        "url": "",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "quickSaveItemApi": {
+                        "method": "get",
+                        "url": "",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "filterTogglable": true,
+                    "headerToolbar": [
+                        {
+                            "type": "columns-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "drag-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "pagination",
+                            "align": "right"
+                        },
+                        {
+                            "type": "reload",
+                            "align": "right",
+                            "label": "刷新",
+                            "icon": "iconfont icon-refresh",
+                            "tooltip": "",
+                            "level": "primary",
+                            "id": "u:6a3a5955844f"
+                        },
+                        {
+                            "type": "tpl",
+                            "align": "left",
+                            "id": "u:a89eced5c7f0",
+                            "tpl": "<p><strong><span style=\"color: rgb(0, 0, 0);\">表字段详情</span></strong></p>"
+                        }
+                    ],
+                    "footerToolbar": [
+                        {
+                            "type": "statistics"
+                        },
+                        {
+                            "type": "switch-per-page"
+                        },
+                        {
+                            "type": "pagination"
+                        },
+                        {
+                            "type": "export-excel",
+                            "tpl": "内容",
+                            "id": "u:70219287d252",
+                            "align": "right",
+                            "api": {
+                                "method": "get",
+                                "url": "http://localhost:8080/loadTableDetailForm",
+                                "dataType": "form-data",
+                                "data": {
+                                    "tid": "${tid}"
+                                }
+                            },
+                            "filename": "DataMaster导出-库表详情页",
+                            "level": "primary",
+                            "block": false
+                        }
+                    ],
+                    "perPageAvailable": [
+                        10
+                    ],
+                    "messages": {
+                    },
+                    "primaryField": "tid",
+                    "loadDataOnce": true,
+                    "placeholder": "-",
+                    "quickEdit": false
                 }
             ],
             "id": "u:0be368e05ab7",
