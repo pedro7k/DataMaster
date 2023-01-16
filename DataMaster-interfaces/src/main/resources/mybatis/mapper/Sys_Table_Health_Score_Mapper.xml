@@ -20,4 +20,16 @@
         VALUES (#{tid}, #{score}, now())
     </insert>
 
+    <select id="query7DaysTableHealthScoreLine" parameterType="java.lang.Integer" resultType="com.pedro.infrastructure.po.ScoreLinePO">
+        SELECT sys_table_health_score.score, sys_table_health_score.time
+        FROM sys_table_health_score
+                 INNER JOIN(SELECT max(sys_table_health_score.time) AS max_time
+                            FROM sys_table_health_score
+                            WHERE tid = #{tid}
+                            GROUP BY date_format(sys_table_health_score.time, '%Y-%m-%d')) AS son
+                           ON sys_table_health_score.time = son.max_time
+        WHERE tid = #{tid}
+        ORDER BY sys_table_health_score.hid DESC limit 7
+    </select>
+
 </mapper>

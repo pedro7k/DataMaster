@@ -18,7 +18,7 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
     private static final Logger logger = LoggerFactory.getLogger(TotalHealthScoreServiceImpl.class);
 
     @Resource
-    TotalHealthScoreRepository totalHealthScoreRepository;
+    private TotalHealthScoreRepository totalHealthScoreRepository;
 
     @Override
     public Double getCurrentTotalHealthScore() {
@@ -27,7 +27,7 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
         Double currentTotalHealthScore = totalHealthScoreRepository.queryCurrentTotalHealthScore();
 
         // 2.校验数据
-        if (currentTotalHealthScore < 0 || currentTotalHealthScore > 100) {
+        if (null == currentTotalHealthScore || currentTotalHealthScore < 0 || currentTotalHealthScore > 100) {
             logger.error("健康分数据不合法");
             throw new ServiceException(ServiceExceptionEnum.HEALTH_SCORE_ILLEGAL_ERROR);
         }
@@ -41,6 +41,19 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
 
         // 1.获取数据
         ScoreLineVO line = totalHealthScoreRepository.query7DaysTotalHealthScoreLine();
+
+        // 2.数据校验
+        check7DaysHealthScoreLine(line);
+
+        // 3.返回
+        return line;
+    }
+
+    /**
+     * 七日健康分数据校验
+     * @param line
+     */
+    public static void check7DaysHealthScoreLine(ScoreLineVO line) {
         int size = line.getDate().size();
 
         // 2.校验数据
@@ -63,8 +76,5 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
                 throw new ServiceException(ServiceExceptionEnum.HEALTH_SCORE_ILLEGAL_ERROR);
             }
         }
-
-        // 3.返回
-        return line;
     }
 }

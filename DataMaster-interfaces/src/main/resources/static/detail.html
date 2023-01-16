@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>数据表详情页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <link rel="stylesheet" href="amis/sdk.css"/>
+    <link rel="stylesheet" href="amis/helper.css"/>
+    <link rel="stylesheet" href="amis/iconfont.css"/>
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+<script src="amis/sdk.js"></script>
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            "type": "page",
+            "title": "数据表详情页",
+            "body": [
+                {
+                    "type": "flex",
+                    "id": "u:3520231181e9",
+                    "className": "p-1",
+                    "items": [
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "tpl",
+                                    "className": "b-primary",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 33,
+                                        "textAlign": "left",
+                                        "color": "#4a90e2"
+                                    },
+                                    "id": "u:9b03f22628eb",
+                                    "tpl": "DataMaster",
+                                    "inline": true,
+                                    "wrapperComponent": ""
+                                }
+                            ],
+                            "id": "u:fbadc279ddf2",
+                            "className": "b-primary",
+                            "bodyClassName": "b-primary text-white bg-white",
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto",
+                                "color": "#000000",
+                                "fontFamily": "",
+                                "fontSize": 12,
+                                "textAlign": "left",
+                                "overflowY": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "form",
+                                    "title": "",
+                                    "body": [
+                                        {
+                                            "type": "group",
+                                            "body": [
+                                                {
+                                                    "type": "input-text",
+                                                    "name": "tableName",
+                                                    "placeholder": "",
+                                                    "label": "当前表",
+                                                    "size": "full",
+                                                    "id": "u:18e2d06ab07c",
+                                                    "showCounter": false,
+                                                    "validations": {
+                                                    },
+                                                    "validationErrors": {
+                                                    },
+                                                    "readOnly": true,
+                                                    "static": false
+                                                }
+                                            ],
+                                            "id": "u:197dedd35438"
+                                        }
+                                    ],
+                                    "api": {
+                                        "method": "get",
+                                        "url": "",
+                                        "messages": {
+                                        }
+                                    },
+                                    "mode": "inline",
+                                    "submitText": null,
+                                    "autoFocus": false,
+                                    "id": "u:6d863ccb0de0",
+                                    "initApi": {
+                                        "url": "http://localhost:8080/getTableName",
+                                        "method": "post",
+                                        "messages": {
+                                        },
+                                        "dataType": "form-data",
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
+                                    },
+                                    "redirect": "http://localhost:8080/jumpToLoginPage"
+                                }
+                            ],
+                            "id": "u:65bd1cabb880",
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false
+                        }
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch"
+                },
+                {
+                    "type": "nav",
+                    "links": [
+                        {
+                            "label": "表详情页",
+                            "icon": "fa fa-stack-exchange",
+                            "to": "http://localhost:8080/jumpToDetailPage",
+                            "active": true
+                        },
+                        {
+                            "label": "约束管理页",
+                            "to": "http://localhost:8080/jumpToRulePage",
+                            "icon": "fa fa-stack-overflow",
+                            "active": ""
+                        },
+                        {
+                            "label": "报警管理页",
+                            "icon": "fa fa-snapchat-ghost",
+                            "to": "http://localhost:8080/jumpToAlarmPage"
+                        }
+                    ],
+                    "id": "u:82e06bf05118"
+                },
+                {
+                    "type": "flex",
+                    "className": "p-1",
+                    "id": "u:19c076d757a0",
+                    "items": [
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "chart",
+                                    "config": {
+                                        "title": {
+                                            "text": "当前表健康分"
+                                        },
+                                        "xAxis": {
+                                            "type": "category",
+                                            "data": [
+                                                "得分"
+                                            ],
+                                            "id": "u:a55ac3e92610"
+                                        },
+                                        "yAxis": {
+                                            "type": "value",
+                                            "id": "u:db3c2f6f83e7",
+                                            "max": "100",
+                                            "min": "0"
+                                        },
+                                        "series": [
+                                            {
+                                                "data": [
+                                                    "${currentTableHealthScore}"
+                                                ],
+                                                "type": "bar",
+                                                "id": "u:4dd54bf0d5e0",
+                                                "label": {
+                                                    "show": "true",
+                                                    "position": "inside"
+                                                },
+                                                "barWidth": "30%"
+                                            }
+                                        ]
+                                    },
+                                    "replaceChartOption": true,
+                                    "id": "u:1290653d6f3d",
+                                    "api": {
+                                        "method": "get",
+                                        "url": "http://localhost:8080/getCurrentTableHealthScore",
+                                        "dataType": "form-data",
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
+                                    }
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 0,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:c3c692b45589"
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "chart",
+                                    "config": {
+                                        "xAxis": {
+                                            "type": "category",
+                                            "data": "${date}",
+                                            "id": "u:8d4440f12b10"
+                                        },
+                                        "yAxis": {
+                                            "type": "value",
+                                            "id": "u:b13dac3f77a7",
+                                            "max": "100",
+                                            "min": "0"
+                                        },
+                                        "series": [
+                                            {
+                                                "data": "${score}",
+                                                "type": "line",
+                                                "id": "u:56fd2a19dc06",
+                                                "label": {
+                                                    "show": "true",
+                                                    "position": "top"
+                                                }
+                                            }
+                                        ],
+                                        "title": {
+                                            "text": "过去有数据的七天表单健康分变化趋势"
+                                        }
+                                    },
+                                    "replaceChartOption": true,
+                                    "id": "u:aecbb2187444",
+                                    "api": {
+                                        "method": "get",
+                                        "url": "http://localhost:8080/get7DaysTableHealthScoreLine",
+                                        "dataType": "form-data",
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
+                                    }
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 12,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:cded25a3de75"
+                        }
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch"
+                }
+            ],
+            "id": "u:0be368e05ab7",
+            "regions": [
+                "body"
+            ]
+        }
+        let amisScoped = amis.embed('#root', amisJSON, {
+            data: {
+                myData: 'amis'
+            }
+        });
+    })();
+</script>
+</body>
+</html>

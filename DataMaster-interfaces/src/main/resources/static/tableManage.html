@@ -398,58 +398,26 @@
                                 {
                                     "type": "button",
                                     "icon": "fa fa-eye",
-                                    "actionType": "dialog",
-                                    "tooltip": "查看",
-                                    "dialog": {
-                                        "title": "查看",
-                                        "body": {
-                                            "type": "form",
-                                            "body": [
+                                    "tooltip": "查看和管理表",
+                                    "id": "u:23a8c4dff6d9",
+                                    "label": "详情页",
+                                    "onEvent": {
+                                        "click": {
+                                            "weight": 0,
+                                            "actions": [
                                                 {
-                                                    "type": "static",
-                                                    "name": "tid",
-                                                    "label": "ID"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "name",
-                                                    "label": "表名"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "score",
-                                                    "label": "单表健康分"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "alarmTimes",
-                                                    "label": "报警次数"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "weight",
-                                                    "label": "权重"
-                                                },
-                                                {
-                                                    "type": "divider"
+                                                    "args": {
+                                                        "url": "http://localhost:8080/jumpToDetailPage",
+                                                        "params": {
+                                                            "tid": "${tid}"
+                                                        }
+                                                    },
+                                                    "actionType": "url",
+                                                    "stopPropagation": ""
                                                 }
                                             ]
                                         }
-                                    },
-                                    "id": "u:23a8c4dff6d9",
-                                    "label": "详情页"
+                                    }
                                 },
                                 {
                                     "type": "button",

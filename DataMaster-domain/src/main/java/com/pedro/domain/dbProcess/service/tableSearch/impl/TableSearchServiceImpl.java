@@ -58,7 +58,6 @@ public class TableSearchServiceImpl implements TableSearchService {
         ).collect(Collectors.toList());
 
         // 3.读取其余表
-
         for (String tableName : unCollectedTableList) {
             try {
                 // 3.1 插入info表

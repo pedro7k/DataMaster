@@ -1,7 +1,10 @@
 package com.pedro.infrastructure.dao;
 
 import com.pedro.domain.dbProcess.model.vo.TableHealthScoreVO;
+import com.pedro.infrastructure.po.ScoreLinePO;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface TableHealthScoreDao {
@@ -20,4 +23,9 @@ public interface TableHealthScoreDao {
      * 插入一条单表健康分数据
      */
     void insertTableHealthScore(TableHealthScoreVO tableHealthScoreVO);
+
+    /**
+     * 获取过去七日健康分变化趋势
+     */
+    List<ScoreLinePO> query7DaysTableHealthScoreLine(int tid);
 }

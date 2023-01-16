@@ -4,29 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.15 完成可视化创建表单的数据库操作部分">
-      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableHealthScoreVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/repository/TableSearchRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableSearch/TableSearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableSearch/impl/TableSearchServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/po/TableMetaInfoPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableSearchRepositoryImpl.java" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.15 完成扫描数据库和可视化创建表">
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableDetailForm/TableDetailFormService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableDetailForm/impl/TableDetailFormServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/repository/TableHealthScoreRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/TableHealthScoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TableHealthScoreServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableHealthScoreRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/CurrentTableHealthScoreRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/TableNameRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/alarm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/rule.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableDetailVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/repository/TableCreationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/repository/TableCreationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/CommonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/CommonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/ExceptTableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/ExceptTableDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableSearch/impl/TableSearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableSearch/impl/TableSearchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TotalHealthScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TotalHealthScoreServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableHealthScoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableHealthScoreDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableCreationRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableCreationRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Common_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Common_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Except_Table_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Except_Table_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Health_Score_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Health_Score_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Info_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Info_Mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Total_Health_Score_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Total_Health_Score_Mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +70,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "G:/code/spring-boot",
+    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,9 +87,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\mapper" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static\amis" />
-      <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\mybatis\config" />
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\java\com\pedro\interfaces\shiro" />
     </key>
@@ -160,7 +157,8 @@
       <workItem from="1673613007235" duration="60000" />
       <workItem from="1673613370855" duration="200000" />
       <workItem from="1673751381771" duration="19303000" />
-      <workItem from="1673774815579" duration="13393000" />
+      <workItem from="1673774815579" duration="14781000" />
+      <workItem from="1673846851918" duration="8214000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -323,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673766834807</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="2023.1.15 完成扫描数据库和可视化创建表">
+      <created>1673793040549</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673793040549</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +366,19 @@
     <MESSAGE value="2023.1.12 完成可视化创建表前端" />
     <MESSAGE value="2023.1.13 完成可视化创建表的创建表单部分" />
     <MESSAGE value="2023.1.15 完成可视化创建表单的数据库操作部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.15 完成可视化创建表单的数据库操作部分" />
+    <MESSAGE value="2023.1.15 完成扫描数据库和可视化创建表" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.15 完成扫描数据库和可视化创建表" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableHealthScoreRepositoryImpl.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

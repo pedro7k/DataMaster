@@ -21,7 +21,7 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
     /**
      * 日期转换器，转为 月.日
      */
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("M.d");
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("M.d");
 
     @Override
     public Double queryCurrentTotalHealthScore() {
@@ -34,6 +34,20 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
         // 1.获取结果
         List<ScoreLinePO> scoreLinePOS = totalHealthScoreDao.query7DaysTotalHealthScoreLine();
 
+        // 2.格式处理
+        ScoreLineVO line = scoreLineFormProcess(scoreLinePOS);
+
+        // 3.返回结果
+        return line;
+    }
+
+    /**
+     * ScoreLinePO格式处理
+     * @param scoreLinePOS
+     * @return
+     */
+    public static ScoreLineVO scoreLineFormProcess(List<ScoreLinePO> scoreLinePOS){
+
         // 2.结合sql，为保持时间顺序，应将结果倒置
         Collections.reverse(scoreLinePOS);
 
@@ -44,7 +58,6 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
             line.getDate().add(simpleDateFormat.format(scoreLinePO.getTime()));
         }
 
-        // 4.返回结果
         return line;
     }
 }

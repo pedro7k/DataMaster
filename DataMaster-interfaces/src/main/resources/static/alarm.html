@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>报警管理页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <link rel="stylesheet" href="amis/sdk.css"/>
+    <link rel="stylesheet" href="amis/helper.css"/>
+    <link rel="stylesheet" href="amis/iconfont.css"/>
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+<script src="amis/sdk.js"></script>
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            "type": "page",
+            "title": "约束管理页",
+            "body": [
+                {
+                    "type": "flex",
+                    "id": "u:35b6fed56bf8",
+                    "className": "p-1",
+                    "items": [
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "tpl",
+                                    "className": "b-primary",
+                                    "style": {
+                                        "fontFamily": "",
+                                        "fontSize": 33,
+                                        "textAlign": "left",
+                                        "color": "#4a90e2"
+                                    },
+                                    "id": "u:9b03f22628eb",
+                                    "tpl": "DataMaster",
+                                    "inline": true,
+                                    "wrapperComponent": ""
+                                }
+                            ],
+                            "id": "u:fbadc279ddf2",
+                            "className": "b-primary",
+                            "bodyClassName": "b-primary text-white bg-white",
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto",
+                                "color": "#000000",
+                                "fontFamily": "",
+                                "fontSize": 12,
+                                "textAlign": "left",
+                                "overflowY": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:6b5fc20acc25"
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 1,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:47b5cd197574"
+                        }
+                    ],
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch"
+                },
+                {
+                    "type": "nav",
+                    "id": "u:82e06bf05118",
+                    "links": [
+                        {
+                            "label": "表详情页",
+                            "to": "http://localhost:8080/jumpToDetailPage",
+                            "active": false,
+                            "icon": "fa fa-stack-exchange"
+                        },
+                        {
+                            "label": "约束管理页",
+                            "to": "http://localhost:8080/jumpToRulePage",
+                            "icon": "fa fa-stack-overflow",
+                            "active": false
+                        },
+                        {
+                            "label": "报警管理页",
+                            "icon": "fa fa-snapchat-ghost",
+                            "to": "http://localhost:8080/jumpToAlarmPage",
+                            "active": true
+                        }
+                    ],
+                    "className": ""
+                },
+                {
+                    "type": "wrapper",
+                    "className": "wrapper bg-white b-l b-b b-r",
+                    "body": [
+                        {
+                            "type": "tpl",
+                            "tpl": "选项卡1的内容",
+                            "inline": false,
+                            "id": "u:cd3655c4ccec"
+                        }
+                    ],
+                    "id": "u:ea9f023c2449"
+                }
+            ],
+            "id": "u:0be368e05ab7",
+            "regions": [
+                "body"
+            ]
+        }
+        let amisScoped = amis.embed('#root', amisJSON, {
+            data: {
+                myData: 'amis'
+            }
+        });
+    })();
+</script>
+</body>
+</html>
