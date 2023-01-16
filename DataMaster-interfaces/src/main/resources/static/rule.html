@@ -430,10 +430,87 @@
                             "buttons": [
                                 {
                                     "type": "button",
+                                    "id": "u:39b0f43b0eb7",
+                                    "label": "新增约束",
+                                    "level": "success",
+                                    "actionType": "drawer",
+                                    "drawer": {
+                                        "title": "可视化创建表",
+                                        "body": [
+                                            {
+                                                "type": "form",
+                                                "title": "新增约束",
+                                                "body": [
+                                                    {
+                                                        "label": "约束名",
+                                                        "type": "input-text",
+                                                        "name": "ruleName",
+                                                        "id": "u:e4fe3099f3f5",
+                                                        "required": true,
+                                                        "validations": {
+                                                            "maxLength": 30
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "select",
+                                                        "label": "约束权重",
+                                                        "name": "ruleWeight",
+                                                        "options": [
+                                                            {
+                                                                "label": "1",
+                                                                "value": "1"
+                                                            },
+                                                            {
+                                                                "label": "2",
+                                                                "value": "2"
+                                                            },
+                                                            {
+                                                                "label": "3",
+                                                                "value": "3"
+                                                            },
+                                                            {
+                                                                "label": "4",
+                                                                "value": "4"
+                                                            },
+                                                            {
+                                                                "label": "5",
+                                                                "value": "5"
+                                                            }
+                                                        ],
+                                                        "id": "u:8bbf5263c22c",
+                                                        "multiple": false
+                                                    }
+                                                ],
+                                                "wrapWithPanel": false,
+                                                "mode": "horizontal",
+                                                "api": {
+                                                    "url": "http://localhost:8080/createTable",
+                                                    "method": "post",
+                                                    "messages": {
+                                                    },
+                                                    "dataType": "json"
+                                                },
+                                                "id": "u:8e2a74bb0778"
+                                            }
+                                        ],
+                                        "pullRefresh": {
+                                            "disabled": true
+                                        },
+                                        "type": "page",
+                                        "position": "right",
+                                        "size": "lg",
+                                        "id": "u:719c7d279202",
+                                        "regions": [
+                                            "body"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "button",
                                     "icon": "fa fa-eye",
+                                    "actionType": "dialog",
                                     "tooltip": "查看",
                                     "id": "u:23a8c4dff6d9",
-                                    "actionType": "dialog",
                                     "dialog": {
                                         "title": "查看",
                                         "body": {
@@ -584,12 +661,6 @@
                             "tooltip": "",
                             "level": "primary",
                             "id": "u:6a3a5955844f"
-                        },
-                        {
-                            "type": "tpl",
-                            "tpl": "<p><span style=\"color: rgb(126, 140, 141);\">删除意为不再由DataMaster管理</span></p>",
-                            "id": "u:a89eced5c7f0",
-                            "align": "left"
                         }
                     ],
                     "footerToolbar": [
