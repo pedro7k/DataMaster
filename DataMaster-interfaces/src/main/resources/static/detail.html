@@ -162,22 +162,23 @@
                         {
                             "label": "表详情页",
                             "icon": "fa fa-stack-exchange",
-                            "to": "http://localhost:8080/jumpToDetailPage",
+                            "to": "http://localhost:8080/jumpToDetailPage?tid=${tid}",
                             "active": true
                         },
                         {
                             "label": "约束管理页",
-                            "to": "http://localhost:8080/jumpToRulePage",
+                            "to": "http://localhost:8080/jumpToRulePage?tid=${tid}",
                             "icon": "fa fa-stack-overflow",
                             "active": ""
                         },
                         {
                             "label": "报警管理页",
                             "icon": "fa fa-snapchat-ghost",
-                            "to": "http://localhost:8080/jumpToAlarmPage"
+                            "to": "http://localhost:8080/jumpToAlarmPage?tid=${tid}"
                         }
                     ],
-                    "id": "u:82e06bf05118"
+                    "id": "u:82e06bf05118",
+                    "className": "text-white bg-light"
                 },
                 {
                     "type": "flex",
@@ -360,8 +361,7 @@
                             "popOver": false,
                             "popOverEnableOn": "this.id === 1",
                             "toggled": true,
-                            "placeholder": "-",
-                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                            "placeholder": "-"
                         },
                         {
                             "name": "notNull",
@@ -372,8 +372,7 @@
                             "popOver": false,
                             "popOverEnableOn": "this.id === 1",
                             "toggled": true,
-                            "placeholder": "-",
-                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                            "placeholder": "-"
                         },
                         {
                             "name": "withDefaultValue",
@@ -384,8 +383,7 @@
                             "popOver": false,
                             "popOverEnableOn": "this.id === 1",
                             "toggled": true,
-                            "placeholder": "-",
-                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                            "placeholder": "-"
                         },
                         {
                             "type": "text",
@@ -396,8 +394,7 @@
                             "sortable": true,
                             "popOver": false,
                             "popOverEnableOn": "this.id === 1",
-                            "toggled": true,
-                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                            "toggled": true
                         },
                         {
                             "type": "text",
@@ -408,8 +405,7 @@
                             "sortable": true,
                             "popOver": false,
                             "popOverEnableOn": "this.id === 1",
-                            "toggled": true,
-                            "classNameExpr": "<%= data.score < 60 ? 'bg-danger' : '' %>"
+                            "toggled": true
                         },
                         {
                             "type": "text",

@@ -9,8 +9,16 @@
     </select>
 
     <delete id="deleteRecordByTid" parameterType="java.lang.Integer">
-        DELETE FROM sys_table_alarm
+        DELETE
+        FROM sys_table_alarm
         WHERE tid = #{tid};
     </delete>
+
+    <select id="queryAlarmByRid" parameterType="java.lang.Integer"
+            resultType="com.pedro.infrastructure.po.TableAlarmPO">
+        SELECT *
+        FROM sys_table_alarm
+        where rid = #{rid}
+    </select>
 
 </mapper>

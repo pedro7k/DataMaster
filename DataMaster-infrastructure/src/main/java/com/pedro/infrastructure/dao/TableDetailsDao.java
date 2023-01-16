@@ -23,4 +23,9 @@ public interface TableDetailsDao {
      * 通过tid查询对应表的所有列信息
      */
     List<TableDetailPO> queryTableDetailByTid(int tid);
+
+    /**
+     * 通过cid查找列信息
+     */
+    TableDetailPO queryTableDetailByCid(int cid);
 }

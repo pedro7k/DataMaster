@@ -24,4 +24,9 @@ public interface TableRuleDao {
      * 通过cid查询相关联的rules
      */
     List<TableRulePO> queryTableRuleByCid(int cid);
+
+    /**
+     * 通过tid查询相关联的rules
+     */
+    List<TableRulePO> queryTableRuleByTid(int tid);
 }
