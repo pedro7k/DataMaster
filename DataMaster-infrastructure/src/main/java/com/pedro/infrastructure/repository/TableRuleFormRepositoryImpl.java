@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.domain.form.model.vo.OptionVO;
 import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableDetailFormVO;
 import com.pedro.domain.form.model.vo.TableRuleFormVO;
@@ -94,5 +95,23 @@ public class TableRuleFormRepositoryImpl implements TableRuleFormRepository {
         }
 
         return deleteCount;
+    }
+
+    @Override
+    public List<OptionVO> getColumnOptionList(int tid) {
+
+        // 1.获取表单detail数据
+        List<TableDetailPO> tableDetailPOList = tableDetailsDao.queryTableDetailByTid(tid);
+
+        // 2.提取出列名和列id
+        List<OptionVO> columnOptionList = new ArrayList<>();
+        for (TableDetailPO tableDetailPO : tableDetailPOList) {
+            OptionVO optionVO = new OptionVO();
+            optionVO.setLabel("列名："+tableDetailPO.getColumnName() + " | " + "列ID：" + tableDetailPO.getCid());
+            optionVO.setValue(tableDetailPO.getCid());
+            columnOptionList.add(optionVO);
+        }
+
+        return columnOptionList;
     }
 }

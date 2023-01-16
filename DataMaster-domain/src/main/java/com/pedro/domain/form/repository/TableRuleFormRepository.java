@@ -1,9 +1,6 @@
 package com.pedro.domain.form.repository;
 
-import com.pedro.domain.form.model.vo.RuleWeightVO;
-import com.pedro.domain.form.model.vo.TableDetailFormVO;
-import com.pedro.domain.form.model.vo.TableRuleFormVO;
-import com.pedro.domain.form.model.vo.TableWeightVO;
+import com.pedro.domain.form.model.vo.*;
 
 import java.util.List;
 
@@ -41,5 +38,10 @@ public interface TableRuleFormRepository {
      * 删除指定约束
      */
     int deleteRule(List<Integer> ridList);
+
+    /**
+     * 获取tid对应的OptionVOList
+     */
+    List<OptionVO> getColumnOptionList(int tid);
 
 }

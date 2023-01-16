@@ -5,6 +5,7 @@ import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
+import com.pedro.domain.form.model.vo.OptionVO;
 import com.pedro.domain.form.model.vo.PieDataVO;
 import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableRuleFormVO;
@@ -139,13 +140,13 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
 
     @Override
     public void deleteRule(int rid) {
+        // TODO 事务
 
         // 1.构造待排除集合
         List<Integer> ridList = new ArrayList<>();
         ridList.add(rid);
 
         // 2.执行删除
-        // TODO 事务
         // 2.1 从alarm表中删除
         tableRuleFormRepository.deleteAlarmByRid(ridList);
         // 2.2从rule表中删除
@@ -157,6 +158,7 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
 
     @Override
     public void batchDeleteRule(List<Integer> ridList) {
+        // TODO 事务
 
         // 1. 从alarm表中删除
         tableRuleFormRepository.deleteAlarmByRid(ridList);
@@ -166,5 +168,10 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
         if (deleteCount != ridList.size()) {
             throw new ServiceException(ServiceExceptionEnum.DELETE_RULE_ERROR);
         }
+    }
+
+    @Override
+    public List<OptionVO> getColumnOptionList(int tid) {
+        return tableRuleFormRepository.getColumnOptionList(tid);
     }
 }

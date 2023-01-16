@@ -1,8 +1,12 @@
 package com.pedro.domain.form.service.tableRuleForm;
 
+import com.pedro.common.res.CommonResult;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
+import com.pedro.domain.form.model.vo.OptionVO;
 import com.pedro.domain.form.model.vo.PieDataVO;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -35,4 +39,11 @@ public interface TableRuleFormService {
      * 批量删除约束
      */
     void batchDeleteRule(List<Integer> ridList);
+
+    /**
+     * 获取当前表的列选项
+     */
+    List<OptionVO> getColumnOptionList(int tid);
+
+
 }

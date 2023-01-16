@@ -430,159 +430,6 @@
                             "buttons": [
                                 {
                                     "type": "button",
-                                    "id": "u:39b0f43b0eb7",
-                                    "label": "新增约束",
-                                    "level": "success",
-                                    "actionType": "drawer",
-                                    "drawer": {
-                                        "title": "可视化创建表",
-                                        "body": [
-                                            {
-                                                "type": "form",
-                                                "title": "新增约束",
-                                                "body": [
-                                                    {
-                                                        "label": "约束名",
-                                                        "type": "input-text",
-                                                        "name": "ruleName",
-                                                        "id": "u:e4fe3099f3f5",
-                                                        "required": true,
-                                                        "validations": {
-                                                            "maxLength": 30
-                                                        }
-                                                    },
-                                                    {
-                                                        "type": "select",
-                                                        "label": "约束权重",
-                                                        "name": "ruleWeight",
-                                                        "options": [
-                                                            {
-                                                                "label": "1",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "label": "2",
-                                                                "value": "2"
-                                                            },
-                                                            {
-                                                                "label": "3",
-                                                                "value": "3"
-                                                            },
-                                                            {
-                                                                "label": "4",
-                                                                "value": "4"
-                                                            },
-                                                            {
-                                                                "label": "5",
-                                                                "value": "5"
-                                                            }
-                                                        ],
-                                                        "id": "u:8bbf5263c22c",
-                                                        "multiple": false
-                                                    }
-                                                ],
-                                                "wrapWithPanel": false,
-                                                "mode": "horizontal",
-                                                "api": {
-                                                    "url": "http://localhost:8080/createTable",
-                                                    "method": "post",
-                                                    "messages": {
-                                                    },
-                                                    "dataType": "json"
-                                                },
-                                                "id": "u:8e2a74bb0778"
-                                            }
-                                        ],
-                                        "pullRefresh": {
-                                            "disabled": true
-                                        },
-                                        "type": "page",
-                                        "position": "right",
-                                        "size": "lg",
-                                        "id": "u:719c7d279202",
-                                        "regions": [
-                                            "body"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "type": "button",
-                                    "icon": "fa fa-eye",
-                                    "actionType": "dialog",
-                                    "tooltip": "查看",
-                                    "id": "u:23a8c4dff6d9",
-                                    "dialog": {
-                                        "title": "查看",
-                                        "body": {
-                                            "type": "form",
-                                            "body": [
-                                                {
-                                                    "type": "static",
-                                                    "name": "rid",
-                                                    "label": "ID"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "cid",
-                                                    "label": "列id"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "columnName",
-                                                    "label": "列名"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "ruleType",
-                                                    "label": "约束类型"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "requiredValue",
-                                                    "label": "指定值/指定数值范围"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "requiredRange",
-                                                    "label": "要求比例/要求出现次数"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "withAlarm",
-                                                    "label": "有无报警"
-                                                },
-                                                {
-                                                    "type": "divider"
-                                                },
-                                                {
-                                                    "type": "static",
-                                                    "name": "weight",
-                                                    "label": "权重"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "button",
                                     "icon": "fa fa-times text-danger",
                                     "actionType": "ajax",
                                     "tooltip": "删除",
@@ -593,11 +440,14 @@
                                         "dataType": "form-data",
                                         "data": null
                                     },
-                                    "id": "u:f5892e781974"
+                                    "id": "u:f5892e781974",
+                                    "label": ""
                                 }
                             ],
                             "toggled": true,
-                            "id": "u:986fda179e92"
+                            "id": "u:986fda179e92",
+                            "placeholder": "-",
+                            "className": ""
                         }
                     ],
                     "bulkActions": [
@@ -702,21 +552,40 @@
                         },
                         {
                             "type": "button",
-                            "id": "u:6650182f9473",
+                            "id": "u:39b0f43b0eb7",
                             "label": "新增约束",
-                            "align": "right",
+                            "level": "success",
                             "actionType": "drawer",
                             "drawer": {
-                                "title": "可视化创建表",
+                                "title": "新增约束",
                                 "body": [
                                     {
                                         "type": "form",
-                                        "title": "可视化创建表",
+                                        "title": "新增约束",
                                         "body": [
                                             {
-                                                "label": "表名",
+                                                "label": "列名",
+                                                "type": "select",
+                                                "name": "cid",
+                                                "id": "u:fee126247598",
+                                                "static": false,
+                                                "multiple": false,
+                                                "source": {
+                                                    "url": "http://localhost:8080/loadColumnsByTid",
+                                                    "method": "post",
+                                                    "messages": {
+                                                    },
+                                                    "data": {
+                                                        "&": "$$",
+                                                        "tid": "${tid}"
+                                                    },
+                                                    "dataType": "form-data"
+                                                }
+                                            },
+                                            {
                                                 "type": "input-text",
-                                                "name": "tableName",
+                                                "label": "约束名",
+                                                "name": "ruleName",
                                                 "id": "u:e4fe3099f3f5",
                                                 "required": true,
                                                 "validations": {
@@ -725,8 +594,8 @@
                                             },
                                             {
                                                 "type": "select",
-                                                "label": "表权重",
-                                                "name": "tableWeight",
+                                                "label": "约束权重",
+                                                "name": "ruleWeight",
                                                 "options": [
                                                     {
                                                         "label": "1",
@@ -753,199 +622,109 @@
                                                 "multiple": false
                                             },
                                             {
-                                                "multiple": true,
-                                                "multiLine": true,
-                                                "type": "input-kvs",
-                                                "name": "columns",
-                                                "addButtonText": "新增列",
-                                                "keyItem": {
-                                                    "label": "列名",
-                                                    "mode": "horizontal"
-                                                },
-                                                "valueItems": [
+                                                "type": "select",
+                                                "label": "约束类型",
+                                                "name": "ruleType",
+                                                "options": [
                                                     {
-                                                        "type": "select",
-                                                        "name": "dataType",
-                                                        "label": "数据类型",
-                                                        "mode": "horizontal",
-                                                        "required": true,
-                                                        "options": [
-                                                            {
-                                                                "label": "int",
-                                                                "value": "int"
-                                                            },
-                                                            {
-                                                                "label": "float",
-                                                                "value": "float"
-                                                            },
-                                                            {
-                                                                "label": "double",
-                                                                "value": "double"
-                                                            },
-                                                            {
-                                                                "label": "varchar(50)",
-                                                                "value": "varchar(50)"
-                                                            },
-                                                            {
-                                                                "label": "timestamp",
-                                                                "value": "timestamp"
-                                                            },
-                                                            {
-                                                                "label": "boolean",
-                                                                "value": "boolean"
-                                                            }
-                                                        ],
-                                                        "id": "u:e75ab240f27c"
+                                                        "label": "空缺率",
+                                                        "value": "空缺率"
                                                     },
                                                     {
-                                                        "type": "switch",
-                                                        "name": "primary",
-                                                        "label": "是否是主键",
-                                                        "mode": "horizontal"
+                                                        "label": "值出现次数",
+                                                        "value": "值出现次数"
                                                     },
                                                     {
-                                                        "name": "notNull",
-                                                        "label": "是否非空",
-                                                        "type": "switch",
-                                                        "mode": "horizontal"
+                                                        "label": "值出现率",
+                                                        "value": "值出现率"
                                                     },
                                                     {
-                                                        "type": "switch",
-                                                        "name": "hasDefaultValue",
-                                                        "label": "是否有默认值",
-                                                        "mode": "horizontal"
+                                                        "label": "数值范围出现次数",
+                                                        "value": "数值范围出现次数"
                                                     },
                                                     {
-                                                        "type": "input-text",
-                                                        "name": "defaultValue",
-                                                        "label": "默认值",
-                                                        "mode": "horizontal",
-                                                        "visibleOn": "${hasDefaultValue == true}"
-                                                    },
-                                                    {
-                                                        "type": "input-kvs",
-                                                        "name": "rules",
-                                                        "addButtonText": "新增约束",
-                                                        "label": "新增约束",
-                                                        "keyItem": {
-                                                            "label": "约束名",
-                                                            "type": "input-text",
-                                                            "mode": "horizontal"
-                                                        },
-                                                        "valueItems": [
-                                                            {
-                                                                "label": "约束类型",
-                                                                "type": "select",
-                                                                "name": "ruleType",
-                                                                "options": [
-                                                                    "空缺率",
-                                                                    "值出现次数",
-                                                                    "值出现率",
-                                                                    "数值范围出现次数",
-                                                                    "数值范围出现率"
-                                                                ],
-                                                                "mode": "horizontal"
-                                                            },
-                                                            {
-                                                                "type": "select",
-                                                                "label": "约束权重",
-                                                                "name": "ruleWeight",
-                                                                "options": [
-                                                                    {
-                                                                        "label": "1",
-                                                                        "value": "1"
-                                                                    },
-                                                                    {
-                                                                        "label": "2",
-                                                                        "value": "2"
-                                                                    },
-                                                                    {
-                                                                        "label": "3",
-                                                                        "value": "3"
-                                                                    },
-                                                                    {
-                                                                        "label": "4",
-                                                                        "value": "4"
-                                                                    },
-                                                                    {
-                                                                        "label": "5",
-                                                                        "value": "5"
-                                                                    }
-                                                                ],
-                                                                "mode": "horizontal",
-                                                                "id": "u:8bbf5263c22c",
-                                                                "multiple": false
-                                                            },
-                                                            {
-                                                                "type": "input-text",
-                                                                "name": "valueAppear",
-                                                                "mode": "horizontal",
-                                                                "label": "指定值",
-                                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '值出现率'}"
-                                                            },
-                                                            {
-                                                                "type": "input-text",
-                                                                "name": "valueRange",
-                                                                "mode": "horizontal",
-                                                                "label": "数值范围",
-                                                                "visibleOn": "${ruleType == '数值范围出现次数' || ruleType == '数值范围出现率'}",
-                                                                "labelRemark": {
-                                                                    "icon": "fa fa-question-circle",
-                                                                    "trigger": [
-                                                                        "hover"
-                                                                    ],
-                                                                    "className": "Remark--warning",
-                                                                    "placement": "top",
-                                                                    "content": "仅适用于数值类型，用 x.xx-x.xx 表示"
-                                                                }
-                                                            },
-                                                            {
-                                                                "type": "input-text",
-                                                                "name": "appearTimes",
-                                                                "mode": "horizontal",
-                                                                "label": "出现次数范围",
-                                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '数值范围出现次数'}",
-                                                                "labelRemark": {
-                                                                    "icon": "fa fa-question-circle",
-                                                                    "trigger": [
-                                                                        "hover"
-                                                                    ],
-                                                                    "className": "Remark--warning",
-                                                                    "placement": "top",
-                                                                    "content": "用 x-x 表示"
-                                                                }
-                                                            },
-                                                            {
-                                                                "type": "input-text",
-                                                                "name": "appearRatio",
-                                                                "mode": "horizontal",
-                                                                "label": "出现比例要求",
-                                                                "visibleOn": "${ruleType == '值出现率' || ruleType == '数值范围出现率' || ruleType =='空缺率'}",
-                                                                "labelRemark": {
-                                                                    "icon": "fa fa-question-circle",
-                                                                    "trigger": [
-                                                                        "hover"
-                                                                    ],
-                                                                    "className": "Remark--warning",
-                                                                    "placement": "top",
-                                                                    "content": "用 x.xx-x.xx 表示，50%为0.5"
-                                                                }
-                                                            }
-                                                        ]
+                                                        "label": "数值范围出现率",
+                                                        "value": "数值范围出现率"
                                                     }
-                                                ]
+                                                ],
+                                                "id": "u:747cc2532700",
+                                                "multiple": false,
+                                                "required": true
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "label": "指定值",
+                                                "name": "valueAppear",
+                                                "mode": "horizontal",
+                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '值出现率'}",
+                                                "id": "u:e9ac3d2b4125"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "name": "valueRange",
+                                                "mode": "horizontal",
+                                                "label": "数值范围",
+                                                "visibleOn": "${ruleType == '数值范围出现次数' || ruleType == '数值范围出现率'}",
+                                                "labelRemark": {
+                                                    "icon": "fa fa-question-circle",
+                                                    "trigger": [
+                                                        "hover"
+                                                    ],
+                                                    "className": "Remark--warning",
+                                                    "placement": "top",
+                                                    "content": "仅适用于数值类型，用 x.xx-x.xx 表示"
+                                                },
+                                                "id": "u:63eb2f6fad1b"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "name": "appearTimes",
+                                                "mode": "horizontal",
+                                                "label": "出现次数范围",
+                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '数值范围出现次数'}",
+                                                "labelRemark": {
+                                                    "icon": "fa fa-question-circle",
+                                                    "trigger": [
+                                                        "hover"
+                                                    ],
+                                                    "className": "Remark--warning",
+                                                    "placement": "top",
+                                                    "content": "用 x-x 表示"
+                                                },
+                                                "id": "u:cd54e076ede6"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "name": "appearRatio",
+                                                "mode": "horizontal",
+                                                "label": "出现比例要求",
+                                                "visibleOn": "${ruleType == '值出现率' || ruleType == '数值范围出现率' || ruleType =='空缺率'}",
+                                                "labelRemark": {
+                                                    "icon": "fa fa-question-circle",
+                                                    "trigger": [
+                                                        "hover"
+                                                    ],
+                                                    "className": "Remark--warning",
+                                                    "placement": "top",
+                                                    "content": "用 x.xx-x.xx 表示，50%为0.5"
+                                                },
+                                                "id": "u:035eb5d4043b"
                                             }
                                         ],
-                                        "wrapWithPanel": false,
+                                        "wrapWithPanel": true,
                                         "mode": "horizontal",
-                                        "debug": true,
                                         "api": {
-                                            "url": "http://localhost:8080/createTable",
+                                            "url": "http://localhost:8080/createRule",
                                             "method": "post",
                                             "messages": {
                                             },
-                                            "dataType": "json"
-                                        }
+                                            "dataType": "json",
+                                            "data": {
+                                                "&": "$$",
+                                                "cid": "${cid}"
+                                            }
+                                        },
+                                        "id": "u:8e2a74bb0778"
                                     }
                                 ],
                                 "pullRefresh": {
@@ -953,9 +732,13 @@
                                 },
                                 "type": "page",
                                 "position": "right",
-                                "size": "lg"
+                                "size": "lg",
+                                "id": "u:719c7d279202",
+                                "regions": [
+                                    "body"
+                                ]
                             },
-                            "level": "primary"
+                            "align": "right"
                         }
                     ],
                     "perPageAvailable": [

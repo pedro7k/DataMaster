@@ -4,20 +4,20 @@ import com.google.common.base.Splitter;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.res.CommonResult;
+import com.pedro.domain.form.model.req.RuleCreationReq;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
+import com.pedro.domain.form.model.vo.OptionVO;
 import com.pedro.domain.form.model.vo.PieDataVO;
 import com.pedro.domain.form.service.tableRuleForm.TableRuleFormService;
 import com.pedro.domain.user.model.vo.UserVO;
 import com.pedro.interfaces.res.CommonFormDataRes;
+import com.pedro.interfaces.res.OptionRes;
 import com.pedro.interfaces.res.PieDataRes;
 import com.pedro.interfaces.role.ShiroUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -146,5 +146,34 @@ public class TableRuleController {
 
         // 5.返回
         return CommonResult.success(null, "删除成功");
+    }
+
+    /**
+     * 拉取创建约束时的列选项
+     */
+    @PostMapping("/loadColumnsByTid")
+    public CommonResult loadColumnsByTid(int tid){
+
+        // 1.获取数据
+        List<OptionVO> optionList = tableRuleFormService.getColumnOptionList(tid);
+
+        // 2.包装
+        OptionRes optionRes = new OptionRes(optionList);
+
+        // 3.返回
+        return CommonResult.success(optionRes);
+    }
+
+    /**
+     * 创建约束
+     */
+    @PostMapping("/createRule")
+    public CommonResult createRule(@RequestBody RuleCreationReq ruleCreationReq){
+
+        // TODO 已经可以正常拿到数据，下一步要真实创建约束，在form领域做 注意约束
+
+        System.out.println(ruleCreationReq);
+
+        return null;
     }
 }
