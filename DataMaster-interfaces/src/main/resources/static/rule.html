@@ -512,7 +512,7 @@
                                     "confirmText": "您确认要删除?",
                                     "api": {
                                         "method": "post",
-                                        "url": "http://localhost:8080/exceptTable",
+                                        "url": "http://localhost:8080/deleteRule",
                                         "dataType": "form-data",
                                         "data": null
                                     },
@@ -529,7 +529,7 @@
                             "actionType": "ajax",
                             "api": {
                                 "method": "post",
-                                "url": "http://localhost:8080/batchExceptTable",
+                                "url": "http://localhost:8080/batchDeleteRule",
                                 "dataType": "form-data"
                             },
                             "confirmText": "确定要批量删除?",
@@ -542,7 +542,7 @@
                     "perPage": 15,
                     "keepItemSelectionOnPageChange": true,
                     "maxKeepItemSelectionLength": 11,
-                    "labelTpl": "${tid} ${name}",
+                    "labelTpl": "${rid} ${columnName} ${ruleType}",
                     "orderBy": "id",
                     "orderDir": "asc",
                     "quickSaveApi": {
@@ -554,7 +554,7 @@
                     },
                     "quickSaveItemApi": {
                         "method": "post",
-                        "url": "http://localhost:8080/quickEditTableWeight",
+                        "url": "http://localhost:8080/quickEditRuleWeight",
                         "messages": {
                         },
                         "dataType": "form-data"
@@ -607,15 +607,25 @@
                             "tpl": "内容",
                             "id": "u:70219287d252",
                             "align": "right",
-                            "api": "http://localhost:8080/loadTableManageForm",
-                            "filename": "DataMaster导出-库表管理页",
+                            "api": {
+                                "method": "get",
+                                "url": "http://localhost:8080/loadTableRuleForm",
+                                "dataType": "form-data",
+                                "data": {
+                                    "tid": "${tid}"
+                                }
+                            },
+                            "filename": "DataMaster导出-约束管理页",
                             "level": "primary",
                             "block": false,
                             "columns": [
-                                "tid",
-                                "name",
-                                "score",
-                                "alarmTimes",
+                                "rid",
+                                "cid",
+                                "columnName",
+                                "ruleType",
+                                "requiredValue",
+                                "requiredRange",
+                                "withAlarm",
                                 "weight"
                             ]
                         },
@@ -882,7 +892,7 @@
                     ],
                     "messages": {
                     },
-                    "primaryField": "tid",
+                    "primaryField": "rid",
                     "loadDataOnce": true,
                     "placeholder": "-",
                     "quickEdit": false

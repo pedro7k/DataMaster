@@ -4,26 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.17 完成数据表详情页">
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/model/res/TableRuleFormRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/model/vo/PieDataVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/model/vo/TableRuleFormVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/TableRuleFormRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/TableRuleFormService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/impl/TableRuleFormServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/po/TableAlarmPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableRuleFormRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/res/PieDataRes.java" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.16 完成约束页图和表单展示">
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/model/vo/RuleWeightVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/TableRuleFormRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/TableRuleFormRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/TableRuleFormService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/TableRuleFormService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/impl/TableRuleFormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/impl/TableRuleFormServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableAlarmDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableAlarmDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableDetailsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableRuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableRuleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableRuleFormRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableRuleFormRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableRuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableRuleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Alarm_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Alarm_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Details_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Details_Mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Rule_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Rule_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/rule.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +151,7 @@
       <workItem from="1673613370855" duration="200000" />
       <workItem from="1673751381771" duration="19303000" />
       <workItem from="1673774815579" duration="14781000" />
-      <workItem from="1673846851918" duration="25921000" />
+      <workItem from="1673846851918" duration="29508000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -342,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673862742689</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="2023.1.16 完成约束页图和表单展示">
+      <created>1673875294467</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1673875294467</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +383,19 @@
     <MESSAGE value="2023.1.15 完成扫描数据库和可视化创建表" />
     <MESSAGE value="2023.1.16 完成数据表详情页健康分图表" />
     <MESSAGE value="2023.1.17 完成数据表详情页" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.17 完成数据表详情页" />
+    <MESSAGE value="2023.1.16 完成约束页图和表单展示" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.16 完成约束页图和表单展示" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableRuleController.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

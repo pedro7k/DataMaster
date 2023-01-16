@@ -21,4 +21,10 @@
         where rid = #{rid}
     </select>
 
+    <delete id="deleteAlarmByRid" parameterType="java.lang.Integer">
+        DELETE
+        FROM sys_table_alarm
+        WHERE rid = #{rid};
+    </delete>
+
 </mapper>

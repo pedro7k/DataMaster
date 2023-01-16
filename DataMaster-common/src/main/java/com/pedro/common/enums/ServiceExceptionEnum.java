@@ -35,6 +35,8 @@ public enum ServiceExceptionEnum {
     INSERT_EXCEPT_TABLE_ERROR(0203, "新增except表失败"),
     EDIT_TABLE_WEIGHT_ERROR(0204,"编辑表单权重时出现异常"),
     STORAGE_RULE_TYPE_ERROR(0205,"数据库中存储的约束类型有误"),
+    EDIT_RULE_WEIGHT_ERROR(0206,"编辑约束权重时出现异常"),
+    DELETE_RULE_ERROR(0207,"删除约束时出现异常"),
     // 03 score模块
     HEALTH_SCORE_ILLEGAL_ERROR(0301, "健康分数据不合法"),
     HEALTH_SCORE_NUM_ERROR(0302, "健康分数据量异常"),

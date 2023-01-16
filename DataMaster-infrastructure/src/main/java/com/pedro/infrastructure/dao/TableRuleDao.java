@@ -2,6 +2,8 @@ package com.pedro.infrastructure.dao;
 
 import com.pedro.domain.dbProcess.model.vo.TableDetailVO;
 import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
+import com.pedro.domain.form.model.vo.RuleWeightVO;
+import com.pedro.domain.form.model.vo.TableWeightVO;
 import com.pedro.infrastructure.po.TableRulePO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -29,4 +31,14 @@ public interface TableRuleDao {
      * 通过tid查询相关联的rules
      */
     List<TableRulePO> queryTableRuleByTid(int tid);
+
+    /**
+     * 编辑约束权重
+     */
+    int updateRuleWeight(RuleWeightVO ruleWeightVO);
+
+    /**
+     * 删除约束
+     */
+    int deleteRuleByRid(int rid);
 }

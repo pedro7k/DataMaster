@@ -25,4 +25,9 @@ public interface TableAlarmDao {
      * 根据rid查询报警记录
      */
     List<TableAlarmPO> queryAlarmByRid(int rid);
+
+    /**
+     * 根据rid删除报警记录
+     */
+    void deleteAlarmByRid(int rid);
 }

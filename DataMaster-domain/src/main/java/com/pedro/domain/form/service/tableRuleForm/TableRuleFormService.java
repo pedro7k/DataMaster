@@ -20,4 +20,19 @@ public interface TableRuleFormService {
      * 约束类型饼图数据拉取
      */
     List<PieDataVO> loadRuleTypePie(int tid);
+
+    /**
+     * 编辑约束权限
+     */
+    void editRuleWeight(int rid, int weight);
+
+    /**
+     * 删除单个约束
+     */
+    void deleteRule(int rid);
+
+    /**
+     * 批量删除约束
+     */
+    void batchDeleteRule(List<Integer> ridList);
 }

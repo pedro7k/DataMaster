@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableDetailFormVO;
 import com.pedro.domain.form.model.vo.TableRuleFormVO;
 import com.pedro.domain.form.repository.TableRuleFormRepository;
@@ -66,5 +67,32 @@ public class TableRuleFormRepositoryImpl implements TableRuleFormRepository {
         List<TableAlarmPO> tableAlarmPOList = tableAlarmDao.queryAlarmByRid(rid);
 
         return tableAlarmPOList.size() > 0;
+    }
+
+    @Override
+    public int editRuleWeight(RuleWeightVO ruleWeightVO) {
+
+        return tableRuleDao.updateRuleWeight(ruleWeightVO);
+    }
+
+    @Override
+    public void deleteAlarmByRid(List<Integer> ridList) {
+
+        for (Integer rid : ridList) {
+            tableAlarmDao.deleteAlarmByRid(rid);
+        }
+    }
+
+    @Override
+    public int deleteRule(List<Integer> ridList) {
+
+        int deleteCount = 0;
+
+        for (Integer rid : ridList) {
+            int delete = tableRuleDao.deleteRuleByRid(rid);
+            deleteCount += delete;
+        }
+
+        return deleteCount;
     }
 }

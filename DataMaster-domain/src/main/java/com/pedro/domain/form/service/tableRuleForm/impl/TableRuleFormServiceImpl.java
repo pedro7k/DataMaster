@@ -6,9 +6,12 @@ import com.pedro.common.exceptions.ServiceException;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
 import com.pedro.domain.form.model.vo.PieDataVO;
+import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableRuleFormVO;
 import com.pedro.domain.form.repository.TableRuleFormRepository;
 import com.pedro.domain.form.service.tableRuleForm.TableRuleFormService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -19,6 +22,8 @@ import java.util.Map;
 
 @Service
 public class TableRuleFormServiceImpl implements TableRuleFormService {
+
+    private static final Logger logger = LoggerFactory.getLogger(TableRuleFormServiceImpl.class);
 
     @Resource
     private TableRuleFormRepository tableRuleFormRepository;
@@ -90,7 +95,7 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
         pieDataVOMap.put(RuleTypeEnum.NULL_PERCENT_RULE.getType(), nullPercentRuleVO);
         pieDataVOList.add(nullPercentRuleVO);
         // 2.1.2 值出现次数
-        PieDataVO valueAppearTimesVO = new PieDataVO(RuleTypeEnum.VALUE_APPEAR_TIMES_RESTRICTION.getMsg(),0);
+        PieDataVO valueAppearTimesVO = new PieDataVO(RuleTypeEnum.VALUE_APPEAR_TIMES_RESTRICTION.getMsg(), 0);
         pieDataVOMap.put(RuleTypeEnum.VALUE_APPEAR_TIMES_RESTRICTION.getType(), valueAppearTimesVO);
         pieDataVOList.add(valueAppearTimesVO);
         // 2.1.3 值出现率
@@ -112,5 +117,54 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
 
         // 3.返回
         return pieDataVOList;
+    }
+
+    @Override
+    public void editRuleWeight(int rid, int weight) {
+
+        // 1.构造VO
+        RuleWeightVO ruleWeightVO = new RuleWeightVO();
+        ruleWeightVO.setRid(rid);
+        ruleWeightVO.setWeight(weight);
+
+        // 2.执行编辑
+        int editCount = tableRuleFormRepository.editRuleWeight(ruleWeightVO);
+
+        // 3.编辑数量异常
+        if (editCount != 1) {
+            logger.error("编辑约束权重时出现异常");
+            throw new ServiceException(ServiceExceptionEnum.EDIT_RULE_WEIGHT_ERROR);
+        }
+    }
+
+    @Override
+    public void deleteRule(int rid) {
+
+        // 1.构造待排除集合
+        List<Integer> ridList = new ArrayList<>();
+        ridList.add(rid);
+
+        // 2.执行删除
+        // TODO 事务
+        // 2.1 从alarm表中删除
+        tableRuleFormRepository.deleteAlarmByRid(ridList);
+        // 2.2从rule表中删除
+        int deleteCount = tableRuleFormRepository.deleteRule(ridList);
+        if (deleteCount != ridList.size()) {
+            throw new ServiceException(ServiceExceptionEnum.DELETE_RULE_ERROR);
+        }
+    }
+
+    @Override
+    public void batchDeleteRule(List<Integer> ridList) {
+
+        // 1. 从alarm表中删除
+        tableRuleFormRepository.deleteAlarmByRid(ridList);
+
+        // 2. 从rule表中删除
+        int deleteCount = tableRuleFormRepository.deleteRule(ridList);
+        if (deleteCount != ridList.size()) {
+            throw new ServiceException(ServiceExceptionEnum.DELETE_RULE_ERROR);
+        }
     }
 }
