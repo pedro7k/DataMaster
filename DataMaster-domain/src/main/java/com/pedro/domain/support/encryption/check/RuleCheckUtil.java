@@ -19,7 +19,7 @@ public class RuleCheckUtil {
      * 出现次数校验
      */
     private static final String APPEAR_TIMES = "APPEAR_TIMES";
-    private static final String EXPRESSION_FOR_APPEAR_TIMES = "[\\d]+[-][\\d]+";
+    private static final String EXPRESSION_FOR_APPEAR_TIMES = "([\\d]+)[-]([\\d]+)";
     private static final Pattern PATTERN_FOR_APPEAR_TIMES = Pattern.compile(EXPRESSION_FOR_APPEAR_TIMES);
 
     /**

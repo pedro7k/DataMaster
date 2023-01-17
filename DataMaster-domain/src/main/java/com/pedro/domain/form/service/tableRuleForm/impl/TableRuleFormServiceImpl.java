@@ -221,7 +221,7 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
         }
         // 约束详情校验
         try {
-            // TODO 正则没写对，出现比例要求写了0-0.5报错
+            // TODO 指定值的情况下，值类型与要求的类型不符，如何处理
             tableRuleVO.setValueAppear(ruleCreationReq.getValueAppear());
             if (!StringUtils.isBlank(ruleCreationReq.getValueRange())) {
                 boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getValueRange(), VALUE_RANGE);
@@ -242,7 +242,7 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
                 }
             }
             if (!StringUtils.isBlank(ruleCreationReq.getAppearRatio())) {
-                boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getAppearRatio(), APPEAR_TIMES);
+                boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getAppearRatio(), APPEAR_RATIO);
                 if (legal) {
                     tableRuleVO.setAppearRatio(ruleCreationReq.getAppearRatio());
                 } else {
