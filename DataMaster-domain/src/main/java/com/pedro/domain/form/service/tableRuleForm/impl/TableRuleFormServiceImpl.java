@@ -14,6 +14,8 @@ import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableRuleFormVO;
 import com.pedro.domain.form.repository.TableRuleFormRepository;
 import com.pedro.domain.form.service.tableRuleForm.TableRuleFormService;
+import com.pedro.domain.support.encryption.check.RuleCheckUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -24,11 +26,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 @Service
 public class TableRuleFormServiceImpl implements TableRuleFormService {
 
     private static final Logger logger = LoggerFactory.getLogger(TableRuleFormServiceImpl.class);
+
+    /**
+     * 数值范围校验
+     */
+    private static final String VALUE_RANGE = "VALUE_RANGE";
+
+    /**
+     * 出现次数校验
+     */
+    private static final String APPEAR_TIMES = "APPEAR_TIMES";
+
+    /**
+     * 数值比例范围校验
+     */
+    private static final String APPEAR_RATIO = "APPEAR_RATIO";
 
     @Resource
     private TableRuleFormRepository tableRuleFormRepository;
@@ -201,10 +219,42 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
                 throw new ServiceException(ServiceExceptionEnum.RULE_TYPE_ERROR_CREATION);
             }
         }
-        tableRuleVO.setValueAppear(ruleCreationReq.getValueAppear());
-        tableRuleVO.setValueRange(ruleCreationReq.getValueRange());
-        tableRuleVO.setAppearTimes(ruleCreationReq.getAppearTimes());
-        tableRuleVO.setAppearRatio(ruleCreationReq.getAppearRatio());
+        // 约束详情校验
+        try {
+            // TODO 正则没写对，出现比例要求写了0-0.5报错
+            tableRuleVO.setValueAppear(ruleCreationReq.getValueAppear());
+            if (!StringUtils.isBlank(ruleCreationReq.getValueRange())) {
+                boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getValueRange(), VALUE_RANGE);
+                if (legal) {
+                    tableRuleVO.setValueRange(ruleCreationReq.getValueRange());
+                } else {
+                    logger.error("创建约束时约束细节值异常");
+                    throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                }
+            }
+            if (!StringUtils.isBlank(ruleCreationReq.getAppearTimes())) {
+                boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getAppearTimes(), APPEAR_TIMES);
+                if (legal) {
+                    tableRuleVO.setAppearTimes(ruleCreationReq.getAppearTimes());
+                } else {
+                    logger.error("创建约束时约束细节值异常");
+                    throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                }
+            }
+            if (!StringUtils.isBlank(ruleCreationReq.getAppearRatio())) {
+                boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getAppearRatio(), APPEAR_TIMES);
+                if (legal) {
+                    tableRuleVO.setAppearRatio(ruleCreationReq.getAppearRatio());
+                } else {
+                    logger.error("创建约束时约束细节值异常");
+                    throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                }
+            }
+        } catch (Throwable e) {
+            logger.error("创建约束时约束细节值异常");
+            throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+        }
+        // 额外信息
         tableRuleVO.setExtInfo(ruleCreationReq.getRuleName());
 
         // 2.执行插入

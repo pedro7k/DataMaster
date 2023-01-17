@@ -38,6 +38,7 @@ public enum ServiceExceptionEnum {
     EDIT_RULE_WEIGHT_ERROR("0206","编辑约束权重时出现异常"),
     DELETE_RULE_ERROR("0207","删除约束时出现异常"),
     RULE_TYPE_ERROR_CREATION("0208","创建约束使用了不适用的约束类型"),
+    RULE_VALUE_ERROR("0209","创建约束时约束细节值异常"),
     // 03 score模块
     HEALTH_SCORE_ILLEGAL_ERROR("0301", "健康分数据不合法"),
     HEALTH_SCORE_NUM_ERROR("0302", "健康分数据量异常"),
