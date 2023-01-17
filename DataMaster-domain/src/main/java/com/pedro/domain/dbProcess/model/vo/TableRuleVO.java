@@ -2,23 +2,23 @@ package com.pedro.domain.dbProcess.model.vo;
 
 public class TableRuleVO {
 
-    int cid;
+    private int cid;
 
-    int tid;
+    private int tid;
 
-    int ruleWeight;
+    private int ruleWeight;
 
-    int type;
+    private int type;
 
-    String valueAppear;
+    private String valueAppear;
 
-    String valueRange;
+    private String valueRange;
 
-    String appearTimes;
+    private String appearTimes;
 
-    String appearRatio;
+    private String appearRatio;
 
-    String extInfo;
+    private String extInfo;
 
     public TableRuleVO() {
     }

@@ -1,6 +1,7 @@
 package com.pedro.domain.form.service.tableRuleForm;
 
 import com.pedro.common.res.CommonResult;
+import com.pedro.domain.form.model.req.RuleCreationReq;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
 import com.pedro.domain.form.model.vo.OptionVO;
@@ -44,6 +45,11 @@ public interface TableRuleFormService {
      * 获取当前表的列选项
      */
     List<OptionVO> getColumnOptionList(int tid);
+
+    /**
+     * 创建约束
+     */
+    void createRule(RuleCreationReq ruleCreationReq);
 
 
 }

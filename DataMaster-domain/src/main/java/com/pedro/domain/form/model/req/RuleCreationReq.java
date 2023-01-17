@@ -2,7 +2,9 @@ package com.pedro.domain.form.model.req;
 
 public class RuleCreationReq {
 
-    private String cid;
+    private Integer cid;
+
+    private Integer tid;
 
     private String ruleType;
 
@@ -21,8 +23,9 @@ public class RuleCreationReq {
     public RuleCreationReq() {
     }
 
-    public RuleCreationReq(String cid, String ruleType, String ruleName, Integer ruleWeight, String appearRatio, String appearTimes, String valueAppear, String valueRange) {
+    public RuleCreationReq(Integer cid, Integer tid, String ruleType, String ruleName, Integer ruleWeight, String appearRatio, String appearTimes, String valueAppear, String valueRange) {
         this.cid = cid;
+        this.tid = tid;
         this.ruleType = ruleType;
         this.ruleName = ruleName;
         this.ruleWeight = ruleWeight;
@@ -32,12 +35,20 @@ public class RuleCreationReq {
         this.valueRange = valueRange;
     }
 
-    public String getCid() {
+    public Integer getCid() {
         return cid;
     }
 
-    public void setCid(String cid) {
+    public void setCid(Integer cid) {
         this.cid = cid;
+    }
+
+    public Integer getTid() {
+        return tid;
+    }
+
+    public void setTid(Integer tid) {
+        this.tid = tid;
     }
 
     public String getRuleType() {
@@ -99,7 +110,8 @@ public class RuleCreationReq {
     @Override
     public String toString() {
         return "RuleCreationReq{" +
-                "cid='" + cid + '\'' +
+                "cid=" + cid +
+                ", tid=" + tid +
                 ", ruleType='" + ruleType + '\'' +
                 ", ruleName='" + ruleName + '\'' +
                 ", ruleWeight=" + ruleWeight +

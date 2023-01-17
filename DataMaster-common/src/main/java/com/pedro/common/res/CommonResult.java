@@ -15,12 +15,12 @@ import java.io.Serializable;
  */
 public class CommonResult<T> implements Serializable {
 
-    public static Integer CODE_SUCCESS = 0;
+    public static String CODE_SUCCESS = "0";
 
     /**
      * 状态码
      */
-    private Integer status;
+    private String status;
     /**
      * 错误提示
      */
@@ -43,7 +43,7 @@ public class CommonResult<T> implements Serializable {
         return error(result.getStatus(), result.getMsg());
     }
 
-    public static <T> CommonResult<T> error(Integer status, String msg) {
+    public static <T> CommonResult<T> error(String status, String msg) {
         Assert.isTrue(!CODE_SUCCESS.equals(status), "status 必须是错误的！");
         CommonResult<T> result = new CommonResult<>();
         result.status = status;
@@ -86,11 +86,11 @@ public class CommonResult<T> implements Serializable {
     }
 
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

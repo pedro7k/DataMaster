@@ -1,5 +1,6 @@
 package com.pedro.domain.form.repository;
 
+import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
 import com.pedro.domain.form.model.vo.*;
 
 import java.util.List;
@@ -43,5 +44,15 @@ public interface TableRuleFormRepository {
      * 获取tid对应的OptionVOList
      */
     List<OptionVO> getColumnOptionList(int tid);
+
+    /**
+     * 通过cid获取列是否是数值类型
+     */
+    boolean queryIfColumnIsNumByCid(int cid);
+
+    /**
+     * 插入新约束
+     */
+    void insertRule(TableRuleVO tableRuleVO);
 
 }

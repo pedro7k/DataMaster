@@ -10,7 +10,7 @@ public final class ServiceException extends RuntimeException {
     /**
      * 错误码
      */
-    private final Integer status;
+    private final String status;
 
     public ServiceException(ServiceExceptionEnum serviceExceptionEnum) {
         // 使用父类的 message 字段
@@ -19,7 +19,7 @@ public final class ServiceException extends RuntimeException {
         this.status = serviceExceptionEnum.getStatus();
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 }

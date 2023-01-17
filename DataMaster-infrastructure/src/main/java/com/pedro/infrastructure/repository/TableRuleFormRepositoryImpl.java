@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
 import com.pedro.domain.form.model.vo.OptionVO;
 import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableDetailFormVO;
@@ -113,5 +114,19 @@ public class TableRuleFormRepositoryImpl implements TableRuleFormRepository {
         }
 
         return columnOptionList;
+    }
+
+    @Override
+    public boolean queryIfColumnIsNumByCid(int cid) {
+
+        TableDetailPO tableDetailPO = tableDetailsDao.queryTableDetailByCid(cid);
+
+        return tableDetailPO.isNumType();
+    }
+
+    @Override
+    public void insertRule(TableRuleVO tableRuleVO) {
+
+        tableRuleDao.insertTableRule(tableRuleVO);
     }
 }

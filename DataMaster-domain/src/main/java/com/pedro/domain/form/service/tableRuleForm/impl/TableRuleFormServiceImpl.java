@@ -1,8 +1,11 @@
 package com.pedro.domain.form.service.tableRuleForm.impl;
 
+import com.pedro.common.config.Constants;
 import com.pedro.common.enums.RuleTypeEnum;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
+import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
+import com.pedro.domain.form.model.req.RuleCreationReq;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
 import com.pedro.domain.form.model.vo.OptionVO;
@@ -14,6 +17,7 @@ import com.pedro.domain.form.service.tableRuleForm.TableRuleFormService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.scanner.Constant;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -173,5 +177,38 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
     @Override
     public List<OptionVO> getColumnOptionList(int tid) {
         return tableRuleFormRepository.getColumnOptionList(tid);
+    }
+
+    @Override
+    public void createRule(RuleCreationReq ruleCreationReq) {
+
+        // 1.对象转换
+        TableRuleVO tableRuleVO = new TableRuleVO();
+        tableRuleVO.setCid(ruleCreationReq.getCid());
+        tableRuleVO.setTid(ruleCreationReq.getTid());
+        if (ruleCreationReq.getRuleWeight() == null || ruleCreationReq.getRuleWeight() == 0) {
+            // 权重默认值
+            tableRuleVO.setRuleWeight(Constants.DEFAULT_WEIGHT);
+        } else {
+            tableRuleVO.setRuleWeight(ruleCreationReq.getRuleWeight());
+        }
+        tableRuleVO.setType(RuleTypeEnum.castTypeToInt(ruleCreationReq.getRuleType()));
+        // 获取本列是否是数值类型，判断type是否合法
+        boolean isNum = tableRuleFormRepository.queryIfColumnIsNumByCid(ruleCreationReq.getCid());
+        if (!isNum) {
+            if (tableRuleVO.getType() == RuleTypeEnum.RANGE_APPEAR_TIMES_RESTRICTION.getType()
+                    || tableRuleVO.getType() == RuleTypeEnum.RANGE_APPEAR_RATIO_RESTRICTION.getType()) {
+                throw new ServiceException(ServiceExceptionEnum.RULE_TYPE_ERROR_CREATION);
+            }
+        }
+        tableRuleVO.setValueAppear(ruleCreationReq.getValueAppear());
+        tableRuleVO.setValueRange(ruleCreationReq.getValueRange());
+        tableRuleVO.setAppearTimes(ruleCreationReq.getAppearTimes());
+        tableRuleVO.setAppearRatio(ruleCreationReq.getAppearRatio());
+        tableRuleVO.setExtInfo(ruleCreationReq.getRuleName());
+
+        // 2.执行插入
+        tableRuleFormRepository.insertRule(tableRuleVO);
+
     }
 }

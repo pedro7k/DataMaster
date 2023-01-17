@@ -170,10 +170,10 @@ public class TableRuleController {
     @PostMapping("/createRule")
     public CommonResult createRule(@RequestBody RuleCreationReq ruleCreationReq){
 
-        // TODO 已经可以正常拿到数据，下一步要真实创建约束，在form领域做 注意约束
+        // 1.创建约束
+        tableRuleFormService.createRule(ruleCreationReq);
 
-        System.out.println(ruleCreationReq);
-
-        return null;
+        // 2.返回
+        return CommonResult.success(null, "创建成功！请稍后刷新");
     }
 }
