@@ -35,4 +35,16 @@
         WHERE name = #{name}
     </select>
 
+    <select id="queryScanFreqByTid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+        SELECT scan_freq_per_min
+        FROM sys_table_info
+        WHERE tid = #{tid}
+    </select>
+
+    <update id="updateScanFreqByTid" parameterType="java.lang.Integer">
+        UPDATE sys_table_info
+        SET scan_freq_per_min = #{freq}
+        WHERE tid = #{tid}
+    </update>
+
 </mapper>

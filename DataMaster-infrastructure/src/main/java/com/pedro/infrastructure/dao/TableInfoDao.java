@@ -41,4 +41,14 @@ public interface TableInfoDao {
      * 通过表名查询库表信息
      */
     TableInfoPO queryTableInfoByName(String name);
+
+    /**
+     * 通过tid查询扫描频率
+     */
+    Integer queryScanFreqByTid(int tid);
+
+    /**
+     * 通过tid更新扫描频率
+     */
+    void updateScanFreqByTid(int tid, int freq);
 }

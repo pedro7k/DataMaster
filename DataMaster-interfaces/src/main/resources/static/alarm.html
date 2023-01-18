@@ -547,6 +547,118 @@
                                 "ruleWeight",
                                 "state"
                             ]
+                        },
+                        {
+                            "type": "button",
+                            "tpl": "内容",
+                            "id": "u:141225b414eb",
+                            "label": "约束扫描频率管理",
+                            "align": "right",
+                            "level": "primary",
+                            "onEvent": {
+                                "click": {
+                                    "weight": 0,
+                                    "actions": [
+                                        {
+                                            "dialog": {
+                                                "title": "表单约束扫描频率编辑",
+                                                "body": [
+                                                    {
+                                                        "type": "tpl",
+                                                        "id": "u:0f02e3b85595",
+                                                        "tpl": "<p><span style=\"color: rgb(126, 140, 141); font-size: 10pt;\">DataMaster会按照此频率，定时对该表单约束进行扫描，打出健康分并作出可能的报警。</span></p>",
+                                                        "inline": true
+                                                    },
+                                                    {
+                                                        "type": "form",
+                                                        "id": "u:6c3cc1879ca0",
+                                                        "api": {
+                                                            "method": "post",
+                                                            "url": "http://localhost:8080/setScanFreq",
+                                                            "messages": {
+                                                            },
+                                                            "dataType": "form-data",
+                                                            "data": {
+                                                                "&": "$$",
+                                                                "tid": "${tid}"
+                                                            }
+                                                        },
+                                                        "title": "常规模式",
+                                                        "mode": "normal",
+                                                        "body": [
+                                                            {
+                                                                "type": "select",
+                                                                "name": "freq",
+                                                                "required": true,
+                                                                "label": "当前表每分钟扫描次数",
+                                                                "id": "u:3e1db3b97521",
+                                                                "mode": "inline",
+                                                                "showCounter": false,
+                                                                "validations": {
+                                                                },
+                                                                "validationErrors": {
+                                                                },
+                                                                "options": [
+                                                                    "0",
+                                                                    "1",
+                                                                    "2",
+                                                                    "3",
+                                                                    "4",
+                                                                    "5",
+                                                                    "6",
+                                                                    "7",
+                                                                    "8",
+                                                                    "9",
+                                                                    "10",
+                                                                    "11",
+                                                                    "12"
+                                                                ],
+                                                                "multiple": false,
+                                                                "size": "lg"
+                                                            }
+                                                        ],
+                                                        "initApi": {
+                                                            "url": "http://localhost:8080/getScanFreq",
+                                                            "method": "get",
+                                                            "messages": {
+                                                            },
+                                                            "dataType": "form-data",
+                                                            "data": {
+                                                                "&": "$$",
+                                                                "tid": "${tid}"
+                                                            }
+                                                        }
+                                                    }
+                                                ],
+                                                "size": "md",
+                                                "closeOnEsc": true,
+                                                "actions": [
+                                                    {
+                                                        "label": "取消",
+                                                        "actionType": "close",
+                                                        "type": "button",
+                                                        "id": "u:c8bd3d625e3c"
+                                                    },
+                                                    {
+                                                        "label": "确认",
+                                                        "actionType": "confirm",
+                                                        "type": "button",
+                                                        "level": "primary",
+                                                        "id": "u:36cc34f82675"
+                                                    }
+                                                ],
+                                                "id": "u:5465842c22aa",
+                                                "type": "dialog",
+                                                "showCloseButton": true,
+                                                "showErrorMsg": true,
+                                                "showLoading": true,
+                                                "dataMapSwitch": false
+                                            },
+                                            "actionType": "dialog"
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     ],
                     "perPageAvailable": [

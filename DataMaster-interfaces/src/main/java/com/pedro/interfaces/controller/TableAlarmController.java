@@ -1,17 +1,22 @@
 package com.pedro.interfaces.controller;
 
 import com.google.common.base.Splitter;
+import com.pedro.common.config.Constants;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
+import com.pedro.common.exceptions.ServiceException;
 import com.pedro.common.res.CommonResult;
 import com.pedro.domain.form.model.res.TableAlarmFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
 import com.pedro.domain.form.model.vo.PieDataVO;
 import com.pedro.domain.form.service.tableAlarmForm.TableAlarmFormService;
 import com.pedro.domain.user.model.vo.UserVO;
+import com.pedro.infrastructure.dao.TableInfoDao;
 import com.pedro.interfaces.res.CommonFormDataRes;
 import com.pedro.interfaces.res.PieDataRes;
+import com.pedro.interfaces.res.ScanFreqRes;
 import com.pedro.interfaces.role.ShiroUtil;
+import org.checkerframework.checker.units.qual.C;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +37,9 @@ public class TableAlarmController {
 
     @Resource
     private TableAlarmFormService tableAlarmFormService;
+
+    @Resource
+    private TableInfoDao tableInfoDao;
 
     /**
      * 跳转到报警管理页
@@ -128,7 +136,7 @@ public class TableAlarmController {
      * 批量删除报警
      */
     @PostMapping("/batchDeleteAlarm")
-    public CommonResult batchDeleteAlarm(@RequestParam("ids") String aids){
+    public CommonResult batchDeleteAlarm(@RequestParam("ids") String aids) {
 
         // 1.获取当前权限
         UserVO currentUser = ShiroUtil.getCurrentUser();
@@ -148,6 +156,38 @@ public class TableAlarmController {
         tableAlarmFormService.batchDeleteAlarm(aidList);
 
         // 5.返回
-        return CommonResult.success(null, "删除成功");
+        return CommonResult.success(null, "删除成功！");
+    }
+
+    /**
+     * 约束扫描频率拉取
+     */
+    @GetMapping("/getScanFreq")
+    public CommonResult getScanFreq(int tid) {
+
+        // 1.查询
+        Integer scanFreq = tableInfoDao.queryScanFreqByTid(tid);
+
+        // 2.包装
+        ScanFreqRes scanFreqRes = new ScanFreqRes();
+        if (scanFreq == null || scanFreq > 12 || scanFreq < 0) {
+            scanFreqRes.setFreq(Constants.DEFAULT_SCAN_FREQ);
+        } else {
+            scanFreqRes.setFreq(scanFreq);
+        }
+
+        // 3.返回
+        return CommonResult.success(scanFreqRes);
+    }
+
+    /**
+     * 约束扫描频率修改
+     */
+    @PostMapping("/setScanFreq")
+    public CommonResult setScanFreq(int tid, Integer freq) {
+
+        tableInfoDao.updateScanFreqByTid(tid, freq);
+
+        return CommonResult.success(null, "更新成功！请稍后查看");
     }
 }
