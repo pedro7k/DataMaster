@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.17 正在处理约束校验">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/impl/TableRuleFormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableRuleForm/impl/TableRuleFormServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/encryption/check/RuleCheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/encryption/check/RuleCheckUtil.java" afterDir="false" />
     </list>
@@ -141,7 +142,7 @@
       <workItem from="1673613370855" duration="200000" />
       <workItem from="1673751381771" duration="19303000" />
       <workItem from="1673774815579" duration="14781000" />
-      <workItem from="1673846851918" duration="43976000" />
+      <workItem from="1673846851918" duration="45086000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -367,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673971366937</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="2023.1.17 正在处理约束校验">
+      <created>1673971818721</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1673971818721</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

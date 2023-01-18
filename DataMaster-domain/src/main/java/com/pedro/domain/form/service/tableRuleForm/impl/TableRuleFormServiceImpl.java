@@ -221,7 +221,7 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
         }
         // 约束详情校验
         try {
-            // TODO 指定值的情况下，值类型与要求的类型不符，如何处理
+            // TODO 指定值的情况下，值类型与要求的类型不符，未处理
             tableRuleVO.setValueAppear(ruleCreationReq.getValueAppear());
             if (!StringUtils.isBlank(ruleCreationReq.getValueRange())) {
                 boolean legal = RuleCheckUtil.checkRuleBoundary(ruleCreationReq.getValueRange(), VALUE_RANGE);

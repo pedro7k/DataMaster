@@ -32,8 +32,8 @@ public class RuleCheckUtil {
     /**
      * 映射map
      */
-    private static HashMap<String, String> patternStringMap = new HashMap<>(3);
-    private static HashMap<String, Pattern> patternMap = new HashMap<>(3);
+    private static final HashMap<String, String> patternStringMap = new HashMap<>(3);
+    private static final HashMap<String, Pattern> patternMap = new HashMap<>(3);
 
     static {
         patternStringMap.put(VALUE_RANGE, EXPRESSION_FOR_VALUE_RANGE);

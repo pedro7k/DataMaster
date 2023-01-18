@@ -12,6 +12,8 @@ import com.pedro.domain.dbProcess.model.vo.*;
 import com.pedro.domain.dbProcess.repository.TableCreationRepository;
 import com.pedro.domain.dbProcess.service.tableCreation.VisualCreateTableService;
 import com.pedro.domain.form.repository.TableManageFormRepository;
+import com.pedro.domain.support.encryption.check.RuleCheckUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,21 @@ import java.util.Map;
 public class VisualCreateTableServiceImpl implements VisualCreateTableService {
 
     private static final Logger logger = LoggerFactory.getLogger(VisualCreateTableServiceImpl.class);
+
+    /**
+     * 数值范围校验
+     */
+    private static final String VALUE_RANGE = "VALUE_RANGE";
+
+    /**
+     * 出现次数校验
+     */
+    private static final String APPEAR_TIMES = "APPEAR_TIMES";
+
+    /**
+     * 数值比例范围校验
+     */
+    private static final String APPEAR_RATIO = "APPEAR_RATIO";
 
     /**
      * 数值类型集合
@@ -136,10 +153,40 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
                             throw new ServiceException(ServiceExceptionEnum.RULE_TYPE_ERROR);
                         }
                     }
-                    tableRuleVO.setValueAppear(ruleReq.getValueAppear());
-                    tableRuleVO.setValueRange(ruleReq.getValueRange());
-                    tableRuleVO.setAppearTimes(ruleReq.getAppearTimes());
-                    tableRuleVO.setAppearRatio(ruleReq.getAppearRatio());
+                    try {
+                        // TODO 指定值的情况下，值类型与要求的类型不符，未处理
+                        tableRuleVO.setValueAppear(ruleReq.getValueAppear());
+                        if (!StringUtils.isBlank(ruleReq.getValueRange())) {
+                            boolean legal = RuleCheckUtil.checkRuleBoundary(ruleReq.getValueRange(), VALUE_RANGE);
+                            if (legal) {
+                                tableRuleVO.setValueRange(ruleReq.getValueRange());
+                            } else {
+                                logger.error("创建约束时约束细节值异常");
+                                throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                            }
+                        }
+                        if (!StringUtils.isBlank(ruleReq.getAppearTimes())) {
+                            boolean legal = RuleCheckUtil.checkRuleBoundary(ruleReq.getAppearTimes(), APPEAR_TIMES);
+                            if (legal) {
+                                tableRuleVO.setAppearTimes(ruleReq.getAppearTimes());
+                            } else {
+                                logger.error("创建约束时约束细节值异常");
+                                throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                            }
+                        }
+                        if (!StringUtils.isBlank(ruleReq.getAppearRatio())) {
+                            boolean legal = RuleCheckUtil.checkRuleBoundary(ruleReq.getAppearRatio(), APPEAR_RATIO);
+                            if (legal) {
+                                tableRuleVO.setAppearRatio(ruleReq.getAppearRatio());
+                            } else {
+                                logger.error("创建约束时约束细节值异常");
+                                throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                            }
+                        }
+                    } catch (Throwable e) {
+                        logger.error("创建约束时约束细节值异常");
+                        throw new ServiceException(ServiceExceptionEnum.RULE_VALUE_ERROR);
+                    }
                     tableRuleVO.setExtInfo(ruleName);
                     // 4.4.2 执行rule插入
                     tableCreationRepository.insertTableRule(tableRuleVO);
