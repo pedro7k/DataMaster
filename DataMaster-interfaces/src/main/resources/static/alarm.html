@@ -272,7 +272,7 @@
                                             }
                                         ],
                                         "title": {
-                                            "text": "约束类型结构",
+                                            "text": "报警状态结构",
                                             "left": "center"
                                         },
                                         "tooltip": {
@@ -528,24 +528,24 @@
                             "align": "right",
                             "api": {
                                 "method": "get",
-                                "url": "http://localhost:8080/loadTableRuleForm",
+                                "url": "http://localhost:8080/loadTableAlarmForm",
                                 "dataType": "form-data",
                                 "data": {
                                     "tid": "${tid}"
                                 }
                             },
-                            "filename": "DataMaster导出-约束管理页",
+                            "filename": "DataMaster导出-报警管理页",
                             "level": "primary",
                             "block": false,
                             "columns": [
+                                "aid",
                                 "rid",
-                                "cid",
                                 "columnName",
-                                "ruleType",
-                                "requiredValue",
-                                "requiredRange",
-                                "withAlarm",
-                                "weight"
+                                "alarmType",
+                                "alarmValue",
+                                "time",
+                                "ruleWeight",
+                                "state"
                             ]
                         }
                     ],
