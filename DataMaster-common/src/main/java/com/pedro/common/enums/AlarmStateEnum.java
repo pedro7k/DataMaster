@@ -1,5 +1,7 @@
 package com.pedro.common.enums;
 
+import com.pedro.common.exceptions.ServiceException;
+
 /**
  * 报警状态枚举
  */
@@ -30,5 +32,27 @@ public enum AlarmStateEnum {
 
     public String getMsg() {
         return msg;
+    }
+
+    public static String castTypeToString(int typeKey) {
+        // 遍历查找
+        for (AlarmStateEnum enumItem : AlarmStateEnum.values()) {
+            if (typeKey == enumItem.state) {
+                return enumItem.msg;
+            }
+        }
+
+        throw new ServiceException(ServiceExceptionEnum.SYS_ERROR);
+    }
+
+    public static int castTypeToInt(String typeString) {
+        // 遍历查找
+        for (AlarmStateEnum enumItem : AlarmStateEnum.values()) {
+            if (typeString.equals(enumItem.msg)) {
+                return enumItem.state;
+            }
+        }
+
+        throw new ServiceException(ServiceExceptionEnum.SYS_ERROR);
     }
 }

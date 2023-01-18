@@ -27,4 +27,24 @@
         WHERE rid = #{rid};
     </delete>
 
+    <select id="queryAlarmByTid" parameterType="java.lang.Integer"
+            resultType="com.pedro.infrastructure.po.TableAlarmPO">
+        SELECT *
+        FROM sys_table_alarm
+        where tid = #{tid}
+    </select>
+
+    <update id="updateAlarmState" parameterType="com.pedro.domain.form.model.vo.AlarmStateVO">
+        UPDATE sys_table_alarm
+        SET state = #{state}
+        WHERE aid = #{aid}
+    </update>
+
+    <delete id="deleteAlarmByAid" parameterType="java.lang.Integer">
+        DELETE
+        FROM sys_table_alarm
+        WHERE aid = #{aid};
+    </delete>
+
+
 </mapper>

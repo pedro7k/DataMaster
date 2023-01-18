@@ -1,18 +1,15 @@
-package com.pedro.infrastructure.po;
-
+package com.pedro.domain.form.model.vo;
 
 import java.util.Date;
 
 /**
- * 报警表PO
+ * 报警表表单VO
  */
-public class TableAlarmPO {
+public class TableAlarmFormVO {
 
     private int aid;
 
     private int rid;
-
-    private int tid;
 
     private int state;
 
@@ -20,13 +17,12 @@ public class TableAlarmPO {
 
     private String value;
 
-    public TableAlarmPO() {
+    public TableAlarmFormVO() {
     }
 
-    public TableAlarmPO(int aid, int rid, int tid, int state, Date time, String value) {
+    public TableAlarmFormVO(int aid, int rid, int state, Date time, String value) {
         this.aid = aid;
         this.rid = rid;
-        this.tid = tid;
         this.state = state;
         this.time = time;
         this.value = value;
@@ -46,14 +42,6 @@ public class TableAlarmPO {
 
     public void setRid(int rid) {
         this.rid = rid;
-    }
-
-    public int getTid() {
-        return tid;
-    }
-
-    public void setTid(int tid) {
-        this.tid = tid;
     }
 
     public int getState() {

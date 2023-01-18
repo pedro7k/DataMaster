@@ -14,11 +14,6 @@ import java.util.List;
 @Repository
 public class TableHealthScoreRepositoryImpl implements TableHealthScoreRepository {
 
-    /**
-     * 日期转换器，转为 月.日
-     */
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("M.d");
-
     @Resource
     private TableHealthScoreDao tableHealthScoreDao;
 

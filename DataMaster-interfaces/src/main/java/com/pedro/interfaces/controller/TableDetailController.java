@@ -48,16 +48,6 @@ public class TableDetailController {
     }
 
     /**
-     * 跳转到报警管理页
-     */
-    @GetMapping("/jumpToAlarmPage")
-    public ModelAndView jumpToAlarmPage(int tid) {
-        ModelAndView mv = new ModelAndView("alarm.html");
-        mv.addObject("tid", tid);
-        return mv;
-    }
-
-    /**
      * 获取当前tid对应的表名
      */
     @PostMapping("/getTableName")

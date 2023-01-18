@@ -41,4 +41,9 @@ public interface TableRuleDao {
      * 删除约束
      */
     int deleteRuleByRid(int rid);
+
+    /**
+     * 通过rid查询约束
+     */
+    TableRulePO queryRuleByRid(int rid);
 }

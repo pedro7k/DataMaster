@@ -58,4 +58,20 @@
         FROM sys_table_rule
         WHERE rid = #{rid};
     </delete>
+
+    <select id="queryRuleByRid" parameterType="java.lang.Integer"
+            resultType="com.pedro.infrastructure.po.TableRulePO">
+        SELECT rid          as rid,
+               cid          as cid,
+               tid          as tid,
+               rule_weight  as ruleWeight,
+               type         as type,
+               value_appear as valueAppear,
+               value_range  as valueRange,
+               appear_times as appearTimes,
+               appear_ratio as appearRatio,
+               ext_info     as extInfo
+        FROM sys_table_rule
+        where rid = #{rid}
+    </select>
 </mapper>
