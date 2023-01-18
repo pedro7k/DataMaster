@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.18 删除了一些无用的文件">
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.18 约束频率修改增加权限控制">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +140,7 @@
       <workItem from="1673613370855" duration="200000" />
       <workItem from="1673751381771" duration="19303000" />
       <workItem from="1673774815579" duration="14781000" />
-      <workItem from="1673846851918" duration="63190000" />
+      <workItem from="1673846851918" duration="65677000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -421,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674038427338</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="2023.1.18 约束频率修改增加权限控制">
+      <created>1674038649269</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1674038649269</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022.1.5 log" />
     <MESSAGE value="2022.1.5 language repair" />
     <MESSAGE value="2022.1.4 code format" />
     <MESSAGE value="2022.1.4 更新库表管理页框架" />
@@ -464,7 +471,8 @@
     <MESSAGE value="2023.1.18" />
     <MESSAGE value="2023.1.18 完成了约束扫描频率弹窗" />
     <MESSAGE value="2023.1.18 删除了一些无用的文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.18 删除了一些无用的文件" />
+    <MESSAGE value="2023.1.18 约束频率修改增加权限控制" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.18 约束频率修改增加权限控制" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
