@@ -1,4 +1,4 @@
-package com.pedro.domain.support.encryption.check;
+package com.pedro.domain.support.check;
 
 import org.apache.shiro.crypto.hash.Hash;
 
@@ -12,7 +12,7 @@ public class RuleCheckUtil {
      * 数值范围校验
      */
     private static final String VALUE_RANGE = "VALUE_RANGE";
-    private static final String EXPRESSION_FOR_VALUE_RANGE = "([\\d]+[\\.][\\d+]|[\\d])[-]([\\d]+[\\.][\\d+]|[\\d])";
+    private static final String EXPRESSION_FOR_VALUE_RANGE = "([\\d]+[\\.][\\d]+|[\\d])[-]([\\d]+[\\.][\\d]+|[\\d])";
     private static final Pattern PATTERN_FOR_VALUE_RANGE = Pattern.compile(EXPRESSION_FOR_VALUE_RANGE);
 
     /**
@@ -26,7 +26,7 @@ public class RuleCheckUtil {
      * 数值比例范围校验
      */
     private static final String APPEAR_RATIO = "APPEAR_RATIO";
-    private static final String EXPRESSION_FOR_APPEAR_RATIO = "(0[\\.][\\d+]|0|1)[-](0[\\.][\\d+]|0|1)";
+    private static final String EXPRESSION_FOR_APPEAR_RATIO = "(0[\\.][\\d]+|0|1)[-](0[\\.][\\d]+|0|1)";
     private static final Pattern PATTERN_FOR_APPEAR_RATIO = Pattern.compile(EXPRESSION_FOR_APPEAR_RATIO);
 
     /**
@@ -64,6 +64,5 @@ public class RuleCheckUtil {
         // 3.返回
         return false;
     }
-
 
 }

@@ -49,6 +49,8 @@ public class TableRuleController {
     @GetMapping("getRulePieData")
     public CommonResult getRulePieData(int tid) {
 
+        // TODO crud数据变化时，同一页面上的饼图不能做到自动刷新
+
         // 1.拉取饼图数据
         List<PieDataVO> pieDataVOList = tableRuleFormService.loadRuleTypePie(tid);
 

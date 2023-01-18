@@ -1,7 +1,6 @@
 package com.pedro.domain.dbProcess.service.tableCreation.impl;
 
 import com.pedro.common.config.Constants;
-import com.pedro.common.enums.AlarmStateEnum;
 import com.pedro.common.enums.RuleTypeEnum;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
@@ -11,19 +10,16 @@ import com.pedro.domain.dbProcess.model.req.TableCreationReq;
 import com.pedro.domain.dbProcess.model.vo.*;
 import com.pedro.domain.dbProcess.repository.TableCreationRepository;
 import com.pedro.domain.dbProcess.service.tableCreation.VisualCreateTableService;
-import com.pedro.domain.form.repository.TableManageFormRepository;
-import com.pedro.domain.support.encryption.check.RuleCheckUtil;
+import com.pedro.domain.support.check.RuleCheckUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class VisualCreateTableServiceImpl implements VisualCreateTableService {

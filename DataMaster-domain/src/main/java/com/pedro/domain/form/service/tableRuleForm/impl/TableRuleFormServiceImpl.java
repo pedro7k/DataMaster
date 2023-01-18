@@ -6,7 +6,6 @@ import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
 import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
 import com.pedro.domain.form.model.req.RuleCreationReq;
-import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
 import com.pedro.domain.form.model.vo.OptionVO;
 import com.pedro.domain.form.model.vo.PieDataVO;
@@ -14,19 +13,17 @@ import com.pedro.domain.form.model.vo.RuleWeightVO;
 import com.pedro.domain.form.model.vo.TableRuleFormVO;
 import com.pedro.domain.form.repository.TableRuleFormRepository;
 import com.pedro.domain.form.service.tableRuleForm.TableRuleFormService;
-import com.pedro.domain.support.encryption.check.RuleCheckUtil;
+import com.pedro.domain.support.check.RuleCheckUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.scanner.Constant;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 @Service
 public class TableRuleFormServiceImpl implements TableRuleFormService {
