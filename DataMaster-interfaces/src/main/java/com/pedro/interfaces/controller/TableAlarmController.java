@@ -186,8 +186,20 @@ public class TableAlarmController {
     @PostMapping("/setScanFreq")
     public CommonResult setScanFreq(int tid, Integer freq) {
 
+        // 1.获取当前权限
+        UserVO currentUser = ShiroUtil.getCurrentUser();
+        int role = currentUser.getRole();
+
+        // 2.权限不足
+        if (role > UserRoleEnum.ADMIN.getLevel()) {
+            logger.info("[roleDenied]权限不足，user={},time={}", currentUser.getUsername(), new Date());
+            return CommonResult.error(ServiceExceptionEnum.ROLE_DENIED);
+        }
+
+        // 3.更新
         tableInfoDao.updateScanFreqByTid(tid, freq);
 
+        // 4.返回
         return CommonResult.success(null, "更新成功！请稍后查看");
     }
 }
