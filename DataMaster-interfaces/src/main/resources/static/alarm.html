@@ -37,11 +37,11 @@
         // 通过替换下面这个配置来生成不同页面
         let amisJSON = {
             "type": "page",
-            "title": "约束管理页",
+            "title": "报警管理页",
             "body": [
                 {
                     "type": "flex",
-                    "id": "u:35b6fed56bf8",
+                    "id": "u:3520231181e9",
                     "className": "p-1",
                     "items": [
                         {
@@ -85,6 +85,55 @@
                         {
                             "type": "container",
                             "body": [
+                                {
+                                    "type": "form",
+                                    "title": "",
+                                    "body": [
+                                        {
+                                            "type": "group",
+                                            "body": [
+                                                {
+                                                    "type": "input-text",
+                                                    "name": "tableName",
+                                                    "placeholder": "",
+                                                    "label": "当前表",
+                                                    "size": "full",
+                                                    "id": "u:18e2d06ab07c",
+                                                    "showCounter": false,
+                                                    "validations": {
+                                                    },
+                                                    "validationErrors": {
+                                                    },
+                                                    "readOnly": true,
+                                                    "static": false
+                                                }
+                                            ],
+                                            "id": "u:197dedd35438"
+                                        }
+                                    ],
+                                    "api": {
+                                        "method": "get",
+                                        "url": "",
+                                        "messages": {
+                                        }
+                                    },
+                                    "mode": "inline",
+                                    "submitText": null,
+                                    "autoFocus": false,
+                                    "id": "u:6d863ccb0de0",
+                                    "initApi": {
+                                        "url": "http://localhost:8080/getTableName",
+                                        "method": "post",
+                                        "messages": {
+                                        },
+                                        "dataType": "form-data",
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
+                                    },
+                                    "redirect": "http://localhost:8080/jumpToLoginPage"
+                                }
                             ],
                             "size": "xs",
                             "style": {
@@ -97,24 +146,7 @@
                             "wrapperBody": false,
                             "isFixedHeight": false,
                             "isFixedWidth": false,
-                            "id": "u:6b5fc20acc25"
-                        },
-                        {
-                            "type": "container",
-                            "body": [
-                            ],
-                            "size": "xs",
-                            "style": {
-                                "position": "static",
-                                "display": "block",
-                                "flex": "1 1 auto",
-                                "flexGrow": 1,
-                                "flexBasis": "auto"
-                            },
-                            "wrapperBody": false,
-                            "isFixedHeight": false,
-                            "isFixedWidth": false,
-                            "id": "u:47b5cd197574"
+                            "id": "u:65bd1cabb880"
                         }
                     ],
                     "style": {
@@ -130,37 +162,593 @@
                     "links": [
                         {
                             "label": "表详情页",
-                            "to": "http://localhost:8080/jumpToDetailPage",
+                            "to": "http://localhost:8080/jumpToDetailPage?tid=${tid}",
                             "active": false,
                             "icon": "fa fa-stack-exchange"
                         },
                         {
                             "label": "约束管理页",
-                            "to": "http://localhost:8080/jumpToRulePage",
+                            "to": "http://localhost:8080/jumpToRulePage?tid=${tid}",
                             "icon": "fa fa-stack-overflow",
                             "active": false
                         },
                         {
                             "label": "报警管理页",
                             "icon": "fa fa-snapchat-ghost",
-                            "to": "http://localhost:8080/jumpToAlarmPage",
+                            "to": "http://localhost:8080/jumpToAlarmPage?tid=${tid}",
                             "active": true
                         }
                     ],
-                    "className": ""
+                    "className": "bg-light text-white b-white"
                 },
                 {
-                    "type": "wrapper",
-                    "className": "wrapper bg-white b-l b-b b-r",
-                    "body": [
+                    "type": "flex",
+                    "className": "p-1",
+                    "id": "u:19c076d757a0",
+                    "items": [
                         {
-                            "type": "tpl",
-                            "tpl": "选项卡1的内容",
-                            "inline": false,
-                            "id": "u:cd3655c4ccec"
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "chart",
+                                    "config": {
+                                        "title": {
+                                            "text": "当前表健康分"
+                                        },
+                                        "xAxis": {
+                                            "type": "category",
+                                            "data": [
+                                                "得分"
+                                            ],
+                                            "id": "u:a55ac3e92610"
+                                        },
+                                        "yAxis": {
+                                            "type": "value",
+                                            "id": "u:db3c2f6f83e7",
+                                            "max": "100",
+                                            "min": "0"
+                                        },
+                                        "series": [
+                                            {
+                                                "data": [
+                                                    "${currentTableHealthScore}"
+                                                ],
+                                                "type": "bar",
+                                                "id": "u:4dd54bf0d5e0",
+                                                "label": {
+                                                    "show": "true",
+                                                    "position": "inside"
+                                                },
+                                                "barWidth": "30%"
+                                            }
+                                        ]
+                                    },
+                                    "replaceChartOption": true,
+                                    "id": "u:1290653d6f3d",
+                                    "api": {
+                                        "method": "get",
+                                        "url": "http://localhost:8080/getCurrentTableHealthScore",
+                                        "dataType": "form-data",
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
+                                    }
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 0,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:c3c692b45589"
+                        },
+                        {
+                            "type": "container",
+                            "body": [
+                                {
+                                    "type": "chart",
+                                    "id": "u:aecbb2187444",
+                                    "config": {
+                                        "series": [
+                                            {
+                                                "data": "${pieData}",
+                                                "type": "pie",
+                                                "name": "Access From",
+                                                "radius": "50%",
+                                                "emphasis": {
+                                                    "itemStyle": {
+                                                        "shadowBlur": 10,
+                                                        "shadowOffsetX": 0,
+                                                        "shadowColor": "rgba(0, 0, 0, 0.5)"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "title": {
+                                            "text": "约束类型结构",
+                                            "left": "center"
+                                        },
+                                        "tooltip": {
+                                            "trigger": "item"
+                                        },
+                                        "legend": {
+                                            "orient": "horizontal",
+                                            "left": "center",
+                                            "top": "10%"
+                                        }
+                                    },
+                                    "replaceChartOption": true,
+                                    "api": {
+                                        "method": "get",
+                                        "url": "http://localhost:8080/getAlarmPieData",
+                                        "dataType": "form-data",
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
+                                    }
+                                }
+                            ],
+                            "size": "xs",
+                            "style": {
+                                "position": "static",
+                                "display": "block",
+                                "flex": "1 1 auto",
+                                "flexGrow": 12,
+                                "flexBasis": "auto"
+                            },
+                            "wrapperBody": false,
+                            "isFixedHeight": false,
+                            "isFixedWidth": false,
+                            "id": "u:cded25a3de75"
                         }
                     ],
-                    "id": "u:ea9f023c2449"
+                    "style": {
+                        "position": "static"
+                    },
+                    "direction": "row",
+                    "justify": "flex-start",
+                    "alignItems": "stretch"
+                },
+                {
+                    "type": "crud",
+                    "api": "http://localhost:8080/loadTableAlarmForm",
+                    "columns": [
+                        {
+                            "name": "aid",
+                            "label": "ID",
+                            "type": "text",
+                            "id": "u:0adfb39e24df",
+                            "sortable": true,
+                            "toggled": true,
+                            "remark": "系统自动生成",
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "rid",
+                            "label": "约束id",
+                            "type": "text",
+                            "id": "u:ca57a6855916",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-"
+                        },
+                        {
+                            "name": "columnName",
+                            "label": "列名",
+                            "type": "text",
+                            "id": "u:a519a73c261f",
+                            "sortable": false,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-",
+                            "searchable": true
+                        },
+                        {
+                            "name": "alarmType",
+                            "label": "报警类型",
+                            "type": "text",
+                            "id": "u:1afbe5cd84e5",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "placeholder": "-"
+                        },
+                        {
+                            "type": "text",
+                            "name": "alarmValue",
+                            "label": "具体对应值",
+                            "id": "u:1afbe5cd84e5",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "remark": "发生报警时出现次数/出现比例的具体值"
+                        },
+                        {
+                            "type": "text",
+                            "label": "时间",
+                            "id": "u:1afbe5cd84e5",
+                            "name": "time",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "remark": ""
+                        },
+                        {
+                            "type": "text",
+                            "label": "约束权重",
+                            "id": "u:1afbe5cd84e5",
+                            "name": "ruleWeight",
+                            "placeholder": "-",
+                            "sortable": true,
+                            "popOver": false,
+                            "popOverEnableOn": "this.id === 1",
+                            "toggled": true,
+                            "classNameExpr": "<%= data.withAlarm == ’有‘ ? 'bg-danger' : '' %>"
+                        },
+                        {
+                            "type": "text",
+                            "label": "状态",
+                            "id": "u:2de69b840de6",
+                            "name": "state",
+                            "quickEdit": {
+                                "saveImmediately": true,
+                                "mode": "inline",
+                                "type": "select",
+                                "options": [
+                                    "等待处理",
+                                    "正在处理",
+                                    "处理完成"
+                                ],
+                                "id": "u:013229f0ca37"
+                            },
+                            "placeholder": "-",
+                            "sortable": true,
+                            "remark": ""
+                        },
+                        {
+                            "type": "operation",
+                            "label": "操作",
+                            "width": 100,
+                            "buttons": [
+                                {
+                                    "type": "button",
+                                    "actionType": "ajax",
+                                    "tooltip": "删除",
+                                    "confirmText": "您确认要删除?",
+                                    "api": {
+                                        "method": "post",
+                                        "url": "http://localhost:8080/deleteRule",
+                                        "dataType": "form-data",
+                                        "data": null
+                                    },
+                                    "id": "u:f5892e781974",
+                                    "label": "删除",
+                                    "level": "danger"
+                                }
+                            ],
+                            "toggled": true,
+                            "id": "u:986fda179e92",
+                            "placeholder": "-",
+                            "className": ""
+                        }
+                    ],
+                    "bulkActions": [
+                        {
+                            "label": "批量删除",
+                            "actionType": "ajax",
+                            "api": {
+                                "method": "post",
+                                "url": "http://localhost:8080/batchDeleteRule",
+                                "dataType": "form-data"
+                            },
+                            "confirmText": "确定要批量删除?",
+                            "id": "u:8b7699109813",
+                            "level": "danger"
+                        }
+                    ],
+                    "id": "u:7bc35eea002d",
+                    "draggable": true,
+                    "perPage": 15,
+                    "keepItemSelectionOnPageChange": true,
+                    "maxKeepItemSelectionLength": 11,
+                    "labelTpl": "${aid} ${columnName} ${alarmType}",
+                    "orderBy": "id",
+                    "orderDir": "asc",
+                    "quickSaveApi": {
+                        "method": "get",
+                        "url": "",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "quickSaveItemApi": {
+                        "method": "post",
+                        "url": "http://localhost:8080/quickEditRuleWeight",
+                        "messages": {
+                        },
+                        "dataType": "form-data"
+                    },
+                    "filterTogglable": true,
+                    "headerToolbar": [
+                        {
+                            "type": "bulk-actions"
+                        },
+                        {
+                            "type": "columns-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "drag-toggler",
+                            "align": "right"
+                        },
+                        {
+                            "type": "pagination",
+                            "align": "right"
+                        },
+                        {
+                            "type": "reload",
+                            "label": "刷新",
+                            "align": "right",
+                            "icon": "iconfont icon-refresh",
+                            "tooltip": "",
+                            "level": "primary",
+                            "id": "u:6a3a5955844f"
+                        }
+                    ],
+                    "footerToolbar": [
+                        {
+                            "type": "statistics"
+                        },
+                        {
+                            "type": "switch-per-page"
+                        },
+                        {
+                            "type": "pagination"
+                        },
+                        {
+                            "type": "export-excel",
+                            "tpl": "内容",
+                            "id": "u:70219287d252",
+                            "align": "right",
+                            "api": {
+                                "method": "get",
+                                "url": "http://localhost:8080/loadTableRuleForm",
+                                "dataType": "form-data",
+                                "data": {
+                                    "tid": "${tid}"
+                                }
+                            },
+                            "filename": "DataMaster导出-约束管理页",
+                            "level": "primary",
+                            "block": false,
+                            "columns": [
+                                "rid",
+                                "cid",
+                                "columnName",
+                                "ruleType",
+                                "requiredValue",
+                                "requiredRange",
+                                "withAlarm",
+                                "weight"
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "id": "u:39b0f43b0eb7",
+                            "label": "新增约束",
+                            "level": "success",
+                            "actionType": "drawer",
+                            "drawer": {
+                                "title": "新增约束",
+                                "body": [
+                                    {
+                                        "type": "form",
+                                        "title": "新增约束",
+                                        "body": [
+                                            {
+                                                "label": "列名",
+                                                "type": "select",
+                                                "name": "cid",
+                                                "id": "u:fee126247598",
+                                                "static": false,
+                                                "multiple": false,
+                                                "source": {
+                                                    "url": "http://localhost:8080/loadColumnsByTid",
+                                                    "method": "post",
+                                                    "messages": {
+                                                    },
+                                                    "data": {
+                                                        "&": "$$",
+                                                        "tid": "${tid}"
+                                                    },
+                                                    "dataType": "form-data"
+                                                }
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "label": "约束名",
+                                                "name": "ruleName",
+                                                "id": "u:e4fe3099f3f5",
+                                                "required": true,
+                                                "validations": {
+                                                    "maxLength": 30
+                                                }
+                                            },
+                                            {
+                                                "type": "select",
+                                                "label": "约束权重",
+                                                "name": "ruleWeight",
+                                                "options": [
+                                                    {
+                                                        "label": "1",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "label": "2",
+                                                        "value": "2"
+                                                    },
+                                                    {
+                                                        "label": "3",
+                                                        "value": "3"
+                                                    },
+                                                    {
+                                                        "label": "4",
+                                                        "value": "4"
+                                                    },
+                                                    {
+                                                        "label": "5",
+                                                        "value": "5"
+                                                    }
+                                                ],
+                                                "id": "u:8bbf5263c22c",
+                                                "multiple": false
+                                            },
+                                            {
+                                                "type": "select",
+                                                "label": "约束类型",
+                                                "name": "ruleType",
+                                                "options": [
+                                                    {
+                                                        "label": "空缺率",
+                                                        "value": "空缺率"
+                                                    },
+                                                    {
+                                                        "label": "值出现次数",
+                                                        "value": "值出现次数"
+                                                    },
+                                                    {
+                                                        "label": "值出现率",
+                                                        "value": "值出现率"
+                                                    },
+                                                    {
+                                                        "label": "数值范围出现次数",
+                                                        "value": "数值范围出现次数"
+                                                    },
+                                                    {
+                                                        "label": "数值范围出现率",
+                                                        "value": "数值范围出现率"
+                                                    }
+                                                ],
+                                                "id": "u:747cc2532700",
+                                                "multiple": false,
+                                                "required": true
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "label": "指定值",
+                                                "name": "valueAppear",
+                                                "mode": "horizontal",
+                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '值出现率'}",
+                                                "id": "u:e9ac3d2b4125"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "name": "valueRange",
+                                                "mode": "horizontal",
+                                                "label": "数值范围",
+                                                "visibleOn": "${ruleType == '数值范围出现次数' || ruleType == '数值范围出现率'}",
+                                                "labelRemark": {
+                                                    "icon": "fa fa-question-circle",
+                                                    "trigger": [
+                                                        "hover"
+                                                    ],
+                                                    "className": "Remark--warning",
+                                                    "placement": "top",
+                                                    "content": "仅适用于数值类型，用 x.xx-x.xx 表示"
+                                                },
+                                                "id": "u:63eb2f6fad1b"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "name": "appearTimes",
+                                                "mode": "horizontal",
+                                                "label": "出现次数范围",
+                                                "visibleOn": "${ruleType == '值出现次数' || ruleType == '数值范围出现次数'}",
+                                                "labelRemark": {
+                                                    "icon": "fa fa-question-circle",
+                                                    "trigger": [
+                                                        "hover"
+                                                    ],
+                                                    "className": "Remark--warning",
+                                                    "placement": "top",
+                                                    "content": "用 x-x 表示"
+                                                },
+                                                "id": "u:cd54e076ede6"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "name": "appearRatio",
+                                                "mode": "horizontal",
+                                                "label": "出现比例要求",
+                                                "visibleOn": "${ruleType == '值出现率' || ruleType == '数值范围出现率' || ruleType =='空缺率'}",
+                                                "labelRemark": {
+                                                    "icon": "fa fa-question-circle",
+                                                    "trigger": [
+                                                        "hover"
+                                                    ],
+                                                    "className": "Remark--warning",
+                                                    "placement": "top",
+                                                    "content": "用 x.xx-x.xx 表示，50%为0.5"
+                                                },
+                                                "id": "u:035eb5d4043b"
+                                            }
+                                        ],
+                                        "wrapWithPanel": true,
+                                        "mode": "horizontal",
+                                        "api": {
+                                            "url": "http://localhost:8080/createRule",
+                                            "method": "post",
+                                            "messages": {
+                                            },
+                                            "dataType": "json",
+                                            "data": {
+                                                "&": "$$",
+                                                "cid": "${cid}",
+                                                "tid": "${tid}"
+                                            }
+                                        },
+                                        "id": "u:8e2a74bb0778"
+                                    }
+                                ],
+                                "pullRefresh": {
+                                    "disabled": true
+                                },
+                                "type": "page",
+                                "position": "right",
+                                "size": "lg",
+                                "id": "u:719c7d279202",
+                                "regions": [
+                                    "body"
+                                ]
+                            },
+                            "align": "right"
+                        }
+                    ],
+                    "perPageAvailable": [
+                        10
+                    ],
+                    "messages": {
+                    },
+                    "primaryField": "aid",
+                    "loadDataOnce": true,
+                    "placeholder": "-",
+                    "quickEdit": false
                 }
             ],
             "id": "u:0be368e05ab7",
