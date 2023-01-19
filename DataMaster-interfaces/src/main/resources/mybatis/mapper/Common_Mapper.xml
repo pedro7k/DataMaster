@@ -42,5 +42,9 @@
         DESC ${tableName}
     </select>
 
+    <select id="queryDataByTNameAndCName" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT ${columnName} FROM ${tableName}
+    </select>
+
 
 </mapper>

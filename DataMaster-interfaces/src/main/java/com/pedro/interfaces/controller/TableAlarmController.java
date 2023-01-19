@@ -1,6 +1,7 @@
 package com.pedro.interfaces.controller;
 
 import com.google.common.base.Splitter;
+import com.pedro.application.process.DataScanProcess;
 import com.pedro.common.config.Constants;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
@@ -40,6 +41,9 @@ public class TableAlarmController {
 
     @Resource
     private TableInfoDao tableInfoDao;
+
+    @Resource
+    private DataScanProcess dataScanProcess;
 
     /**
      * 跳转到报警管理页
@@ -202,4 +206,28 @@ public class TableAlarmController {
         // 4.返回
         return CommonResult.success(null, "更新成功！请稍后查看");
     }
+
+    /**
+     * 手动触发一次同步约束扫描
+     */
+    @GetMapping("/triggerScan")
+    public CommonResult triggerScan(int tid){
+
+        // 1.获取当前权限
+        UserVO currentUser = ShiroUtil.getCurrentUser();
+        int role = currentUser.getRole();
+
+        // 2.权限不足
+        if (role > UserRoleEnum.ADMIN.getLevel()) {
+            logger.info("[roleDenied]权限不足，user={},time={}", currentUser.getUsername(), new Date());
+            return CommonResult.error(ServiceExceptionEnum.ROLE_DENIED);
+        }
+
+        // 3.触发扫描
+        dataScanProcess.tableDataScanProcess(tid);
+
+        // 4.返回
+        return CommonResult.success(null, "扫描完成！请稍后查看");
+    }
+
 }

@@ -46,5 +46,10 @@
         WHERE aid = #{aid};
     </delete>
 
+    <insert id="insertTableAlarm" parameterType="com.pedro.domain.dbProcess.model.vo.TableAlarmVO">
+        INSERT INTO sys_table_alarm(rid, tid, state, time, value)
+        values (#{rid}, #{tid}, #{state}, #{time}, #{value});
+    </insert>
+
 
 </mapper>

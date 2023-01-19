@@ -151,7 +151,9 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
                     }
                     try {
                         // TODO 指定值的情况下，值类型与要求的类型不符，未处理
-                        tableRuleVO.setValueAppear(ruleReq.getValueAppear());
+                        if(!StringUtils.isBlank(ruleReq.getValueAppear())){
+                            tableRuleVO.setValueAppear(ruleReq.getValueAppear());
+                        }
                         if (!StringUtils.isBlank(ruleReq.getValueRange())) {
                             boolean legal = RuleCheckUtil.checkRuleBoundary(ruleReq.getValueRange(), VALUE_RANGE);
                             if (legal) {

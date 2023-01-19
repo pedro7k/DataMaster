@@ -48,7 +48,7 @@
                             "type": "image",
                             "id": "u:f3216aeede60",
                             "className": "no-border",
-                            "src": "http://pedro-imgsubmit.oss-cn-beijing.aliyuncs.com/img/logo.jpg",
+                            "src": "logo.jpg",
                             "thumbMode": "contain",
                             "thumbRatio": "16:9",
                             "imageMode": "thumb",
@@ -634,6 +634,49 @@
                                                 "dataMapSwitch": false
                                             },
                                             "actionType": "dialog"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "type": "button",
+                            "tpl": "内容",
+                            "id": "u:ba01b69af6d7",
+                            "label": "手动触发扫描",
+                            "align": "right",
+                            "level": "success",
+                            "confirmText": "确定要触发一次约束扫描吗？",
+                            "onEvent": {
+                                "click": {
+                                    "weight": 0,
+                                    "actions": [
+                                        {
+                                            "args": {
+                                                "options": {
+                                                },
+                                                "api": {
+                                                    "url": "http://localhost:8080/triggerScan",
+                                                    "method": "get",
+                                                    "messages": {
+                                                    },
+                                                    "dataType": "form-data",
+                                                    "data": {
+                                                        "&": "$$",
+                                                        "tid": "${tid}"
+                                                    }
+                                                }
+                                            },
+                                            "outputVar": "responseResult",
+                                            "actionType": "ajax"
+                                        },
+                                        {
+                                            "componentId": "u:7bc35eea002d",
+                                            "args": {
+                                                "resetPage": true
+                                            },
+                                            "actionType": "reload",
+                                            "dataMergeMode": "merge"
                                         }
                                     ]
                                 }

@@ -1,9 +1,11 @@
 package com.pedro.infrastructure.dao;
 
+import com.pedro.domain.dbProcess.model.vo.TableAlarmVO;
 import com.pedro.domain.form.model.vo.AlarmStateVO;
 import com.pedro.infrastructure.po.TableAlarmPO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -46,4 +48,9 @@ public interface TableAlarmDao {
      * 根据aid删除报警记录
      */
     int deleteAlarmByAid(int aid);
+
+    /**
+     * 插入新报警记录
+     */
+    void insertTableAlarm(TableAlarmVO tableAlarmVO);
 }

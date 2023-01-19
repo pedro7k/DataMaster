@@ -44,4 +44,9 @@ public interface CommonDao {
      * desc表
      */
     List<TableMetaInfoPO> descTable(@Param("tableName") String tableName);
+
+    /**
+     * 通过表名和列名查询对应值
+     */
+    List<String> queryDataByTNameAndCName(@Param("tableName") String tableName, @Param("columnName") String columnName);
 }

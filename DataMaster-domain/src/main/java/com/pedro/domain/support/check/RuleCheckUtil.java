@@ -1,8 +1,10 @@
 package com.pedro.domain.support.check;
 
 import org.apache.shiro.crypto.hash.Hash;
+import org.apache.shiro.util.PatternMatcher;
 
 import java.util.HashMap;
+import java.util.concurrent.locks.Condition;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,6 +46,12 @@ public class RuleCheckUtil {
         patternMap.put(APPEAR_RATIO, PATTERN_FOR_APPEAR_RATIO);
     }
 
+    /**
+     * 检查传入的约束边界
+     * @param content
+     * @param type
+     * @return
+     */
     public static boolean checkRuleBoundary(String content, String type) {
 
         // 1.格式校验
@@ -63,6 +71,24 @@ public class RuleCheckUtil {
 
         // 3.返回
         return false;
+    }
+
+    /**
+     * 获取边界
+     */
+    public static Double[] getBoundary(String content, String type){
+
+        Double[] boundary = new Double[2];
+        Pattern pattern = patternMap.get(type);
+        Matcher matcher = pattern.matcher(content);
+
+        // 解析
+        if (matcher.find()){
+            boundary[0] = Double.parseDouble(matcher.group(1));
+            boundary[1] = Double.parseDouble(matcher.group(2));
+        }
+
+        return boundary;
     }
 
 }
