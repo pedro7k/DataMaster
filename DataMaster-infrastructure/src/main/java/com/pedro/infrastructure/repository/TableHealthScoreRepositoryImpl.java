@@ -1,7 +1,10 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.common.config.Constants;
+import com.pedro.domain.dbProcess.model.vo.TableHealthScoreVO;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.domain.score.repository.TableHealthScoreRepository;
+import com.pedro.domain.support.number.NumberUtil;
 import com.pedro.infrastructure.dao.TableHealthScoreDao;
 import com.pedro.infrastructure.po.ScoreLinePO;
 import org.springframework.stereotype.Repository;
@@ -19,7 +22,12 @@ public class TableHealthScoreRepositoryImpl implements TableHealthScoreRepositor
 
     @Override
     public Double getCurrentTableHealthScore(int tid) {
-        return tableHealthScoreDao.queryCurrentTableHealthScoreByTid(tid);
+
+        // 1.获取分数
+        Double score = tableHealthScoreDao.queryCurrentTableHealthScoreByTid(tid);
+
+        // 2.保留小数并返回
+        return NumberUtil.reserveDoubleScale(score, Constants.HEALTH_SCORE_SCALE);
     }
 
     @Override
@@ -33,5 +41,19 @@ public class TableHealthScoreRepositoryImpl implements TableHealthScoreRepositor
 
         // 4.返回结果
         return line;
+    }
+
+    @Override
+    public void insertTableHealthScore(int tid, Double score) {
+
+        // 1.构造数据
+        TableHealthScoreVO tableHealthScoreVO = new TableHealthScoreVO();
+        tableHealthScoreVO.setTid(tid);
+        // 保留小数
+        score = NumberUtil.reserveDoubleScale(score, Constants.HEALTH_SCORE_SCALE);
+        tableHealthScoreVO.setScore(score);
+
+        // 2.插入
+        tableHealthScoreDao.insertTableHealthScore(tableHealthScoreVO);
     }
 }

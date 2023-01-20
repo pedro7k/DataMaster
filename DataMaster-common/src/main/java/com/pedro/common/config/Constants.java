@@ -20,5 +20,10 @@ public class Constants {
      */
     public final static int DEFAULT_SCAN_FREQ = 3;
 
+    /**
+     * 健康分保留位数
+     */
+    public final static int HEALTH_SCORE_SCALE = 2;
+
 
 }

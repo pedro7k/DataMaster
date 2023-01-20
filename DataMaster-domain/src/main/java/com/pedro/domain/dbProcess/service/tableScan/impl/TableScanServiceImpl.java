@@ -76,6 +76,7 @@ public class TableScanServiceImpl implements TableScanService {
             tableScanResList.add(oneRes);
         }
 
+        // 4.返回
         return tableScanResList;
     }
 

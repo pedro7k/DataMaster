@@ -2,6 +2,7 @@ package com.pedro.domain.score.service.impl;
 
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
+import com.pedro.domain.dbProcess.model.res.TableScanRes;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.domain.score.repository.TableHealthScoreRepository;
 import com.pedro.domain.score.service.TableHealthScoreService;
@@ -11,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
+import java.util.List;
 
 import static com.pedro.domain.score.service.impl.TotalHealthScoreServiceImpl.check7DaysHealthScoreLine;
 
@@ -49,6 +52,37 @@ public class TableHealthScoreServiceImpl implements TableHealthScoreService {
 
         // 3.返回
         return line;
+    }
+
+    /**
+     * 单表打分方法
+     * 传入参数，weight为规则权重，rupePass为规则是否通过(0/1)
+     * 基本公式为 (100*ΣWnSn)/ΣWn
+     *
+     * @param scanResList List<Weight,RulePass>
+     * @return
+     */
+    @Override
+    public Double doTableScore(List<TableScanRes> scanResList) {
+
+        // 1.初始化
+        double weightSum = 0.0, weightedResultSum = 0.0;
+
+        // 2.遍历
+        for (TableScanRes tableScanRes : scanResList) {
+            int weight = tableScanRes.getWeight();
+            int value = tableScanRes.isRulePass() ? 1 : 0;
+            weightedResultSum += weight * value;
+            weightSum += weight;
+        }
+
+        // 3.计算并返回
+        return (100 * weightedResultSum) / weightSum;
+    }
+
+    @Override
+    public void insertTableHealthScore(int tid, Double score) {
+        tableHealthScoreRepository.insertTableHealthScore(tid, score);
     }
 
 }

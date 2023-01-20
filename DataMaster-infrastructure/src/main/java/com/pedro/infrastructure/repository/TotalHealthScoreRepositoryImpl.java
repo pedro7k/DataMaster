@@ -1,7 +1,9 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.common.config.Constants;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.domain.score.repository.TotalHealthScoreRepository;
+import com.pedro.domain.support.number.NumberUtil;
 import com.pedro.infrastructure.dao.TotalHealthScoreDao;
 import com.pedro.infrastructure.po.ScoreLinePO;
 import org.springframework.stereotype.Repository;
@@ -25,7 +27,12 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
 
     @Override
     public Double queryCurrentTotalHealthScore() {
-        return totalHealthScoreDao.queryCurrentTotalHealthScore();
+
+        // 1.获取分数
+        Double score = totalHealthScoreDao.queryCurrentTotalHealthScore();
+
+        // 2.转换结果并返回
+        return NumberUtil.reserveDoubleScale(score, Constants.HEALTH_SCORE_SCALE);
     }
 
     @Override
@@ -43,10 +50,11 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
 
     /**
      * ScoreLinePO格式处理
+     *
      * @param scoreLinePOS
      * @return
      */
-    public static ScoreLineVO scoreLineFormProcess(List<ScoreLinePO> scoreLinePOS){
+    public static ScoreLineVO scoreLineFormProcess(List<ScoreLinePO> scoreLinePOS) {
 
         // 2.结合sql，为保持时间顺序，应将结果倒置
         Collections.reverse(scoreLinePOS);
@@ -54,7 +62,9 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
         // 3.格式转换，转为分数和日期各列为list
         ScoreLineVO line = new ScoreLineVO();
         for (ScoreLinePO scoreLinePO : scoreLinePOS) {
-            line.getScore().add(scoreLinePO.getScore());
+            // 转换分数
+            double score = NumberUtil.reserveDoubleScale(scoreLinePO.getScore(), Constants.HEALTH_SCORE_SCALE);
+            line.getScore().add(score);
             line.getDate().add(simpleDateFormat.format(scoreLinePO.getTime()));
         }
 

@@ -1,8 +1,10 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.common.config.Constants;
 import com.pedro.domain.form.model.vo.TableBaseInfoVO;
 import com.pedro.domain.form.model.vo.TableWeightVO;
 import com.pedro.domain.form.repository.TableManageFormRepository;
+import com.pedro.domain.support.number.NumberUtil;
 import com.pedro.infrastructure.dao.*;
 import com.pedro.infrastructure.po.TableInfoPO;
 import org.springframework.stereotype.Repository;
@@ -54,7 +56,13 @@ public class TableManageFormRepositoryImpl implements TableManageFormRepository 
 
     @Override
     public Double queryHealthScoreByTid(int tid) {
-        return tableHealthScoreDao.queryCurrentTableHealthScoreByTid(tid);
+
+        // 1.获取分数
+        Double score = tableHealthScoreDao.queryCurrentTableHealthScoreByTid(tid);
+
+        // 2.保留小数并返回
+        return NumberUtil.reserveDoubleScale(score, Constants.HEALTH_SCORE_SCALE);
+
     }
 
     @Override
