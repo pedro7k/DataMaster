@@ -2,6 +2,7 @@ package com.pedro.infrastructure.repository;
 
 import com.pedro.common.config.Constants;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
+import com.pedro.domain.score.model.vo.ThIdVO;
 import com.pedro.domain.score.repository.TotalHealthScoreRepository;
 import com.pedro.domain.support.number.NumberUtil;
 import com.pedro.infrastructure.dao.TotalHealthScoreDao;
@@ -46,6 +47,26 @@ public class TotalHealthScoreRepositoryImpl implements TotalHealthScoreRepositor
 
         // 3.返回结果
         return line;
+    }
+
+    @Override
+    public void insertTotalHealthScore(Double score) {
+
+        // 1.保留小数
+        score = NumberUtil.reserveDoubleScale(score, Constants.HEALTH_SCORE_SCALE);
+
+        // 2.落库
+        totalHealthScoreDao.insertTotalHealthScore(score);
+    }
+
+    @Override
+    public ThIdVO queryLastThIdInPastOneHour() {
+        return totalHealthScoreDao.queryLastThIdInPastOneHour();
+    }
+
+    @Override
+    public void deleteTotalHealthScoreInPastOneHourExceptThId(ThIdVO thIdVO) {
+        totalHealthScoreDao.deleteTotalHealthScoreInPastOneHour(thIdVO);
     }
 
     /**

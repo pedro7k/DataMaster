@@ -20,4 +20,10 @@ public interface TotalHealthScoreService {
      * 获得过去七日整体健康分变化趋势
      */
     ScoreLineVO get7DaysTotalHealthScoreLine();
+
+    /**
+     * 重打整体健康分
+     */
+    void updateTotalHealthScore();
+
 }

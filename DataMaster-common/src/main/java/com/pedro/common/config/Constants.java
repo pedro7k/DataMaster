@@ -31,6 +31,16 @@ public class Constants {
     public final static String TABLE_SCAN_CRON = "*/5 * * * * ?";
 
     /**
+     * 重打整体健康分cron
+     */
+    public final static String TOTAL_HEALTH_SCORE_CRON = "0 */1 * * * ?";
+
+    /**
+     * 重打整体健康分cron
+     */
+    public final static String DELETE_HEALTH_SCORE_CRON = "0 * */1 * * ?";
+
+    /**
      * 每分钟的表单扫描次数
      */
     public final static int REAL_SCAN_FREQ_PER_MIN = 12;

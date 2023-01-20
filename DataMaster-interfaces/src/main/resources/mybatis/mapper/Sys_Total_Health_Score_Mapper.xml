@@ -19,4 +19,26 @@
         ORDER BY sys_total_health_score.thid DESC limit 7
     </select>
 
+    <insert id="insertTotalHealthScore" parameterType="java.lang.Double">
+        INSERT INTO sys_total_health_score(score, time)
+        VALUES (#{score}, now())
+    </insert>
+
+    <delete id="deleteTotalHealthScoreInPastOneHour" parameterType="com.pedro.domain.score.model.vo.ThIdVO">
+        DELETE
+        FROM sys_total_health_score
+        WHERE thid != #{thId}
+        AND TIME BETWEEN (date_sub(#{nowTime}, INTERVAL 1 HOUR)) AND #{nowTime}
+    </delete>
+
+    <select id="queryLastThIdInPastOneHour" resultType="com.pedro.domain.score.model.vo.ThIdVO">
+        SELECT sys_total_health_score.thid as thId, now() as nowTime
+        FROM sys_total_health_score
+                 INNER JOIN (SELECT max(sys_total_health_score.time) AS max_time
+                             FROM sys_total_health_score
+                             WHERE time > date_sub(now(), INTERVAL 1 HOUR)) AS son
+                            ON sys_total_health_score.time = son.max_time;
+    </select>
+
+
 </mapper>

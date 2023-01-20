@@ -44,7 +44,5 @@ public class TableScanEventConsumer implements EventHandler<TableScanMessage> {
         } catch (Throwable e) {
             logger.error("消费者处理表单扫描消息失败，message={}, errorInfo={}", message, e);
         }
-        logger.info("消费者处理表单扫描消息结束");
-
     }
 }

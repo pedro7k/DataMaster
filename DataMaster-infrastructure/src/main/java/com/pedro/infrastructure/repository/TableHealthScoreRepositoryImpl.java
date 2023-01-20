@@ -2,16 +2,19 @@ package com.pedro.infrastructure.repository;
 
 import com.pedro.common.config.Constants;
 import com.pedro.domain.dbProcess.model.vo.TableHealthScoreVO;
+import com.pedro.domain.form.model.vo.TableWeightVO;
+import com.pedro.domain.score.model.vo.HidTidVO;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.domain.score.repository.TableHealthScoreRepository;
 import com.pedro.domain.support.number.NumberUtil;
 import com.pedro.infrastructure.dao.TableHealthScoreDao;
+import com.pedro.infrastructure.dao.TableInfoDao;
 import com.pedro.infrastructure.po.ScoreLinePO;
+import com.pedro.infrastructure.po.TableInfoPO;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
-import java.text.SimpleDateFormat;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -19,6 +22,9 @@ public class TableHealthScoreRepositoryImpl implements TableHealthScoreRepositor
 
     @Resource
     private TableHealthScoreDao tableHealthScoreDao;
+
+    @Resource
+    private TableInfoDao tableInfoDao;
 
     @Override
     public Double getCurrentTableHealthScore(int tid) {
@@ -55,5 +61,34 @@ public class TableHealthScoreRepositoryImpl implements TableHealthScoreRepositor
 
         // 2.插入
         tableHealthScoreDao.insertTableHealthScore(tableHealthScoreVO);
+    }
+
+    @Override
+    public List<TableWeightVO> queryAllTableWeight() {
+
+        // 1.查询数据
+        List<TableInfoPO> tableInfoPOList = tableInfoDao.queryAllTableInfo();
+
+        // 2.数据转换
+        List<TableWeightVO> tableWeightVOList = new ArrayList<>();
+        for (TableInfoPO tableInfoPO : tableInfoPOList) {
+            TableWeightVO oneRes = new TableWeightVO();
+            oneRes.setTid(tableInfoPO.getTid());
+            oneRes.setWeight(tableInfoPO.getTableWeight());
+            tableWeightVOList.add(oneRes);
+        }
+
+        // 3.返回
+        return tableWeightVOList;
+    }
+
+    @Override
+    public List<HidTidVO> queryLastHidInPastOneHour() {
+        return tableHealthScoreDao.queryLastHidInPastOneHour();
+    }
+
+    @Override
+    public void deleteHealthScoreInPastOneHourExceptHid(HidTidVO hidTidVO) {
+        tableHealthScoreDao.deleteHealthScoreInPastOneHourExceptHid(hidTidVO);
     }
 }

@@ -5,6 +5,8 @@ import com.pedro.application.process.impl.DataScanProcessImpl;
 import com.pedro.common.config.Constants;
 import com.pedro.domain.dbProcess.model.vo.TableScanFreqVO;
 import com.pedro.domain.dbProcess.service.tableScan.TableScanService;
+import com.pedro.domain.score.service.ScoreClearService;
+import com.pedro.domain.score.service.TotalHealthScoreService;
 import com.pedro.domain.support.random.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.pedro.common.config.Constants.TABLE_SCAN_CRON;
+import static com.pedro.common.config.Constants.TOTAL_HEALTH_SCORE_CRON;
 
 /**
  * 表单扫描定时任务
@@ -31,6 +34,12 @@ public class TableScanScheduleTask {
 
     @Resource
     private TableScanService tableScanService;
+
+    @Resource
+    private TotalHealthScoreService totalHealthScoreService;
+
+    @Resource
+    private ScoreClearService scoreClearService;
 
 
     /**
@@ -53,5 +62,23 @@ public class TableScanScheduleTask {
         // 3.调用消息队列生产者
         logger.info("表单扫描定时任务执行，tidList={}", tidList);
         tableScanEventProducer.sendTableScanMessage(tidList);
+    }
+
+    /**
+     * 每分钟执行一次，重打整体健康分
+     */
+    @Scheduled(cron = TOTAL_HEALTH_SCORE_CRON)
+    private void doUpdateTotalHealthScore() {
+        totalHealthScoreService.updateTotalHealthScore();
+        logger.info("重打整体健康分，间隔1min");
+    }
+
+    /**
+     * 每小时整点执行一次，清理过期数据
+     */
+    @Scheduled(cron = Constants.DELETE_HEALTH_SCORE_CRON)
+    private void doDeleteScoreInOneHour(){
+        scoreClearService.deleteScoreInPastOneHour();
+        logger.info("清理健康分数据，间隔1h");
     }
 }

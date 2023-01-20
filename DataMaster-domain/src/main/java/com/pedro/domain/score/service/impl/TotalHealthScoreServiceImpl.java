@@ -2,12 +2,15 @@ package com.pedro.domain.score.service.impl;
 
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.exceptions.ServiceException;
+import com.pedro.domain.form.model.vo.TableWeightVO;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
+import com.pedro.domain.score.repository.TableHealthScoreRepository;
 import com.pedro.domain.score.repository.TotalHealthScoreRepository;
 import com.pedro.domain.score.service.TotalHealthScoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,6 +22,9 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
 
     @Resource
     private TotalHealthScoreRepository totalHealthScoreRepository;
+
+    @Resource
+    private TableHealthScoreRepository tableHealthScoreRepository;
 
     @Override
     public Double getCurrentTotalHealthScore() {
@@ -49,8 +55,34 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
         return line;
     }
 
+    @Override
+    public void updateTotalHealthScore() {
+
+        // 1.查询各表的权重和tid
+        List<TableWeightVO> tableWeightVOList = tableHealthScoreRepository.queryAllTableWeight();
+        double totalHealthScore = 100.0;
+
+        // 若查询结果不为空，查询各表健康分，并计算整体健康分
+        if (!CollectionUtils.isEmpty(tableWeightVOList)) {
+            double weightSum = 0.0, weightedResultSum = 0.0;
+            for (TableWeightVO tableWeightVO : tableWeightVOList) {
+                // TODO 中间值过大会不会需要处理
+                int weight = tableWeightVO.getWeight();
+                double score = tableHealthScoreRepository.getCurrentTableHealthScore(tableWeightVO.getTid());
+                weightedResultSum += weight * score;
+                weightSum += weight;
+            }
+            // 原表达式分子分母各有100，省去
+            totalHealthScore = weightedResultSum / weightSum;
+        }
+
+        // 3.整体健康分落库
+        totalHealthScoreRepository.insertTotalHealthScore(totalHealthScore);
+    }
+
     /**
      * 七日健康分数据校验
+     *
      * @param line
      */
     public static void check7DaysHealthScoreLine(ScoreLineVO line) {

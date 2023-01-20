@@ -32,4 +32,22 @@
         ORDER BY sys_table_health_score.hid DESC limit 7
     </select>
 
+    <select id="queryLastHidInPastOneHour" resultType="com.pedro.domain.score.model.vo.HidTidVO">
+        SELECT sys_table_health_score.tid, sys_table_health_score.hid, now() as nowTime
+        FROM sys_table_health_score
+                 INNER JOIN (SELECT max(sys_table_health_score.time) AS max_time
+                             FROM sys_table_health_score
+                             WHERE time > date_sub(now(), INTERVAL 1 HOUR)
+                             GROUP BY tid) AS son
+                            ON sys_table_health_score.time = son.max_time;
+    </select>
+
+    <delete id="deleteHealthScoreInPastOneHourExceptHid" parameterType="com.pedro.domain.score.model.vo.HidTidVO">
+        DELETE
+        FROM sys_table_health_score
+        WHERE tid = #{tid}
+          AND hid != #{hid}
+          AND TIME BETWEEN (date_sub(#{nowTime}, INTERVAL 1 HOUR)) AND #{nowTime}
+    </delete>
+
 </mapper>
