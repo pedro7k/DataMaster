@@ -1,10 +1,12 @@
 package com.pedro.domain.form.service.tableDetailForm.impl;
 
+import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableManageFormRes;
 import com.pedro.domain.form.model.vo.TableDetailFormVO;
 import com.pedro.domain.form.repository.TableDetailFormRepository;
 import com.pedro.domain.form.service.tableDetailForm.TableDetailFormService;
+import com.pedro.domain.support.cache.CaffeineUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,8 +19,31 @@ public class TableDetailFormServiceImpl implements TableDetailFormService {
     @Resource
     private TableDetailFormRepository tableDetailFormRepository;
 
+    /**
+     * 表单缓存
+     *
+     * @param tid
+     * @return
+     */
+    private volatile LoadingCache<Integer, List<TableDetailFormRes>> cache;
+
     @Override
     public List<TableDetailFormRes> loadTableDetailForm(int tid) {
+
+        // 1.延迟初始化加载cache
+        if (cache == null) {
+            synchronized (TableDetailFormServiceImpl.class) {
+                if (cache == null) {
+                    cache = new CaffeineUtil<Integer, List<TableDetailFormRes>>().buildCache(this::loadTableDetailFormByDB);
+                }
+            }
+        }
+
+        // 2.从cache中get，没拿到就查DB
+        return cache.get(tid);
+    }
+
+    private List<TableDetailFormRes> loadTableDetailFormByDB(int tid) {
 
         // 1.数据拉取
         List<TableDetailFormVO> tableDetailFormVOList = tableDetailFormRepository.loadTableDetailForm(tid);
