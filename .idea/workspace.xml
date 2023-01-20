@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.19 完成单表扫描方法">
-      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/number/NumberUtil.java" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.20 完成单表扫描功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableScan/impl/TableScanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableScan/impl/TableScanServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/repository/TableHealthScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/repository/TableHealthScoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/TableHealthScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/TableHealthScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TableHealthScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/score/service/impl/TableHealthScoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableHealthScoreRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableHealthScoreRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableManageFormRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableManageFormRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TotalHealthScoreRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,32 +41,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings",
-    "spring.configuration.checksum": "8fc6ecbf400e71c14650a20c297d2c12",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.statistic.project.settings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8fc6ecbf400e71c14650a20c297d2c12&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\code\DataMaster\DataMaster-interfaces\src\main\resources\static" />
@@ -170,7 +160,8 @@
       <workItem from="1673846851918" duration="66477000" />
       <workItem from="1674048520305" duration="3144000" />
       <workItem from="1674109297328" duration="23603000" />
-      <workItem from="1674187467370" duration="5209000" />
+      <workItem from="1674187467370" duration="5349000" />
+      <workItem from="1674195726812" duration="666000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -480,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674138825263</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="2023.1.20 完成单表扫描功能">
+      <created>1674195676233</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1674195676233</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022.1.4 更新库表管理页框架" />
     <MESSAGE value="2022.1.4 开发用户管理页面 未完成" />
     <MESSAGE value="2022.1.6 开发用户管理页面 未完成" />
     <MESSAGE value="2022.1.7 完成用户管理页，开发库表管理页图表" />
@@ -523,7 +520,8 @@
     <MESSAGE value="2023.1.18" />
     <MESSAGE value="2023.1.18 logo" />
     <MESSAGE value="2023.1.19 完成单表扫描方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.19 完成单表扫描方法" />
+    <MESSAGE value="2023.1.20 完成单表扫描功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.20 完成单表扫描功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
