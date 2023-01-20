@@ -25,7 +25,7 @@ public class DataScanProcessImpl implements DataScanProcess {
     private TableHealthScoreService tableHealthScoreService;
 
     @Override
-    public Double tableDataScanProcess(int tid) {
+    public void tableDataScanProcess(int tid) {
 
         // 1.执行扫描
         List<TableScanRes> tableScanResList = tableScanService.scanTable(tid);
@@ -41,8 +41,7 @@ public class DataScanProcessImpl implements DataScanProcess {
         // 3.打分结果落库
         tableHealthScoreService.insertTableHealthScore(tid, score);
 
-        // 4.返回结果
+        // 4.打日志
         logger.info("执行单表扫描完成，tid={}，score={}，time={}", tid, score, new Date());
-        return score;
     }
 }

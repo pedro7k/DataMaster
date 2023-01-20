@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.20 完成单表扫描功能">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.20 fix单表扫描功能">
+      <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +161,7 @@
       <workItem from="1674048520305" duration="3144000" />
       <workItem from="1674109297328" duration="23603000" />
       <workItem from="1674187467370" duration="5349000" />
-      <workItem from="1674195726812" duration="666000" />
+      <workItem from="1674195726812" duration="1023000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -478,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674195676233</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="2023.1.20 fix单表扫描功能">
+      <created>1674196566971</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1674196566971</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022.1.4 开发用户管理页面 未完成" />
     <MESSAGE value="2022.1.6 开发用户管理页面 未完成" />
     <MESSAGE value="2022.1.7 完成用户管理页，开发库表管理页图表" />
     <MESSAGE value="2022.1.7 完成库表管理页的图表" />
@@ -521,7 +527,8 @@
     <MESSAGE value="2023.1.18 logo" />
     <MESSAGE value="2023.1.19 完成单表扫描方法" />
     <MESSAGE value="2023.1.20 完成单表扫描功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.20 完成单表扫描功能" />
+    <MESSAGE value="2023.1.20 fix单表扫描功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.20 fix单表扫描功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

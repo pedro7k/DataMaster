@@ -8,6 +8,6 @@ public interface DataScanProcess {
     /**
      * 执行单表扫描、报警、打分处理
      */
-    Double tableDataScanProcess(int tid);
+    void tableDataScanProcess(int tid);
 
 }
