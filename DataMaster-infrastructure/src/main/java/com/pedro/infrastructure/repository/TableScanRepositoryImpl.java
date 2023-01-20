@@ -1,6 +1,7 @@
 package com.pedro.infrastructure.repository;
 
 import com.pedro.domain.dbProcess.model.vo.TableAlarmVO;
+import com.pedro.domain.dbProcess.model.vo.TableScanFreqVO;
 import com.pedro.domain.dbProcess.model.vo.TableScanRuleVO;
 import com.pedro.domain.dbProcess.repository.TableScanRepository;
 import com.pedro.infrastructure.dao.*;
@@ -107,6 +108,25 @@ public class TableScanRepositoryImpl implements TableScanRepository {
     public void insertTableAlarm(TableAlarmVO tableAlarmVO) {
 
         tableAlarmDao.insertTableAlarm(tableAlarmVO);
+    }
+
+    @Override
+    public List<TableScanFreqVO> queryAllTableScanFreq() {
+
+        // 1.查询
+        List<TableInfoPO> tableInfoPOList = tableInfoDao.queryAllTableInfo();
+
+        // 2.转换
+        List<TableScanFreqVO> tableScanFreqVOList = new ArrayList<>();
+        for (TableInfoPO tableInfoPO : tableInfoPOList) {
+            TableScanFreqVO oneRes = new TableScanFreqVO();
+            oneRes.setTid(tableInfoPO.getTid());
+            oneRes.setScanFreqPerMin(tableInfoPO.getScanFreqPerMin());
+            tableScanFreqVOList.add(oneRes);
+        }
+
+        // 3.返回
+        return tableScanFreqVOList;
     }
 
 }

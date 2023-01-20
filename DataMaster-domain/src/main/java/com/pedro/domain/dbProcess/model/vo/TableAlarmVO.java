@@ -67,4 +67,15 @@ public class TableAlarmVO {
     public void setValue(Double value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "TableAlarmVO{" +
+                "rid=" + rid +
+                ", tid=" + tid +
+                ", state=" + state +
+                ", time=" + time +
+                ", value=" + value +
+                '}';
+    }
 }

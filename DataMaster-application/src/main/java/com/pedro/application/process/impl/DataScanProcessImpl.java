@@ -6,6 +6,7 @@ import com.pedro.domain.dbProcess.service.tableScan.TableScanService;
 import com.pedro.domain.score.service.TableHealthScoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -43,5 +44,6 @@ public class DataScanProcessImpl implements DataScanProcess {
 
         // 4.打日志
         logger.info("执行单表扫描完成，tid={}，score={}，time={}", tid, score, new Date());
+
     }
 }

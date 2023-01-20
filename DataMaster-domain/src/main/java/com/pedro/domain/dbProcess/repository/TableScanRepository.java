@@ -2,6 +2,7 @@ package com.pedro.domain.dbProcess.repository;
 
 import com.pedro.domain.dbProcess.model.vo.TableAlarmVO;
 import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
+import com.pedro.domain.dbProcess.model.vo.TableScanFreqVO;
 import com.pedro.domain.dbProcess.model.vo.TableScanRuleVO;
 
 import java.util.Date;
@@ -41,4 +42,9 @@ public interface TableScanRepository {
      * 插入新报警记录
      */
     void insertTableAlarm(TableAlarmVO tableAlarmVO);
+
+    /**
+     * 获取tid和扫描频率，供定时任务使用
+     */
+    List<TableScanFreqVO> queryAllTableScanFreq();
 }

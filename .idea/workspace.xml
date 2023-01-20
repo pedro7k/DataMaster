@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.20 fix单表扫描功能">
-      <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/DataScanProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/BeanManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/MQManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/consumer/TableScanEventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/factory/TableScanMessageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/model/TableScanMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/producer/TableScanEventProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/mq/producer/impl/TableScanEventProducerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/scheduleTask/TableScanScheduleTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableScanFreqVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/random/RandomUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/test/java/com/pedro/domain/support/check/TableScanEventConsumerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/process/impl/DataScanProcessImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/config/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableAlarmVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/TableAlarmVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/repository/TableScanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/repository/TableScanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableScan/TableScanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableScan/TableScanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableScan/impl/TableScanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableScan/impl/TableScanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableScanRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableScanRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/DataMasterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/DataMasterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +149,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="" />
@@ -161,7 +184,7 @@
       <workItem from="1674048520305" duration="3144000" />
       <workItem from="1674109297328" duration="23603000" />
       <workItem from="1674187467370" duration="5349000" />
-      <workItem from="1674195726812" duration="1023000" />
+      <workItem from="1674195726812" duration="11017000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670914676694</created>
@@ -485,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674196566971</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="2023.1.20 fix单表扫描功能">
+      <created>1674196819556</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1674196819556</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,6 +559,22 @@
     <MESSAGE value="2023.1.20 完成单表扫描功能" />
     <MESSAGE value="2023.1.20 fix单表扫描功能" />
     <option name="LAST_COMMIT_MESSAGE" value="2023.1.20 fix单表扫描功能" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java</url>
+          <line>216</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java</url>
+          <line>226</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

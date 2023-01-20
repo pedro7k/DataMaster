@@ -25,5 +25,15 @@ public class Constants {
      */
     public final static int HEALTH_SCORE_SCALE = 2;
 
+    /**
+     * 表单扫描cron
+     */
+    public final static String TABLE_SCAN_CRON = "*/5 * * * * ?";
+
+    /**
+     * 每分钟的表单扫描次数
+     */
+    public final static int REAL_SCAN_FREQ_PER_MIN = 12;
+
 
 }

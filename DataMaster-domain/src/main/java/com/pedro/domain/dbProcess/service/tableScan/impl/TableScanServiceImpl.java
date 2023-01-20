@@ -4,10 +4,13 @@ import com.pedro.common.enums.AlarmStateEnum;
 import com.pedro.domain.dbProcess.model.res.TableScanRes;
 import com.pedro.domain.dbProcess.model.vo.TableAlarmVO;
 import com.pedro.domain.dbProcess.model.vo.TableRuleVO;
+import com.pedro.domain.dbProcess.model.vo.TableScanFreqVO;
 import com.pedro.domain.dbProcess.model.vo.TableScanRuleVO;
 import com.pedro.domain.dbProcess.repository.TableScanRepository;
 import com.pedro.domain.dbProcess.service.tableScan.TableScanService;
 import com.pedro.domain.support.check.ValueCheckUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,6 +21,8 @@ import java.util.List;
 
 @Service
 public class TableScanServiceImpl implements TableScanService {
+
+    private static final Logger logger = LoggerFactory.getLogger(TableScanServiceImpl.class);
 
     private static final int millsInOneDay = 1000 * 3600 * 24;
 
@@ -78,6 +83,11 @@ public class TableScanServiceImpl implements TableScanService {
 
         // 4.返回
         return tableScanResList;
+    }
+
+    @Override
+    public List<TableScanFreqVO> queryAllTableScanFreq() {
+        return tableScanRepository.queryAllTableScanFreq();
     }
 
     /**
