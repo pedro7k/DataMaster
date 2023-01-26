@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.dao;
 
+import com.pedro.domain.dbProcess.model.vo.MuchDeleteVO;
 import com.pedro.domain.dbProcess.model.vo.TableAlarmVO;
 import com.pedro.domain.form.model.vo.AlarmStateVO;
 import com.pedro.infrastructure.po.TableAlarmPO;
@@ -53,4 +54,9 @@ public interface TableAlarmDao {
      * 插入新报警记录
      */
     void insertTableAlarm(TableAlarmVO tableAlarmVO);
+
+    /**
+     * 新大量删除操作数据插入表
+     */
+    void insertMuchDeleteRecord(MuchDeleteVO muchDeleteVO);
 }

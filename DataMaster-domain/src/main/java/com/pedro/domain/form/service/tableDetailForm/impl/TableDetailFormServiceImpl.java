@@ -34,7 +34,7 @@ public class TableDetailFormServiceImpl implements TableDetailFormService {
         if (cache == null) {
             synchronized (TableDetailFormServiceImpl.class) {
                 if (cache == null) {
-                    cache = new CaffeineUtil<Integer, List<TableDetailFormRes>>().buildCache(this::loadTableDetailFormByDB);
+                    cache = CaffeineUtil.buildLoadingCache(this::loadTableDetailFormByDB);
                 }
             }
         }
@@ -43,7 +43,9 @@ public class TableDetailFormServiceImpl implements TableDetailFormService {
         return cache.get(tid);
     }
 
-    private List<TableDetailFormRes> loadTableDetailFormByDB(int tid) {
+    private synchronized List<TableDetailFormRes> loadTableDetailFormByDB(int tid) {
+
+        // TODO 检查一下这边表单是否正常
 
         // 1.数据拉取
         List<TableDetailFormVO> tableDetailFormVOList = tableDetailFormRepository.loadTableDetailForm(tid);

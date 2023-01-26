@@ -42,8 +42,25 @@ public class Constants {
 
     /**
      * 每分钟的表单扫描次数
+     * 结合TABLE_SCAN_CRON
      */
     public final static int REAL_SCAN_FREQ_PER_MIN = 12;
+
+    /**
+     * 日志监控大量删除时间长度，单位：秒
+     */
+    public final static int DELETE_COUNT_TIME_LENGTH = 60;
+
+    /**
+     * 日志监控单位时间内大量删除阈值
+     */
+    public final static int DELETE_COUNT_THRESHOLD = 100;
+
+    /**
+     * 系统名，也为数据库名
+     */
+    public final static String SYS_NAME = "datamaster";
+
 
 
 }

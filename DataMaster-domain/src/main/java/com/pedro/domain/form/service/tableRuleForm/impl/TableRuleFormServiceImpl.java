@@ -159,7 +159,6 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
 
     @Override
     public void deleteRule(int rid) {
-        // TODO 事务
 
         // 1.构造待排除集合
         List<Integer> ridList = new ArrayList<>();
@@ -177,7 +176,6 @@ public class TableRuleFormServiceImpl implements TableRuleFormService {
 
     @Override
     public void batchDeleteRule(List<Integer> ridList) {
-        // TODO 事务
 
         // 1. 从alarm表中删除
         tableRuleFormRepository.deleteAlarmByRid(ridList);

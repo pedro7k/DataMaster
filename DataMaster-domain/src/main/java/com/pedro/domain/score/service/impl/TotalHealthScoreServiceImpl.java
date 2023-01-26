@@ -66,7 +66,7 @@ public class TotalHealthScoreServiceImpl implements TotalHealthScoreService {
         if (!CollectionUtils.isEmpty(tableWeightVOList)) {
             double weightSum = 0.0, weightedResultSum = 0.0;
             for (TableWeightVO tableWeightVO : tableWeightVOList) {
-                // TODO 中间值过大会不会需要处理
+
                 int weight = tableWeightVO.getWeight();
                 double score = tableHealthScoreRepository.getCurrentTableHealthScore(tableWeightVO.getTid());
                 weightedResultSum += weight * score;

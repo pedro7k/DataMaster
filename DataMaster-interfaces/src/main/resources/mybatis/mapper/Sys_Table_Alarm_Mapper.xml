@@ -51,5 +51,10 @@
         values (#{rid}, #{tid}, #{state}, #{time}, #{value});
     </insert>
 
+    <insert id="insertMuchDeleteRecord" parameterType="com.pedro.domain.dbProcess.model.vo.MuchDeleteVO">
+        INSERT INTO sys_much_delete_record(tid, time)
+        VALUES (#{tid}, #{time});
+    </insert>
+
 
 </mapper>

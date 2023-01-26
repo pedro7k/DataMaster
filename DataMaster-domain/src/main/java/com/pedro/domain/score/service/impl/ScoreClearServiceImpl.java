@@ -21,7 +21,6 @@ public class ScoreClearServiceImpl implements ScoreClearService {
 
     @Override
     public void deleteScoreInPastOneHour() {
-        // TODO 事务
 
         // 1.清除单表健康分数据
         // 1.1 查询各表过去一小时内最后一条数据hid
