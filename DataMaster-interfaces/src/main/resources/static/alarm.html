@@ -414,7 +414,10 @@
                                         "method": "post",
                                         "url": "http://localhost:8080/deleteAlarm",
                                         "dataType": "form-data",
-                                        "data": null
+                                        "data": {
+                                            "&": "$$",
+                                            "tid": "${tid}"
+                                        }
                                     },
                                     "id": "u:f5892e781974",
                                     "label": "删除",
@@ -434,7 +437,11 @@
                             "api": {
                                 "method": "post",
                                 "url": "http://localhost:8080/batchDeleteAlarm",
-                                "dataType": "form-data"
+                                "dataType": "form-data",
+                                "data": {
+                                    "&": "$$",
+                                    "tid": "${tid}"
+                                }
                             },
                             "confirmText": "确定要批量删除?",
                             "id": "u:8b7699109813",
@@ -461,7 +468,11 @@
                         "url": "http://localhost:8080/quickEditAlarmState",
                         "messages": {
                         },
-                        "dataType": "form-data"
+                        "dataType": "form-data",
+                        "data": {
+                            "&": "$$",
+                            "tid": "${tid}"
+                        }
                     },
                     "filterTogglable": true,
                     "headerToolbar": [

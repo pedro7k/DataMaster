@@ -38,6 +38,8 @@ public class TableMonitorServiceImpl implements TableMonitorService {
         MuchDeleteVO muchDeleteVO = new MuchDeleteVO();
         muchDeleteVO.setTid(tid);
         muchDeleteVO.setTime(new Date());
+        muchDeleteVO.setState(AlarmStateEnum.WAITING_PROCESS.getState());
+
         tableMonitorRepository.insertMuchDeleteRecord(muchDeleteVO);
     }
 }

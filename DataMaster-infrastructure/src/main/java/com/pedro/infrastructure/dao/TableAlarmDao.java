@@ -3,6 +3,7 @@ package com.pedro.infrastructure.dao;
 import com.pedro.domain.dbProcess.model.vo.MuchDeleteVO;
 import com.pedro.domain.dbProcess.model.vo.TableAlarmVO;
 import com.pedro.domain.form.model.vo.AlarmStateVO;
+import com.pedro.infrastructure.po.MuchDeletePO;
 import com.pedro.infrastructure.po.TableAlarmPO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -59,4 +60,19 @@ public interface TableAlarmDao {
      * 新大量删除操作数据插入表
      */
     void insertMuchDeleteRecord(MuchDeleteVO muchDeleteVO);
+
+    /**
+     * 查询tid对应的最新大量删除操作数据
+     */
+    MuchDeletePO queryMuchDeleteRecord(int tid);
+
+    /**
+     * 修改短时大量删除变更报警状态
+     */
+    void updateMuchDeleteRecordState(MuchDeleteVO muchDeleteVO);
+
+    /**
+     * 根据tid删除短时大量删除报警
+     */
+    void deleteMuchDeleteRecordByTid(int tid);
 }

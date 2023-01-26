@@ -93,7 +93,7 @@ public class TableAlarmController {
      * 快速编辑约束权重
      */
     @PostMapping("/quickEditAlarmState")
-    public CommonResult quickEditAlarmState(@RequestParam("aid") int aid, @RequestParam("state") String state) {
+    public CommonResult quickEditAlarmState(@RequestParam("tid") int tid, @RequestParam("aid") int aid, @RequestParam("state") String state) {
 
         // 1.获取当前权限
         UserVO currentUser = ShiroUtil.getCurrentUser();
@@ -106,7 +106,7 @@ public class TableAlarmController {
         }
 
         // 3.编辑
-        tableAlarmFormService.editAlarmState(aid, state);
+        tableAlarmFormService.editAlarmState(tid, aid, state);
 
         // 4.返回
         return CommonResult.success(null, "修改成功！");
@@ -117,7 +117,7 @@ public class TableAlarmController {
      * 删除单个报警
      */
     @PostMapping("/deleteAlarm")
-    public CommonResult deleteAlarm(@RequestParam("aid") int aid) {
+    public CommonResult deleteAlarm(@RequestParam("tid") int tid, @RequestParam("aid") int aid) {
 
         // 1.获取当前权限
         UserVO currentUser = ShiroUtil.getCurrentUser();
@@ -130,7 +130,7 @@ public class TableAlarmController {
         }
 
         // 3.执行删除
-        tableAlarmFormService.deleteAlarm(aid);
+        tableAlarmFormService.deleteAlarm(tid, aid);
 
         // 4.返回
         return CommonResult.success(null, "删除成功");
@@ -140,7 +140,7 @@ public class TableAlarmController {
      * 批量删除报警
      */
     @PostMapping("/batchDeleteAlarm")
-    public CommonResult batchDeleteAlarm(@RequestParam("ids") String aids) {
+    public CommonResult batchDeleteAlarm(@RequestParam("tid") int tid, @RequestParam("ids") String aids) {
 
         // 1.获取当前权限
         UserVO currentUser = ShiroUtil.getCurrentUser();
@@ -157,7 +157,7 @@ public class TableAlarmController {
                 .stream().map(Integer::parseInt).collect(Collectors.toList());
 
         // 4.执行删除
-        tableAlarmFormService.batchDeleteAlarm(aidList);
+        tableAlarmFormService.batchDeleteAlarm(tid, aidList);
 
         // 5.返回
         return CommonResult.success(null, "删除成功！");

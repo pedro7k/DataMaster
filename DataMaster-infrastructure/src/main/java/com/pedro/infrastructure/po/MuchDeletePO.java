@@ -1,25 +1,36 @@
-package com.pedro.domain.dbProcess.model.vo;
+package com.pedro.infrastructure.po;
 
 import java.util.Date;
 
 /**
- * 大量删除VO
+ * 大量删除PO
  */
-public class MuchDeleteVO {
+public class MuchDeletePO {
+
+    private int mid;
 
     private int tid;
 
     private Date time;
 
-    private int state;
+    private Integer state;
 
-    public MuchDeleteVO() {
+    public MuchDeletePO() {
     }
 
-    public MuchDeleteVO(int tid, Date time, int state) {
+    public MuchDeletePO(int mid, int tid, Date time, int state) {
+        this.mid = mid;
         this.tid = tid;
         this.time = time;
         this.state = state;
+    }
+
+    public int getMid() {
+        return mid;
+    }
+
+    public void setMid(int mid) {
+        this.mid = mid;
     }
 
     public int getTid() {

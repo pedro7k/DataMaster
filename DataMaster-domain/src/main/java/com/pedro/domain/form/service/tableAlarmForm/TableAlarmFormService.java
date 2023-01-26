@@ -24,15 +24,15 @@ public interface TableAlarmFormService {
     /**
      * 编辑报警状态
      */
-    void editAlarmState(int aid, String state);
+    void editAlarmState(int tid, int aid, String state);
 
     /**
      * 删除单个报警
      */
-    void deleteAlarm(int aid);
+    void deleteAlarm(int tid, int aid);
 
     /**
      * 批量删除报警
      */
-    void batchDeleteAlarm(List<Integer> aidList);
+    void batchDeleteAlarm(int tid, List<Integer> aidList);
 }

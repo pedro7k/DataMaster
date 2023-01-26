@@ -1,5 +1,6 @@
 package com.pedro.infrastructure.repository;
 
+import com.pedro.domain.dbProcess.model.vo.MuchDeleteVO;
 import com.pedro.domain.form.model.vo.AlarmStateVO;
 import com.pedro.domain.form.model.vo.TableAlarmFormVO;
 import com.pedro.domain.form.model.vo.TableRuleBaseVO;
@@ -7,12 +8,14 @@ import com.pedro.domain.form.model.vo.TableRuleFormVO;
 import com.pedro.domain.form.repository.TableAlarmFormRepository;
 import com.pedro.infrastructure.dao.TableAlarmDao;
 import com.pedro.infrastructure.dao.TableRuleDao;
+import com.pedro.infrastructure.po.MuchDeletePO;
 import com.pedro.infrastructure.po.TableAlarmPO;
 import com.pedro.infrastructure.po.TableRulePO;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -81,5 +84,32 @@ public class TableAlarmFormRepositoryImpl implements TableAlarmFormRepository {
         }
 
         return deleteCount;
+    }
+
+    @Override
+    public MuchDeleteVO queryMuchDeleteRecord(int tid) {
+        
+        // 1.查询
+        MuchDeletePO muchDeletePO = tableAlarmDao.queryMuchDeleteRecord(tid);
+        
+        // 2.对象转换和返回
+        if (muchDeletePO != null){
+            MuchDeleteVO muchDeleteVO = new MuchDeleteVO();
+            muchDeleteVO.setTid(tid);
+            muchDeleteVO.setState(muchDeletePO.getState());
+            muchDeleteVO.setTime(muchDeletePO.getTime());
+            return muchDeleteVO;
+        }
+        return null;
+    }
+
+    @Override
+    public void updateMuchDeleteRecordState(MuchDeleteVO muchDeleteVO) {
+        tableAlarmDao.updateMuchDeleteRecordState(muchDeleteVO);
+    }
+
+    @Override
+    public void deleteMuchDeleteRecordByTid(int tid) {
+        tableAlarmDao.deleteMuchDeleteRecordByTid(tid);
     }
 }

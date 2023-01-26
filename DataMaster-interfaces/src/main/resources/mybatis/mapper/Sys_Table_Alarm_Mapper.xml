@@ -52,9 +52,30 @@
     </insert>
 
     <insert id="insertMuchDeleteRecord" parameterType="com.pedro.domain.dbProcess.model.vo.MuchDeleteVO">
-        INSERT INTO sys_much_delete_record(tid, time)
-        VALUES (#{tid}, #{time});
+        INSERT INTO sys_much_delete_record(tid, time, state)
+        VALUES (#{tid}, #{time}, #{state});
     </insert>
+
+    <select id="queryMuchDeleteRecord" parameterType="java.lang.Integer"
+            resultType="com.pedro.infrastructure.po.MuchDeletePO">
+        SELECT *
+        FROM sys_much_delete_record
+        WHERE tid = #{tid}
+        ORDER BY time DESC
+        limit 1
+    </select>
+
+    <update id="updateMuchDeleteRecordState" parameterType="com.pedro.infrastructure.po.MuchDeletePO">
+        UPDATE sys_much_delete_record
+        SET state = #{state}
+        WHERE tid = #{tid}
+    </update>
+
+    <delete id="deleteMuchDeleteRecordByTid" parameterType="java.lang.Integer">
+        DELETE
+        FROM sys_much_delete_record
+        WHERE tid = #{tid};
+    </delete>
 
 
 </mapper>
