@@ -5,6 +5,8 @@ import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.github.shyiko.mysql.binlog.BinaryLogClient;
 import com.github.shyiko.mysql.binlog.event.*;
 import com.pedro.common.config.Constants;
+import com.pedro.common.enums.ServiceExceptionEnum;
+import com.pedro.common.exceptions.ServiceException;
 import com.pedro.domain.dbProcess.service.tableMonitor.TableMonitorService;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.support.cache.CaffeineUtil;
@@ -103,7 +105,7 @@ public class LogMonitor implements ApplicationRunner {
         try {
             client.connect();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new ServiceException(ServiceExceptionEnum.LOG_MONITOR_CONNECT_ERROR);
         }
 
     }

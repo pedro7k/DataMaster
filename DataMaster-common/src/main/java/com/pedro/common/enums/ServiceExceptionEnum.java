@@ -15,6 +15,7 @@ public enum ServiceExceptionEnum {
     SYS_ERROR("1", "服务端发生异常"),
     NO_RESULT("2", "查询不到结果"),
     ROLE_DENIED("3", "权限不足"),
+    LOG_MONITOR_CONNECT_ERROR("4","日志监控连接数据库失败"),
 
     /**
      * ===========业务级别===========
