@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.27 短时大量删除变更报警提示" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.27 bugfix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,21 +182,7 @@
       <workItem from="1674187467370" duration="5349000" />
       <workItem from="1674195726812" duration="27568000" />
       <workItem from="1674224554592" duration="26000" />
-      <workItem from="1674724656622" duration="22862000" />
-    </task>
-    <task id="LOCAL-00005" summary="2022.1.1">
-      <created>1672569963007</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1672569963007</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2022.1.3">
-      <created>1672720848948</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1672720848948</updated>
+      <workItem from="1674724656622" duration="23531000" />
     </task>
     <task id="LOCAL-00007" summary="2022.1.3">
       <created>1672753296381</created>
@@ -525,7 +513,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674793383622</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="2023.1.27 短时大量删除变更报警提示">
+      <created>1674793773458</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1674793773458</updated>
+    </task>
+    <task id="LOCAL-00055" summary="2023.1.27 bugfix">
+      <created>1674793966231</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1674793966231</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2023.1.13 完成可视化创建表的创建表单部分" />
     <MESSAGE value="2023.1.15 完成可视化创建表单的数据库操作部分" />
     <MESSAGE value="2023.1.15 完成扫描数据库和可视化创建表" />
     <MESSAGE value="2023.1.16 完成数据表详情页健康分图表" />
@@ -568,7 +569,8 @@
     <MESSAGE value="2023.1.26 实现binlog监控后端功能" />
     <MESSAGE value="2023.1.26 实现binlog监控" />
     <MESSAGE value="2023.1.27 短时大量删除变更报警提示" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.27 短时大量删除变更报警提示" />
+    <MESSAGE value="2023.1.27 bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.27 bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

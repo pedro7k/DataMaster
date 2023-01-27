@@ -54,6 +54,7 @@ public class TimerCounter {
         if (DateUtil.between(timeList.get(0), now, DateUnit.SECOND) > timeLengthWithSec) {
             // 3.1 第一个到现在已经超过了时间长度，说明可以淘汰掉第一个
             timeList.remove(0);
+            timeList.add(now);
             return true;
         }
         // 3.2 第一个到现在还没达到时间长度，说明已经达到阈值，清空list返回失败
