@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.26 实现binlog监控后端功能">
-      <change afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/po/MuchDeletePO.java" afterDir="false" />
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.26 实现binlog监控">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/MuchDeleteVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/model/vo/MuchDeleteVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableMonitor/impl/TableMonitorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableMonitor/impl/TableMonitorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/TableAlarmFormRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/repository/TableAlarmFormRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableAlarmForm/TableAlarmFormService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableAlarmForm/TableAlarmFormService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableAlarmForm/impl/TableAlarmFormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableAlarmForm/impl/TableAlarmFormServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableAlarmDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/TableAlarmDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableAlarmFormRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableAlarmFormRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Alarm_Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/mybatis/mapper/Sys_Table_Alarm_Mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/alarm.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/alarm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,14 +182,7 @@
       <workItem from="1674187467370" duration="5349000" />
       <workItem from="1674195726812" duration="27568000" />
       <workItem from="1674224554592" duration="26000" />
-      <workItem from="1674724656622" duration="21701000" />
-    </task>
-    <task id="LOCAL-00003" summary="working 2022.12.29">
-      <created>1672321217513</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1672321217513</updated>
+      <workItem from="1674724656622" duration="22479000" />
     </task>
     <task id="LOCAL-00004" summary="2022.12.31 进行了一些框架搭建">
       <created>1672466800427</created>
@@ -538,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674744174911</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="2023.1.26 实现binlog监控">
+      <created>1674749005463</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1674749005464</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022.1.9 完成库表管理页的表单功能" />
     <MESSAGE value="2023.1.12 完成可视化创建表前端" />
     <MESSAGE value="2023.1.13 完成可视化创建表的创建表单部分" />
     <MESSAGE value="2023.1.15 完成可视化创建表单的数据库操作部分" />
@@ -581,7 +569,8 @@
     <MESSAGE value="2023.1.20 完成全部三个定时任务" />
     <MESSAGE value="2023.1.20 detail页表单引入缓存" />
     <MESSAGE value="2023.1.26 实现binlog监控后端功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.26 实现binlog监控后端功能" />
+    <MESSAGE value="2023.1.26 实现binlog监控" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.26 实现binlog监控" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -595,26 +584,6 @@
           <url>file://$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableAlarmForm/impl/TableAlarmFormServiceImpl.java</url>
           <line>162</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java</url>
-          <line>150</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java</url>
-          <line>149</line>
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
