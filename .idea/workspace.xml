@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.26 实现binlog监控">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.27 短时大量删除变更报警提示" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,14 +180,7 @@
       <workItem from="1674187467370" duration="5349000" />
       <workItem from="1674195726812" duration="27568000" />
       <workItem from="1674224554592" duration="26000" />
-      <workItem from="1674724656622" duration="22479000" />
-    </task>
-    <task id="LOCAL-00004" summary="2022.12.31 进行了一些框架搭建">
-      <created>1672466800427</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1672466800427</updated>
+      <workItem from="1674724656622" duration="22862000" />
     </task>
     <task id="LOCAL-00005" summary="2022.1.1">
       <created>1672569963007</created>
@@ -527,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674749005464</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="2023.1.27 短时大量删除变更报警提示">
+      <created>1674793383622</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1674793383622</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2023.1.12 完成可视化创建表前端" />
     <MESSAGE value="2023.1.13 完成可视化创建表的创建表单部分" />
     <MESSAGE value="2023.1.15 完成可视化创建表单的数据库操作部分" />
     <MESSAGE value="2023.1.15 完成扫描数据库和可视化创建表" />
@@ -570,7 +567,8 @@
     <MESSAGE value="2023.1.20 detail页表单引入缓存" />
     <MESSAGE value="2023.1.26 实现binlog监控后端功能" />
     <MESSAGE value="2023.1.26 实现binlog监控" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.26 实现binlog监控" />
+    <MESSAGE value="2023.1.27 短时大量删除变更报警提示" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.27 短时大量删除变更报警提示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

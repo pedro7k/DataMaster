@@ -30,6 +30,11 @@ public class LogMonitor implements ApplicationRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(LogMonitor.class);
 
+    /**
+     * 系统表前缀
+     */
+    private static final String SYS_TABLE_PREFIX = "sys_";
+
     @Resource
     private TableMonitorService tableMonitorService;
 
@@ -69,7 +74,7 @@ public class LogMonitor implements ApplicationRunner {
                 TableMapEventData tableMapEventData = (TableMapEventData) data;
                 // 3.1 表映射 不是系统表变更，且tableIdMap中尚不存在，添加id到表名的映射
                 if (tableMapEventData.getDatabase().equals(Constants.SYS_NAME)
-                        && !tableMapEventData.getTable().startsWith("sys")
+                        && !tableMapEventData.getTable().startsWith(SYS_TABLE_PREFIX)
                         && tableIdMap.getIfPresent(tableMapEventData.getTableId()) == null) {
                     tableIdMap.put(tableMapEventData.getTableId(), tableMapEventData.getTable());
                     logger.info("日志监控新增id和表名对应，tableId={},tableName={}", tableMapEventData.getTableId(), tableMapEventData.getTable());
