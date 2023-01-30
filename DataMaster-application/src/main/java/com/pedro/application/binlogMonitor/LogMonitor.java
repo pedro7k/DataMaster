@@ -79,7 +79,7 @@ public class LogMonitor implements ApplicationRunner {
                         && !tableMapEventData.getTable().startsWith(SYS_TABLE_PREFIX)
                         && tableIdMap.getIfPresent(tableMapEventData.getTableId()) == null) {
                     tableIdMap.put(tableMapEventData.getTableId(), tableMapEventData.getTable());
-                    logger.info("日志监控新增id和表名对应，tableId={},tableName={}", tableMapEventData.getTableId(), tableMapEventData.getTable());
+                    logger.info("日志监控新增id和表名对应，mysql内置tableId={},tableName={}", tableMapEventData.getTableId(), tableMapEventData.getTable());
                 }
             } else if (data instanceof DeleteRowsEventData) {
                 DeleteRowsEventData deleteRowsEventData = (DeleteRowsEventData) data;

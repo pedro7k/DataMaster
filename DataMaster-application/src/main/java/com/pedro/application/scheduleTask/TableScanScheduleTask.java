@@ -18,8 +18,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.pedro.common.config.Constants.TABLE_SCAN_CRON;
-import static com.pedro.common.config.Constants.TOTAL_HEALTH_SCORE_CRON;
+import static com.pedro.common.config.Constants.*;
 
 /**
  * 表单扫描定时任务
@@ -76,7 +75,7 @@ public class TableScanScheduleTask {
     /**
      * 每小时整点执行一次，清理过期数据
      */
-    @Scheduled(cron = Constants.DELETE_HEALTH_SCORE_CRON)
+    @Scheduled(cron = DELETE_HEALTH_SCORE_CRON)
     private void doDeleteScoreInOneHour(){
         scoreClearService.deleteScoreInPastOneHour();
         logger.info("清理健康分数据，间隔1h");
