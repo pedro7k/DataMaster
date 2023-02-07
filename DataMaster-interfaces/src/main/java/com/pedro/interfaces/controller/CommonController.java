@@ -1,11 +1,10 @@
 package com.pedro.interfaces.controller;
 
+import com.pedro.auth.model.User;
+import com.pedro.auth.subject.api.PedroAuthUtil;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.res.CommonResult;
-import com.pedro.domain.user.model.vo.UserVO;
-import com.pedro.interfaces.role.ShiroConfig;
-import com.pedro.interfaces.role.ShiroUtil;
-import org.apache.shiro.SecurityUtils;
+import com.pedro.common.util.CommonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,7 @@ public class CommonController {
      */
     @GetMapping("/roleDenied")
     public ModelAndView roleDenied() {
-        logger.info("[roleDenied]权限不足，user={},time={}", ShiroUtil.getCurrentUser().getUsername(), new Date());
+        logger.info("[roleDenied]权限不足，user={},time={}", PedroAuthUtil.getAuthSubject().getUser().getUsername(), new Date());
         ModelAndView mv = new ModelAndView("roleDenied.html");
         return mv;
     }
@@ -40,8 +39,8 @@ public class CommonController {
     public CommonResult roleCheck(@RequestParam int minRoleKey) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > minRoleKey) {

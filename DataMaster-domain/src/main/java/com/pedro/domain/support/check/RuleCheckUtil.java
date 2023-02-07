@@ -1,8 +1,5 @@
 package com.pedro.domain.support.check;
 
-import org.apache.shiro.crypto.hash.Hash;
-import org.apache.shiro.util.PatternMatcher;
-
 import java.util.HashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.regex.Matcher;

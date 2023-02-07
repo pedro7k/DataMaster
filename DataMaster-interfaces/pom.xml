@@ -51,10 +51,10 @@
             <artifactId>guava</artifactId>
         </dependency>
 
-        <!--shiro-->
+        <!--pedroAuth-->
         <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
+            <groupId>com.pedro</groupId>
+            <artifactId>pedro-auth-spring-boot-starter</artifactId>
         </dependency>
         <!--MyBatis-->
         <dependency>

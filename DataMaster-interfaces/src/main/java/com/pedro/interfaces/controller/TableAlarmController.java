@@ -2,11 +2,14 @@ package com.pedro.interfaces.controller;
 
 import com.google.common.base.Splitter;
 import com.pedro.application.process.DataScanProcess;
+import com.pedro.auth.model.User;
+import com.pedro.auth.subject.api.PedroAuthUtil;
 import com.pedro.common.config.Constants;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.exceptions.ServiceException;
 import com.pedro.common.res.CommonResult;
+import com.pedro.common.util.CommonUtil;
 import com.pedro.domain.form.model.res.TableAlarmFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
 import com.pedro.domain.form.model.vo.PieDataVO;
@@ -16,7 +19,6 @@ import com.pedro.infrastructure.dao.TableInfoDao;
 import com.pedro.interfaces.res.CommonFormDataRes;
 import com.pedro.interfaces.res.PieDataRes;
 import com.pedro.interfaces.res.ScanFreqRes;
-import com.pedro.interfaces.role.ShiroUtil;
 import org.checkerframework.checker.units.qual.C;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -96,8 +98,8 @@ public class TableAlarmController {
     public CommonResult quickEditAlarmState(@RequestParam("tid") int tid, @RequestParam("aid") int aid, @RequestParam("state") String state) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -120,8 +122,8 @@ public class TableAlarmController {
     public CommonResult deleteAlarm(@RequestParam("tid") int tid, @RequestParam("aid") int aid) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -143,8 +145,8 @@ public class TableAlarmController {
     public CommonResult batchDeleteAlarm(@RequestParam("tid") int tid, @RequestParam("ids") String aids) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -191,8 +193,8 @@ public class TableAlarmController {
     public CommonResult setScanFreq(int tid, Integer freq) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -214,8 +216,8 @@ public class TableAlarmController {
     public CommonResult triggerScan(int tid){
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {

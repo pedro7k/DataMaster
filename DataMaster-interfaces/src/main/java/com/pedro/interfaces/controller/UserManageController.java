@@ -1,6 +1,9 @@
 package com.pedro.interfaces.controller;
 
 import com.google.common.base.Splitter;
+import com.pedro.auth.annotation.MethodAuth;
+import com.pedro.auth.common.enums.RuleLevelEnum;
+import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.res.CommonResult;
 import com.pedro.domain.form.model.res.UserManageFormRes;
 import com.pedro.domain.form.service.userManageForm.UserManageFormService;
@@ -22,13 +25,20 @@ public class UserManageController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserManageController.class);
 
+    /**
+     * ROOT权限对应的代码
+     */
+    private static final String ROOT_CODE = "0";
+
     @Resource
     private UserManageFormService userManageFormService;
 
     /**
      * 跳转到用户管理页
+     * 需要ROOT权限
      */
     @GetMapping("/jumpToUserManage")
+    @MethodAuth(level = RuleLevelEnum.NEED_ROLE, roles = ROOT_CODE)
     public ModelAndView jumpToUserManage() {
         ModelAndView mv = new ModelAndView("userManage.html");
         return mv;

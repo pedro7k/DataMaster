@@ -27,5 +27,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.pedro</groupId>
+            <artifactId>pedro-auth-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 </project>

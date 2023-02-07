@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         UserVO userVO = new UserVO();
         userVO.setUsername(registryReq.getUsername());
         userVO.setSalt(EncryptionUtil.getSalt());
-        userVO.setPassword(EncryptionUtil.encryptPassword(registryReq.getUsername(), registryReq.getPassword(), userVO.getSalt(), Constants.HASH_TIMES));
+        userVO.setPassword(EncryptionUtil.encryptPassword(registryReq.getUsername(), registryReq.getPassword(), userVO.getSalt()));
         userVO.setRole(UserRoleEnum.NORMAL_USER.getLevel());
         boolean success = userRepository.registry(userVO);
 

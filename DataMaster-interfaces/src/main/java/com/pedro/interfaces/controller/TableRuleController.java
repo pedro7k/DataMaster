@@ -1,9 +1,12 @@
 package com.pedro.interfaces.controller;
 
 import com.google.common.base.Splitter;
+import com.pedro.auth.model.User;
+import com.pedro.auth.subject.api.PedroAuthUtil;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
 import com.pedro.common.res.CommonResult;
+import com.pedro.common.util.CommonUtil;
 import com.pedro.domain.form.model.req.RuleCreationReq;
 import com.pedro.domain.form.model.res.TableDetailFormRes;
 import com.pedro.domain.form.model.res.TableRuleFormRes;
@@ -14,7 +17,6 @@ import com.pedro.domain.user.model.vo.UserVO;
 import com.pedro.interfaces.res.CommonFormDataRes;
 import com.pedro.interfaces.res.OptionRes;
 import com.pedro.interfaces.res.PieDataRes;
-import com.pedro.interfaces.role.ShiroUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -84,8 +86,8 @@ public class TableRuleController {
     public CommonResult quickEditRuleWeight(@RequestParam("rid") int rid, @RequestParam("weight") int weight) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -107,8 +109,8 @@ public class TableRuleController {
     public CommonResult deleteRule(@RequestParam("rid") int rid) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -130,8 +132,8 @@ public class TableRuleController {
     public CommonResult batchDeleteRule(@RequestParam("ids") String rids){
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {

@@ -1,9 +1,16 @@
 package com.pedro.interfaces.controller;
 
 import com.google.common.base.Splitter;
+import com.pedro.auth.annotation.MethodAuth;
+import com.pedro.auth.common.enums.RuleLevelEnum;
+import com.pedro.auth.model.User;
+import com.pedro.auth.subject.AuthSubject;
+import com.pedro.auth.subject.api.PedroAuthUtil;
 import com.pedro.common.enums.ServiceExceptionEnum;
 import com.pedro.common.enums.UserRoleEnum;
+import com.pedro.common.exceptions.ServiceException;
 import com.pedro.common.res.CommonResult;
+import com.pedro.common.util.CommonUtil;
 import com.pedro.domain.dbProcess.model.req.TableCreationReq;
 import com.pedro.domain.dbProcess.service.tableCreation.VisualCreateTableService;
 import com.pedro.domain.dbProcess.service.tableSearch.TableSearchService;
@@ -15,9 +22,6 @@ import com.pedro.interfaces.res.CommonFormDataRes;
 import com.pedro.interfaces.res.CurrentTotalHealthScoreRes;
 import com.pedro.domain.score.model.vo.ScoreLineVO;
 import com.pedro.interfaces.res.UsernameRes;
-import com.pedro.interfaces.role.ShiroUtil;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -65,11 +69,11 @@ public class TableManageController {
         logger.info("getCurrentUser");
 
         // 1.获取当前user
-        UserVO currentUser = ShiroUtil.getCurrentUser();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.在用户名后标注权限等级
         String username = currentUser.getUsername();
-        username = username + " " + UserRoleEnum.castRoleToString(currentUser.getRole());
+        username = username + " " + UserRoleEnum.castRoleToString(Integer.parseInt(currentUser.getRoleList().get(0)));
 
         // 3.保证安全，构造一个仅包含username的对象
         UsernameRes usernameRes = new UsernameRes();
@@ -83,11 +87,15 @@ public class TableManageController {
      * 注销
      */
     @GetMapping("/logout")
-    public CommonResult logout() {
-        Subject subject = SecurityUtils.getSubject();
-        subject.logout();
+    public CommonResult logout(){
+        AuthSubject subject = PedroAuthUtil.getAuthSubject();
 
-        return CommonResult.success(null);
+        if (subject.logout()) {
+            return CommonResult.success(null);
+        } else {
+            return CommonResult.error(ServiceExceptionEnum.LOGOUT_ERROR);
+        }
+
     }
 
     /**
@@ -139,8 +147,8 @@ public class TableManageController {
     public CommonResult exceptTable(@RequestParam("tid") int tid) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -162,8 +170,8 @@ public class TableManageController {
     public CommonResult batchExceptTable(@RequestParam("ids") String tids) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -189,8 +197,8 @@ public class TableManageController {
     public CommonResult quickEditTableWeight(@RequestParam("tid") int tid, @RequestParam("weight") int weight) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -209,11 +217,11 @@ public class TableManageController {
      * 可视化创建表
      */
     @PostMapping("/createTable")
-    public CommonResult createTable(@RequestBody TableCreationReq tableCreationReq){
+    public CommonResult createTable(@RequestBody TableCreationReq tableCreationReq) {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -225,15 +233,15 @@ public class TableManageController {
         visualCreateTableService.createTable(tableCreationReq);
 
         // 4.返回
-        return CommonResult.success(null,"创建成功！请稍后刷新");
+        return CommonResult.success(null, "创建成功！请稍后刷新");
     }
 
     @GetMapping("/searchTable")
-    public CommonResult searchTable(){
+    public CommonResult searchTable() {
 
         // 1.获取当前权限
-        UserVO currentUser = ShiroUtil.getCurrentUser();
-        int role = currentUser.getRole();
+        Integer role = CommonUtil.getFirstRole();
+        User currentUser = PedroAuthUtil.getAuthSubject().getUser();
 
         // 2.权限不足
         if (role > UserRoleEnum.ADMIN.getLevel()) {
@@ -245,7 +253,7 @@ public class TableManageController {
         tableSearchService.searchTable();
 
         // 4.返回
-        return CommonResult.success(null,"搜索新表单成功！请稍后刷新");
+        return CommonResult.success(null, "搜索新表单成功！请稍后刷新");
 
     }
 }

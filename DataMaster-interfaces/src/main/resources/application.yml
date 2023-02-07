@@ -38,3 +38,25 @@ logging:
   file:
     name: G:/code/DataMaster/log/DataMaster.log
 
+pedro-auth:
+  auth-level:
+    # default只支持noAuth和needAuth
+    default: needAuth
+    rule-list: rule1,rule2,rule3,rule4,rule5
+    rule1:
+      path: /jumpToLoginPage
+      level: noAuth
+    rule2:
+      path: /login
+      level: noAuth
+    rule3:
+      path: /jumpToRegistryPage
+      level: noAuth
+    rule4:
+      path: /registry
+      level: noAuth
+    rule5:
+      path: /roleDenied
+      level: noAuth
+  no-auth-path: /jumpToLoginPage
+  no-role-path: /roleDenied

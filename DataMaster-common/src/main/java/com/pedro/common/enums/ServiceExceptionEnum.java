@@ -30,6 +30,8 @@ public enum ServiceExceptionEnum {
     UNKNOWN_ACCOUNT_ERROR("0102", "登陆时用户名不存在"),
     INCORRECT_PASSWORD("0103", "登录时密码错误"),
     DUPLICATE_USERNAME("0104", "注册时用户名重复"),
+    ENCODE_PASSWORD_ERROR("0105", "注册时密码加密出现异常"),
+    LOGOUT_ERROR("0106", "注销时出现异常"),
     // 02 form模块
     DELETE_USER_ERROR("0201", "删除用户时出现异常"),
     EDIT_USER_ROLE_ERROR("0202", "编辑用户权限时出现异常"),

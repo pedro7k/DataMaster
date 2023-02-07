@@ -86,10 +86,40 @@
                                                     "type": "button-toolbar",
                                                     "buttons": [
                                                         {
-                                                            "type": "submit",
+                                                            "type": "button",
                                                             "label": "注销",
                                                             "id": "u:9db9233f7198",
-                                                            "confirmText": "确定要注销吗？"
+                                                            "confirmText": "确定要注销吗？",
+                                                            "onEvent": {
+                                                                "click": {
+                                                                    "weight": 0,
+                                                                    "actions": [
+                                                                        {
+                                                                            "args": {
+                                                                                "options": {
+                                                                                },
+                                                                                "api": {
+                                                                                    "url": "http://localhost:8080/logout",
+                                                                                    "method": "get",
+                                                                                    "messages": {
+                                                                                    },
+                                                                                    "dataType": "form-data"
+                                                                                }
+                                                                            },
+                                                                            "outputVar": "logoutResult",
+                                                                            "actionType": "ajax"
+                                                                        },
+                                                                        {
+                                                                            "args": {
+                                                                                "url": "http://localhost:8080/jumpToLoginPage",
+                                                                                "blank": false
+                                                                            },
+                                                                            "actionType": "url",
+                                                                            "expression": "${event.data.logoutResult.responseStatus==0}"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
                                                         },
                                                         {
                                                             "type": "button",

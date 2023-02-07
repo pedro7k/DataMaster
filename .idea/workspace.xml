@@ -6,6 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.30 bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/ServiceExceptionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/util/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/util/CommonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/check/RuleCheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/check/RuleCheckUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/encryption/EncryptionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/encryption/EncryptionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableAlarmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableRuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableRuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/UserManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/ShiroConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/ShiroUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/role/UserRealm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-interfaces/src/main/resources/static/tableManage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +43,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -596,6 +617,91 @@
           <url>file://$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/form/service/tableAlarmForm/impl/TableAlarmFormServiceImpl.java</url>
           <line>162</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/joinPoint/MethodAuthJoinPoint.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/joinPoint/MethodAuthJoinPoint.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/UserManageController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DataMaster-interfaces/src/main/java/com/pedro/interfaces/controller/TableManageController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/config/UserAuthInterceptor.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
