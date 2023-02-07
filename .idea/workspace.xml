@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.27 bugfix">
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.1.30 bugfix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/binlogMonitor/LogMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/binlogMonitor/LogMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/scheduleTask/TableScanScheduleTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-application/src/main/java/com/pedro/application/scheduleTask/TableScanScheduleTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +51,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/code/DataMaster/DataMaster-interfaces/src/main/resources/static&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/code/pedroAuth&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -187,13 +185,16 @@
       <workItem from="1674724656622" duration="25049000" />
       <workItem from="1675051999984" duration="382000" />
       <workItem from="1675081444286" duration="963000" />
-    </task>
-    <task id="LOCAL-00008" summary="2022.1.3">
-      <created>1672755170442</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672755170442</updated>
+      <workItem from="1675082985536" duration="5660000" />
+      <workItem from="1675165109223" duration="10156000" />
+      <workItem from="1675254352327" duration="4516000" />
+      <workItem from="1675317109872" duration="156000" />
+      <workItem from="1675342230594" duration="18000" />
+      <workItem from="1675683638838" duration="1000" />
+      <workItem from="1675687502328" duration="55000" />
+      <workItem from="1675688142584" duration="4116000" />
+      <workItem from="1675710581220" duration="204000" />
+      <workItem from="1675768913618" duration="4359000" />
     </task>
     <task id="LOCAL-00009" summary="2022.1.4 完善注册功能">
       <created>1672826523097</created>
@@ -531,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674794533996</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="2023.1.30 bugfix">
+      <created>1675083032779</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1675083032779</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2023.1.15 完成可视化创建表单的数据库操作部分" />
     <MESSAGE value="2023.1.15 完成扫描数据库和可视化创建表" />
     <MESSAGE value="2023.1.16 完成数据表详情页健康分图表" />
     <MESSAGE value="2023.1.17 完成数据表详情页" />
@@ -574,7 +581,8 @@
     <MESSAGE value="2023.1.26 实现binlog监控" />
     <MESSAGE value="2023.1.27 短时大量删除变更报警提示" />
     <MESSAGE value="2023.1.27 bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.27 bugfix" />
+    <MESSAGE value="2023.1.30 bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.1.30 bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
