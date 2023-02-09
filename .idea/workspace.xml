@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.2.8 pedroAuth">
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.2.9 pedroAuth仓库更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -199,14 +199,8 @@
       <workItem from="1675688142584" duration="4116000" />
       <workItem from="1675710581220" duration="204000" />
       <workItem from="1675768913618" duration="4359000" />
-      <workItem from="1675945766148" duration="4240000" />
-    </task>
-    <task id="LOCAL-00009" summary="2022.1.4 完善注册功能">
-      <created>1672826523097</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1672826523097</updated>
+      <workItem from="1675945766148" duration="4316000" />
+      <workItem from="1675955768453" duration="3268000" />
     </task>
     <task id="LOCAL-00010" summary="2022.1.4 完善权限相关功能">
       <created>1672833037300</created>
@@ -544,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675083032779</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="2023.2.9 pedroAuth仓库更新">
+      <created>1675955648873</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1675955648873</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +563,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2023.1.15 完成扫描数据库和可视化创建表" />
     <MESSAGE value="2023.1.16 完成数据表详情页健康分图表" />
     <MESSAGE value="2023.1.17 完成数据表详情页" />
     <MESSAGE value="2023.1.16 完成约束页图和表单展示" />
@@ -587,7 +587,8 @@
     <MESSAGE value="2023.1.27 短时大量删除变更报警提示" />
     <MESSAGE value="2023.1.27 bugfix" />
     <MESSAGE value="2023.1.30 bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.1.30 bugfix" />
+    <MESSAGE value="2023.2.9 pedroAuth仓库更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.2.9 pedroAuth仓库更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -634,12 +635,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
-          <line>120</line>
+          <line>122</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
-          <line>121</line>
+          <line>123</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -669,17 +670,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
-          <line>128</line>
+          <line>130</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
-          <line>129</line>
+          <line>131</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/com/pedro/pedro-auth-spring-boot-starter/1.0-SNAPSHOT/pedro-auth-spring-boot-starter-1.0-SNAPSHOT-sources.jar!/com/pedro/auth/subject/impl/DefaultAuthSubject.java</url>
-          <line>135</line>
+          <line>137</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
