@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.2.9 pedroAuth仓库更新">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.2.10 pedroAuth版本更新" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,14 +197,7 @@
       <workItem from="1675710581220" duration="204000" />
       <workItem from="1675768913618" duration="4359000" />
       <workItem from="1675945766148" duration="4316000" />
-      <workItem from="1675955768453" duration="3268000" />
-    </task>
-    <task id="LOCAL-00010" summary="2022.1.4 完善权限相关功能">
-      <created>1672833037300</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1672833037300</updated>
+      <workItem from="1675955768453" duration="3316000" />
     </task>
     <task id="LOCAL-00011" summary="2022.1.5 log">
       <created>1672838492792</created>
@@ -545,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675955648873</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="2023.2.10 pedroAuth版本更新">
+      <created>1675959330060</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1675959330060</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +560,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2023.1.16 完成数据表详情页健康分图表" />
     <MESSAGE value="2023.1.17 完成数据表详情页" />
     <MESSAGE value="2023.1.16 完成约束页图和表单展示" />
     <MESSAGE value="2023.1.16 完成约束页除新增约束外的表单功能" />
@@ -588,7 +584,8 @@
     <MESSAGE value="2023.1.27 bugfix" />
     <MESSAGE value="2023.1.30 bugfix" />
     <MESSAGE value="2023.2.9 pedroAuth仓库更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.2.9 pedroAuth仓库更新" />
+    <MESSAGE value="2023.2.10 pedroAuth版本更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.2.10 pedroAuth版本更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
