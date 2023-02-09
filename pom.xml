@@ -29,6 +29,17 @@
         <relativePath/>
     </parent>
 
+    <repositories>
+        <repository>
+            <id>pedro7k</id>
+            <url>https://raw.github.com/pedro7k/pedroAuth/main/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencyManagement>
 
         <dependencies>
