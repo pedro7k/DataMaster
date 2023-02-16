@@ -1,5 +1,7 @@
 package com.pedro.domain.support.check;
 
+import com.google.common.collect.ImmutableMap;
+
 import java.util.HashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.regex.Matcher;
@@ -31,17 +33,25 @@ public class RuleCheckUtil {
     /**
      * 映射map
      */
-    private static final HashMap<String, String> patternStringMap = new HashMap<>(3);
-    private static final HashMap<String, Pattern> patternMap = new HashMap<>(3);
+    private static final ImmutableMap<String, String> patternStringMap = ImmutableMap.of(
+            VALUE_RANGE, EXPRESSION_FOR_VALUE_RANGE,
+            APPEAR_TIMES, EXPRESSION_FOR_APPEAR_TIMES,
+            APPEAR_RATIO, EXPRESSION_FOR_APPEAR_RATIO
+    );
+    private static final ImmutableMap<String, Pattern> patternMap = ImmutableMap.of(
+            VALUE_RANGE, PATTERN_FOR_VALUE_RANGE,
+            APPEAR_TIMES, PATTERN_FOR_APPEAR_TIMES,
+            APPEAR_RATIO, PATTERN_FOR_APPEAR_RATIO
+    );
 
-    static {
-        patternStringMap.put(VALUE_RANGE, EXPRESSION_FOR_VALUE_RANGE);
-        patternMap.put(VALUE_RANGE, PATTERN_FOR_VALUE_RANGE);
-        patternStringMap.put(APPEAR_TIMES, EXPRESSION_FOR_APPEAR_TIMES);
-        patternMap.put(APPEAR_TIMES, PATTERN_FOR_APPEAR_TIMES);
-        patternStringMap.put(APPEAR_RATIO, EXPRESSION_FOR_APPEAR_RATIO);
-        patternMap.put(APPEAR_RATIO, PATTERN_FOR_APPEAR_RATIO);
-    }
+//    static {
+//        patternStringMap.put(VALUE_RANGE, EXPRESSION_FOR_VALUE_RANGE);
+//        patternMap.put(VALUE_RANGE, PATTERN_FOR_VALUE_RANGE);
+//        patternStringMap.put(APPEAR_TIMES, EXPRESSION_FOR_APPEAR_TIMES);
+//        patternMap.put(APPEAR_TIMES, PATTERN_FOR_APPEAR_TIMES);
+//        patternStringMap.put(APPEAR_RATIO, EXPRESSION_FOR_APPEAR_RATIO);
+//        patternMap.put(APPEAR_RATIO, PATTERN_FOR_APPEAR_RATIO);
+//    }
 
     /**
      * 检查传入的约束边界

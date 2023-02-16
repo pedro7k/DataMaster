@@ -33,7 +33,7 @@ public interface CommonDao {
     /**
      * 删除指定表名的数据表
      */
-    void dropTableByName(String tableName);
+    void dropTableByName(@Param("tableName") String tableName);
 
     /**
      * 查询数据库中所有的表名

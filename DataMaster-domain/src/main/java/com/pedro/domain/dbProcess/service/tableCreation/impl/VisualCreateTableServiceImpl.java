@@ -1,5 +1,6 @@
 package com.pedro.domain.dbProcess.service.tableCreation.impl;
 
+import com.google.common.collect.ImmutableList;
 import com.pedro.common.config.Constants;
 import com.pedro.common.enums.RuleTypeEnum;
 import com.pedro.common.enums.ServiceExceptionEnum;
@@ -44,13 +45,11 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
     /**
      * 数值类型集合
      */
-    private static List<String> numTypeList = new ArrayList<>();
-
-    static {
-        numTypeList.add("int");
-        numTypeList.add("float");
-        numTypeList.add("double");
-    }
+    private static final ImmutableList<String> numTypeList = ImmutableList.of(
+            "int",
+            "float",
+            "double"
+    );
 
     @Resource
     private TableCreationRepository tableCreationRepository;
@@ -198,7 +197,7 @@ public class VisualCreateTableServiceImpl implements VisualCreateTableService {
             tableCreationRepository.insertTableHealthScore(tableHealthScoreVO);
 
         } catch (ServiceException e) {
-            deleteDataByTableName(req.getTableName());
+//            deleteDataByTableName(req.getTableName()); TODO 不要这样，用事务处理
             logger.error(e.getMessage());
             throw e;
         } catch (Throwable e) {
