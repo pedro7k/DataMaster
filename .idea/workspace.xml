@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.2.10 pedroAuth版本更新">
+    <list default="true" id="01e17a71-8855-400b-aaf7-a0066a8c5e10" name="Changes" comment="2023.2.16 使用不可变集合">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/check/RuleCheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/support/check/RuleCheckUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/CommonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/dao/CommonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/UserRoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataMaster-common/src/main/java/com/pedro/common/enums/UserRoleEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,14 +206,8 @@
       <workItem from="1676285631617" duration="5312000" />
       <workItem from="1676305164771" duration="36000" />
       <workItem from="1676466641359" duration="114000" />
-      <workItem from="1676541178723" duration="2024000" />
-    </task>
-    <task id="LOCAL-00011" summary="2022.1.5 log">
-      <created>1672838492792</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1672838492792</updated>
+      <workItem from="1676541178723" duration="3488000" />
+      <workItem from="1676792970658" duration="922000" />
     </task>
     <task id="LOCAL-00012" summary="2022.1.5 language repair">
       <created>1672838729648</created>
@@ -553,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675959330060</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="2023.2.16 使用不可变集合">
+      <created>1676543242787</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1676543242787</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2023.1.17 完成数据表详情页" />
     <MESSAGE value="2023.1.16 完成约束页图和表单展示" />
     <MESSAGE value="2023.1.16 完成约束页除新增约束外的表单功能" />
     <MESSAGE value="2023.1.16" />
@@ -596,7 +594,8 @@
     <MESSAGE value="2023.1.30 bugfix" />
     <MESSAGE value="2023.2.9 pedroAuth仓库更新" />
     <MESSAGE value="2023.2.10 pedroAuth版本更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.2.10 pedroAuth版本更新" />
+    <MESSAGE value="2023.2.16 使用不可变集合" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.2.16 使用不可变集合" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -610,11 +609,6 @@
           <url>file://$PROJECT_DIR$/DataMaster-domain/src/main/java/com/pedro/domain/dbProcess/service/tableCreation/impl/VisualCreateTableServiceImpl.java</url>
           <line>202</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableCreationRepositoryImpl.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/DataMaster-infrastructure/src/main/java/com/pedro/infrastructure/repository/TableCreationRepositoryImpl.java</url>

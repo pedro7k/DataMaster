@@ -1,5 +1,6 @@
 package com.pedro.common.enums;
 
+import com.google.common.collect.ImmutableListMultimap;
 import com.pedro.common.exceptions.ServiceException;
 
 import java.util.*;
@@ -38,21 +39,11 @@ public enum UserRoleEnum {
     /**
      * 静态加载从数字到角色的对应关系
      */
-    private static final Map<Integer, List<String>> roleStringListMap = new HashMap<>();
-
-    static {
-        // root
-        List<String> rootRoles = new ArrayList<>(2);
-        rootRoles.add("root");
-        rootRoles.add("admin");
-        roleStringListMap.put(0, rootRoles);
-        // admin
-        List<String> adminRoles = new ArrayList<>(1);
-        rootRoles.add("admin");
-        roleStringListMap.put(1, adminRoles);
-        // normal user
-        roleStringListMap.put(2, new ArrayList<>());
-    }
+    private static final ImmutableListMultimap<Integer, String> roleStringListMap = ImmutableListMultimap.of(
+            0, "root",
+            0, "admin",
+            1,"admin"
+    );
 
     /**
      * 返回key对应的roles及权限比他低的roles
