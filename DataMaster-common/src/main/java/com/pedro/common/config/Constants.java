@@ -38,7 +38,7 @@ public class Constants {
     /**
      * 重打整体健康分cron
      */
-    public final static String DELETE_HEALTH_SCORE_CRON = "0 * */1 * * ?";
+    public final static String DELETE_HEALTH_SCORE_CRON = "0 0 */1 * * ?";
 
     /**
      * 每分钟的表单扫描次数
