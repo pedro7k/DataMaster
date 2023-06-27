@@ -1,6 +1,5 @@
 package com.pedro.application.mq.consumer;
 
-import com.lmax.disruptor.EventHandler;
 import com.pedro.application.mq.BeanManager;
 import com.pedro.application.mq.model.TableScanMessage;
 import com.pedro.application.process.DataScanProcess;

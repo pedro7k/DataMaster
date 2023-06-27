@@ -1,6 +1,5 @@
 package com.pedro.application.mq.factory;
 
-import com.lmax.disruptor.EventFactory;
 import com.pedro.application.mq.model.TableScanMessage;
 import com.pedro.event.interfaces.MessageFactory;
 

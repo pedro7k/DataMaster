@@ -1,6 +1,5 @@
 package com.pedro.application.mq.producer.impl;
 
-import com.lmax.disruptor.RingBuffer;
 import com.pedro.application.mq.consumer.TableScanEventConsumer;
 import com.pedro.application.mq.model.TableScanMessage;
 import com.pedro.application.mq.producer.TableScanEventProducer;
