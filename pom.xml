@@ -57,6 +57,13 @@
                 <version>1.0.0</version>
             </dependency>
 
+            <!--pedroEventPlane-->
+            <dependency>
+                <groupId>com.pedro</groupId>
+                <artifactId>pedro-event-plane</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
