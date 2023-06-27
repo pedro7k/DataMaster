@@ -11,10 +11,33 @@ import java.util.concurrent.Executors;
 import com.pedro.application.mq.consumer.TableScanEventConsumer;
 import com.pedro.application.mq.factory.TableScanMessageFactory;
 import com.pedro.application.mq.model.TableScanMessage;
+import com.pedro.event.PedroEventPlane;
+import com.pedro.event.common.enums.ProviderTypeEnum;
+import com.pedro.event.common.enums.ProviderWaitStrategyEnum;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+public class MQManager {
+
+    @Bean("TableScanMessageEventPlane")
+    public PedroEventPlane<TableScanMessage> TableScanMessageEventPlane() {
+
+        // 1.构建队列
+        PedroEventPlane<TableScanMessage> plane = new PedroEventPlane
+                .Builder<>(Executors.newFixedThreadPool(2), new TableScanMessageFactory(), 1024 * 256, ProviderTypeEnum.SINGLE_PROVIDER, new TableScanEventConsumer())
+                .providerWeightStrategy(ProviderWaitStrategyEnum.PROVIDER_PARK_1NS_STRATEGY)
+                .build();
+
+        // 2.启动disruptor线程
+        plane.start();
+
+        // 3.返回队列
+        return plane;
+    }
+}
+
+/*@Configuration
 public class MQManager {
 
     @Bean("TableScanMessageRingBuffer")
@@ -44,4 +67,4 @@ public class MQManager {
 
         return ringBuffer;
     }
-}
+}*/

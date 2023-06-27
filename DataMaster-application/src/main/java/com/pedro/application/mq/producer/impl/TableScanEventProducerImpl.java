@@ -4,6 +4,7 @@ import com.lmax.disruptor.RingBuffer;
 import com.pedro.application.mq.consumer.TableScanEventConsumer;
 import com.pedro.application.mq.model.TableScanMessage;
 import com.pedro.application.mq.producer.TableScanEventProducer;
+import com.pedro.event.PedroEventPlane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,33 @@ import java.util.Date;
 import java.util.List;
 
 @Component
+public class TableScanEventProducerImpl implements TableScanEventProducer {
+
+    private static final Logger logger = LoggerFactory.getLogger(TableScanEventConsumer.class);
+
+    @Resource
+    private PedroEventPlane<TableScanMessage> messagePlane;
+
+    @Override
+    public void sendTableScanMessage(List<Integer> tidList) {
+
+        // 2.尝试发送消息
+        try {
+            // 指定位置填充数据
+            TableScanMessage message = new TableScanMessage();
+            message.setSendTime(new Date());
+            message.setTidList(tidList);
+            // 发送
+            messagePlane.sendMessage(message);
+            logger.info("向消息队列中添加消息, message={}", message);
+        } catch (Throwable e) {
+            logger.error("向消息队列中添加消息失败,tidList={}", tidList);
+        }
+
+    }
+}
+
+/*@Component
 public class TableScanEventProducerImpl implements TableScanEventProducer {
 
     private static final Logger logger = LoggerFactory.getLogger(TableScanEventConsumer.class);
@@ -41,4 +69,4 @@ public class TableScanEventProducerImpl implements TableScanEventProducer {
         }
 
     }
-}
+}*/

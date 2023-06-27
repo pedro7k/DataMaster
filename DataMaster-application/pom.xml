@@ -51,6 +51,10 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.pedro</groupId>
+            <artifactId>pedro-event-plane</artifactId>
+        </dependency>
 
         <!--其他模块-->
         <dependency>
